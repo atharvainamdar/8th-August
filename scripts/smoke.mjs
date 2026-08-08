@@ -24,4 +24,7 @@ await check(`/lessons/lesson.read.1`);
 await check(`/rewards?childId=${id}`);
 await check(`/settings/${id}`);
 await check(`/history/${id}`);
+await check(`/share/${id}`);
+await check(`/api/share/${id}`);
+await check(`/contact`);
 console.log("smoke passed", base);

@@ -1844,6 +1844,22 @@
       "a": 5,
       "b": 4,
       "answer": 7
+    },
+    {
+      "schema": "money",
+      "skill": "math.word.money",
+      "template": "{name} has {a} cents. {name} finds {b} more cents. How many cents now?",
+      "a": 25,
+      "b": 10,
+      "answer": 35
+    },
+    {
+      "schema": "time",
+      "skill": "math.word.time",
+      "template": "{name} starts at {a}:00 and works for {b} hours. What time is it then?",
+      "a": 3,
+      "b": 2,
+      "answer": 5
     }
   ]
 }

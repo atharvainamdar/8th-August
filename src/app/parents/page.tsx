@@ -149,6 +149,20 @@ export default function ParentsPage() {
             <Link className="lumi-btn lumi-btn-ghost" href={`/rewards?childId=${selected}`}>
               Rewards
             </Link>
+            <Link className="lumi-btn lumi-btn-secondary" href={`/share/${selected}`}>
+              Educator share link
+            </Link>
+            <button
+              type="button"
+              className="lumi-btn lumi-btn-ghost"
+              onClick={async () => {
+                const url = `${window.location.origin}/share/${selected}`;
+                await navigator.clipboard.writeText(url);
+                alert("Share link copied");
+              }}
+            >
+              Copy share URL
+            </button>
             <Button
               variant="ghost"
               onClick={async () => {

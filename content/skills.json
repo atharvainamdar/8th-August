@@ -1340,5 +1340,507 @@
     "activityKinds": [
       "number_sense"
     ]
+  },
+  {
+    "id": "read.phoneme.medial",
+    "domain": "reading",
+    "title": "Medial sounds",
+    "description": "Hear middle sounds",
+    "prerequisites": [
+      "read.phoneme.isolate"
+    ],
+    "standards": [
+      "RF.1.2"
+    ],
+    "difficulty": 2,
+    "defaultModalities": [
+      "audio",
+      "visual"
+    ],
+    "activityKinds": [
+      "phoneme_match"
+    ]
+  },
+  {
+    "id": "read.phonics.diphthongs",
+    "domain": "reading",
+    "title": "Diphthongs",
+    "description": "Read oi/oy/ou/ow",
+    "prerequisites": [
+      "read.phonics.vowel_teams"
+    ],
+    "standards": [
+      "RF.2.3"
+    ],
+    "difficulty": 7,
+    "defaultModalities": [
+      "visual",
+      "audio",
+      "speak"
+    ],
+    "activityKinds": [
+      "decode"
+    ]
+  },
+  {
+    "id": "read.phonics.soft_c_g",
+    "domain": "reading",
+    "title": "Soft c and g",
+    "description": "Read soft c/g words",
+    "prerequisites": [
+      "read.phonics.silent_e"
+    ],
+    "standards": [
+      "RF.2.3"
+    ],
+    "difficulty": 6,
+    "defaultModalities": [
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "decode"
+    ]
+  },
+  {
+    "id": "read.fluency.phrase",
+    "domain": "reading",
+    "title": "Phrase reading",
+    "description": "Read in phrases",
+    "prerequisites": [
+      "read.fluency.accuracy"
+    ],
+    "standards": [
+      "RF.3.4"
+    ],
+    "difficulty": 7,
+    "defaultModalities": [
+      "speak",
+      "audio"
+    ],
+    "activityKinds": [
+      "fluency"
+    ]
+  },
+  {
+    "id": "read.comp.detail",
+    "domain": "reading",
+    "title": "Key details",
+    "description": "Find key details",
+    "prerequisites": [
+      "read.comp.literal"
+    ],
+    "standards": [
+      "RI.2.1"
+    ],
+    "difficulty": 5,
+    "defaultModalities": [
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "comprehension"
+    ]
+  },
+  {
+    "id": "read.comp.cause",
+    "domain": "reading",
+    "title": "Cause and effect",
+    "description": "Find why something happened",
+    "prerequisites": [
+      "read.comp.infer"
+    ],
+    "standards": [
+      "RI.3.3"
+    ],
+    "difficulty": 7,
+    "defaultModalities": [
+      "visual",
+      "avatar"
+    ],
+    "activityKinds": [
+      "comprehension"
+    ]
+  },
+  {
+    "id": "read.vocab.affixes",
+    "domain": "reading",
+    "title": "Affix meaning",
+    "description": "Use prefixes/suffixes for meaning",
+    "prerequisites": [
+      "read.phonics.prefixes",
+      "read.phonics.suffixes"
+    ],
+    "standards": [
+      "L.3.4"
+    ],
+    "difficulty": 7,
+    "defaultModalities": [
+      "visual",
+      "typing"
+    ],
+    "activityKinds": [
+      "comprehension"
+    ]
+  },
+  {
+    "id": "write.letters.spacing",
+    "domain": "writing",
+    "title": "Letter spacing",
+    "description": "Space letters in words",
+    "prerequisites": [
+      "write.letters.formation"
+    ],
+    "standards": [
+      "L.1.1"
+    ],
+    "difficulty": 3,
+    "defaultModalities": [
+      "visual",
+      "typing"
+    ],
+    "activityKinds": [
+      "letter_trace"
+    ]
+  },
+  {
+    "id": "write.spelling.homophones",
+    "domain": "writing",
+    "title": "Homophones",
+    "description": "Choose there/their/they're style pairs",
+    "prerequisites": [
+      "write.spelling.vowel_teams"
+    ],
+    "standards": [
+      "L.4.1"
+    ],
+    "difficulty": 7,
+    "defaultModalities": [
+      "visual",
+      "typing"
+    ],
+    "activityKinds": [
+      "spelling_ccc"
+    ]
+  },
+  {
+    "id": "write.grammar.nouns",
+    "domain": "writing",
+    "title": "Nouns and verbs",
+    "description": "Identify nouns/verbs",
+    "prerequisites": [
+      "write.sentence.frame"
+    ],
+    "standards": [
+      "L.1.1"
+    ],
+    "difficulty": 4,
+    "defaultModalities": [
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "sentence_build"
+    ]
+  },
+  {
+    "id": "write.grammar.tense",
+    "domain": "writing",
+    "title": "Verb tense",
+    "description": "Use past/present",
+    "prerequisites": [
+      "write.grammar.nouns"
+    ],
+    "standards": [
+      "L.2.1"
+    ],
+    "difficulty": 6,
+    "defaultModalities": [
+      "typing",
+      "speak"
+    ],
+    "activityKinds": [
+      "sentence_build"
+    ]
+  },
+  {
+    "id": "write.edit.revise",
+    "domain": "writing",
+    "title": "Revise writing",
+    "description": "Make a sentence clearer",
+    "prerequisites": [
+      "write.sentence.expand"
+    ],
+    "standards": [
+      "W.2.5"
+    ],
+    "difficulty": 7,
+    "defaultModalities": [
+      "typing",
+      "visual"
+    ],
+    "activityKinds": [
+      "short_response"
+    ]
+  },
+  {
+    "id": "write.edit.capitalize",
+    "domain": "writing",
+    "title": "Capitalization",
+    "description": "Fix capitals",
+    "prerequisites": [
+      "write.punctuation.basic"
+    ],
+    "standards": [
+      "L.2.2"
+    ],
+    "difficulty": 5,
+    "defaultModalities": [
+      "typing",
+      "visual"
+    ],
+    "activityKinds": [
+      "sentence_build"
+    ]
+  },
+  {
+    "id": "math.number.odd_even",
+    "domain": "math",
+    "title": "Odd and even",
+    "description": "Identify odd/even",
+    "prerequisites": [
+      "math.number.20"
+    ],
+    "standards": [
+      "2.OA"
+    ],
+    "difficulty": 3,
+    "defaultModalities": [
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "number_sense"
+    ]
+  },
+  {
+    "id": "math.number.round",
+    "domain": "math",
+    "title": "Rounding",
+    "description": "Round to tens",
+    "prerequisites": [
+      "math.placevalue.tens"
+    ],
+    "standards": [
+      "3.NBT"
+    ],
+    "difficulty": 6,
+    "defaultModalities": [
+      "visual",
+      "avatar"
+    ],
+    "activityKinds": [
+      "number_sense"
+    ]
+  },
+  {
+    "id": "math.ops.mul_facts_2_5",
+    "domain": "math",
+    "title": "Facts 2 and 5",
+    "description": "Multiply by 2 and 5",
+    "prerequisites": [
+      "math.ops.mul_concept"
+    ],
+    "standards": [
+      "3.OA.C"
+    ],
+    "difficulty": 6,
+    "defaultModalities": [
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "fact_fluency"
+    ]
+  },
+  {
+    "id": "math.ops.mul_facts_10",
+    "domain": "math",
+    "title": "Facts 10",
+    "description": "Multiply by 10",
+    "prerequisites": [
+      "math.ops.mul_facts_2_5"
+    ],
+    "standards": [
+      "3.OA.C"
+    ],
+    "difficulty": 6,
+    "defaultModalities": [
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "fact_fluency"
+    ]
+  },
+  {
+    "id": "math.ops.div_facts",
+    "domain": "math",
+    "title": "Division facts",
+    "description": "Basic division facts",
+    "prerequisites": [
+      "math.ops.div_concept"
+    ],
+    "standards": [
+      "3.OA.C"
+    ],
+    "difficulty": 7,
+    "defaultModalities": [
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "fact_fluency"
+    ]
+  },
+  {
+    "id": "math.word.money",
+    "domain": "math",
+    "title": "Money stories",
+    "description": "Solve simple money problems",
+    "prerequisites": [
+      "math.ops.add_100"
+    ],
+    "standards": [
+      "2.MD"
+    ],
+    "difficulty": 6,
+    "defaultModalities": [
+      "visual",
+      "manipulative"
+    ],
+    "activityKinds": [
+      "word_problem"
+    ]
+  },
+  {
+    "id": "math.word.time",
+    "domain": "math",
+    "title": "Time stories",
+    "description": "Solve elapsed-time lite problems",
+    "prerequisites": [
+      "math.number.100"
+    ],
+    "standards": [
+      "2.MD"
+    ],
+    "difficulty": 6,
+    "defaultModalities": [
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "word_problem"
+    ]
+  },
+  {
+    "id": "math.geo.shapes",
+    "domain": "math",
+    "title": "Shapes",
+    "description": "Name and sort shapes",
+    "prerequisites": [
+      "math.number.10"
+    ],
+    "standards": [
+      "2.G"
+    ],
+    "difficulty": 3,
+    "defaultModalities": [
+      "visual",
+      "manipulative"
+    ],
+    "activityKinds": [
+      "number_sense"
+    ]
+  },
+  {
+    "id": "math.data.picture",
+    "domain": "math",
+    "title": "Picture graphs",
+    "description": "Read a simple picture graph",
+    "prerequisites": [
+      "math.number.20"
+    ],
+    "standards": [
+      "2.MD"
+    ],
+    "difficulty": 5,
+    "defaultModalities": [
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "number_sense"
+    ]
+  },
+  {
+    "id": "math.frac.unit",
+    "domain": "math",
+    "title": "Unit fractions",
+    "description": "Identify 1/2 1/3 1/4",
+    "prerequisites": [
+      "math.frac.parts"
+    ],
+    "standards": [
+      "3.NF.A"
+    ],
+    "difficulty": 7,
+    "defaultModalities": [
+      "visual",
+      "manipulative"
+    ],
+    "activityKinds": [
+      "number_sense"
+    ]
+  },
+  {
+    "id": "math.ops.estimate",
+    "domain": "math",
+    "title": "Estimate sums",
+    "description": "Estimate before solving",
+    "prerequisites": [
+      "math.ops.add_100"
+    ],
+    "standards": [
+      "3.NBT"
+    ],
+    "difficulty": 6,
+    "defaultModalities": [
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "operation"
+    ]
+  },
+  {
+    "id": "read.comp.predict",
+    "domain": "reading",
+    "title": "Predict next",
+    "description": "Predict what happens next",
+    "prerequisites": [
+      "read.comp.infer"
+    ],
+    "standards": [
+      "RL.2.7"
+    ],
+    "difficulty": 6,
+    "defaultModalities": [
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "comprehension"
+    ]
   }
 ]

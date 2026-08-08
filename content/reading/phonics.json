@@ -413,6 +413,26 @@
       "smallest",
       "boxes",
       "runs"
+    ],
+    "read.phonics.diphthongs": [
+      "coin",
+      "boy",
+      "cloud",
+      "cow",
+      "out",
+      "oil",
+      "town",
+      "point"
+    ],
+    "read.phonics.soft_c_g": [
+      "city",
+      "cent",
+      "giant",
+      "gem",
+      "cage",
+      "page",
+      "face",
+      "race"
     ]
   },
   "fluency": [
