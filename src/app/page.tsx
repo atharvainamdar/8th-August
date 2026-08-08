@@ -46,6 +46,9 @@ export default function LandingPage() {
             <Link className="lumi-btn lumi-btn-ghost" href="/demo">
               See YC demo
             </Link>
+            <Link className="lumi-btn lumi-btn-ghost" href="/guide">
+              Parent guide
+            </Link>
           </div>
           <ul className="m-0 grid gap-2 p-0 text-base" style={{ listStyle: "none" }}>
             <li>✓ Science-of-reading + arithmetic syllabus for ages 7–10</li>
@@ -189,6 +192,7 @@ export default function LandingPage() {
         <p className="m-0">Lumi · Educational practice tool · Not clinical therapy</p>
         <div className="flex flex-wrap gap-3">
           <Link href="/parents">Parent hub</Link>
+          <Link href="/guide">Guide</Link>
           <Link href="/faq">FAQ</Link>
           <Link href="/legal/privacy">Privacy</Link>
           <Link href="/legal/terms">Terms</Link>

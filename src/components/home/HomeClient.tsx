@@ -104,6 +104,18 @@ export function HomeClient({ profiles }: { profiles: Profile[] }) {
           >
             Reward board
           </Link>
+          <Link
+            className="lumi-btn lumi-btn-ghost text-center"
+            href={`/settings/${profile.id}`}
+          >
+            Settings
+          </Link>
+          <Link
+            className="lumi-btn lumi-btn-ghost text-center"
+            href={`/history/${profile.id}`}
+          >
+            History
+          </Link>
         </div>
 
         <div className="grid grid-cols-3 gap-2">

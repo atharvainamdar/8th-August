@@ -2,6 +2,7 @@ import Link from "next/link";
 import { listProfiles } from "@/lib/db/profile";
 import { Card } from "@/components/ui/Card";
 import { HomeClient } from "@/components/home/HomeClient";
+import { OnboardingTip } from "@/components/home/OnboardingTip";
 
 export const dynamic = "force-dynamic";
 
@@ -33,6 +34,7 @@ export default async function KidAppHomePage() {
         </nav>
       </header>
 
+      <OnboardingTip />
       <Card className="mb-6">
         <h2 className="mt-0 text-2xl font-bold">Choose who is learning</h2>
         <p className="text-[color:var(--muted)]">
