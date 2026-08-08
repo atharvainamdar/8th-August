@@ -433,6 +433,26 @@
       "page",
       "face",
       "race"
+    ],
+    "read.phonics.contractions": [
+      "I'm",
+      "don't",
+      "can't",
+      "we'll",
+      "it's",
+      "she's",
+      "they're",
+      "won't"
+    ],
+    "read.phonics.compound": [
+      "sunset",
+      "backpack",
+      "rainbow",
+      "football",
+      "cupcake",
+      "notebook",
+      "sunshine",
+      "bedroom"
     ]
   },
   "fluency": [

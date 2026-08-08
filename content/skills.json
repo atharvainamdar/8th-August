@@ -1842,5 +1842,207 @@
     "activityKinds": [
       "comprehension"
     ]
+  },
+  {
+    "id": "read.phonics.contractions",
+    "domain": "reading",
+    "title": "Contractions",
+    "description": "Read I'm/don't/can't",
+    "prerequisites": [
+      "read.hf.irregular"
+    ],
+    "standards": [
+      "RF.2.3"
+    ],
+    "difficulty": 5,
+    "defaultModalities": [
+      "visual",
+      "audio",
+      "speak"
+    ],
+    "activityKinds": [
+      "decode"
+    ]
+  },
+  {
+    "id": "read.phonics.compound",
+    "domain": "reading",
+    "title": "Compound words",
+    "description": "Read compound words",
+    "prerequisites": [
+      "read.phonics.multisyllable"
+    ],
+    "standards": [
+      "RF.3.3"
+    ],
+    "difficulty": 6,
+    "defaultModalities": [
+      "visual",
+      "speak"
+    ],
+    "activityKinds": [
+      "decode"
+    ]
+  },
+  {
+    "id": "read.comp.compare",
+    "domain": "reading",
+    "title": "Compare texts",
+    "description": "Compare two short texts",
+    "prerequisites": [
+      "read.comp.main_idea"
+    ],
+    "standards": [
+      "RI.3.9"
+    ],
+    "difficulty": 8,
+    "defaultModalities": [
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "comprehension"
+    ]
+  },
+  {
+    "id": "write.spelling.silent_letters",
+    "domain": "writing",
+    "title": "Silent letters",
+    "description": "Spell kn-/wr- words",
+    "prerequisites": [
+      "write.spelling.blends"
+    ],
+    "standards": [
+      "L.3.2"
+    ],
+    "difficulty": 6,
+    "defaultModalities": [
+      "typing",
+      "audio"
+    ],
+    "activityKinds": [
+      "spelling_ccc"
+    ]
+  },
+  {
+    "id": "write.sentence.questions",
+    "domain": "writing",
+    "title": "Ask questions",
+    "description": "Write question sentences",
+    "prerequisites": [
+      "write.punctuation.basic"
+    ],
+    "standards": [
+      "L.1.2"
+    ],
+    "difficulty": 4,
+    "defaultModalities": [
+      "typing",
+      "speak"
+    ],
+    "activityKinds": [
+      "sentence_build"
+    ]
+  },
+  {
+    "id": "write.response.narrative",
+    "domain": "writing",
+    "title": "Mini narrative",
+    "description": "Write a tiny story",
+    "prerequisites": [
+      "write.response.pow"
+    ],
+    "standards": [
+      "W.2.3"
+    ],
+    "difficulty": 8,
+    "defaultModalities": [
+      "typing",
+      "speak"
+    ],
+    "activityKinds": [
+      "short_response"
+    ]
+  },
+  {
+    "id": "math.number.expand",
+    "domain": "math",
+    "title": "Expanded form",
+    "description": "Write expanded form",
+    "prerequisites": [
+      "math.placevalue.hundreds"
+    ],
+    "standards": [
+      "2.NBT"
+    ],
+    "difficulty": 5,
+    "defaultModalities": [
+      "visual",
+      "typing"
+    ],
+    "activityKinds": [
+      "number_sense"
+    ]
+  },
+  {
+    "id": "math.ops.arrays",
+    "domain": "math",
+    "title": "Arrays",
+    "description": "Use arrays for multiply",
+    "prerequisites": [
+      "math.ops.mul_concept"
+    ],
+    "standards": [
+      "3.OA"
+    ],
+    "difficulty": 6,
+    "defaultModalities": [
+      "manipulative",
+      "visual"
+    ],
+    "activityKinds": [
+      "operation"
+    ]
+  },
+  {
+    "id": "math.ops.missing",
+    "domain": "math",
+    "title": "Missing number",
+    "description": "Find missing addend/factor",
+    "prerequisites": [
+      "math.ops.add_20",
+      "math.ops.mul_concept"
+    ],
+    "standards": [
+      "3.OA"
+    ],
+    "difficulty": 6,
+    "defaultModalities": [
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "operation"
+    ]
+  },
+  {
+    "id": "math.word.multi_compare",
+    "domain": "math",
+    "title": "Multiplicative compare",
+    "description": "Solve times-as-many stories",
+    "prerequisites": [
+      "math.word.equal_groups"
+    ],
+    "standards": [
+      "3.OA"
+    ],
+    "difficulty": 8,
+    "defaultModalities": [
+      "visual",
+      "manipulative"
+    ],
+    "activityKinds": [
+      "word_problem"
+    ]
   }
 ]

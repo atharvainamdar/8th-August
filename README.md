@@ -66,6 +66,11 @@ GOOGLE_GENERATIVE_AI_API_KEY=
 - `npm run db:seed` — demo parent + children
 - `npm run build` — production build
 - `npm run smoke` — route smoke checks against local server
+- `npm run simulate` — adaptive vs fixed learner simulation → `docs/sim-results.json`
+
+## Status
+
+See `docs/PRODUCT_STATUS.md` and `CHANGELOG.md`.
 
 ## Docs
 
