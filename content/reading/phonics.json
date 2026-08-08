@@ -1,0 +1,610 @@
+{
+  "phoneme_match": [
+    {
+      "prompt": "Which picture starts with /m/?",
+      "targetSound": "m",
+      "options": [
+        "moon",
+        "sun",
+        "fish"
+      ],
+      "answer": "moon"
+    },
+    {
+      "prompt": "Which picture starts with /s/?",
+      "targetSound": "s",
+      "options": [
+        "sock",
+        "ball",
+        "cup"
+      ],
+      "answer": "sock"
+    },
+    {
+      "prompt": "Which picture starts with /t/?",
+      "targetSound": "t",
+      "options": [
+        "tiger",
+        "moon",
+        "apple"
+      ],
+      "answer": "tiger"
+    },
+    {
+      "prompt": "Which picture starts with /b/?",
+      "targetSound": "b",
+      "options": [
+        "bus",
+        "nest",
+        "leaf"
+      ],
+      "answer": "bus"
+    },
+    {
+      "prompt": "Which picture ends with /n/?",
+      "targetSound": "n",
+      "options": [
+        "sun",
+        "cup",
+        "bee"
+      ],
+      "answer": "sun"
+    },
+    {
+      "prompt": "Which picture starts with /p/?",
+      "targetSound": "p",
+      "options": [
+        "pig",
+        "dog",
+        "hat"
+      ],
+      "answer": "pig"
+    },
+    {
+      "prompt": "Which picture starts with /f/?",
+      "targetSound": "f",
+      "options": [
+        "fish",
+        "cat",
+        "rug"
+      ],
+      "answer": "fish"
+    },
+    {
+      "prompt": "Which picture starts with /r/?",
+      "targetSound": "r",
+      "options": [
+        "rocket",
+        "ball",
+        "nest"
+      ],
+      "answer": "rocket"
+    },
+    {
+      "prompt": "Which picture ends with /t/?",
+      "targetSound": "t",
+      "options": [
+        "cat",
+        "sun",
+        "bee"
+      ],
+      "answer": "cat"
+    },
+    {
+      "prompt": "Which picture starts with /l/?",
+      "targetSound": "l",
+      "options": [
+        "lion",
+        "cup",
+        "map"
+      ],
+      "answer": "lion"
+    }
+  ],
+  "blend": [
+    {
+      "sounds": [
+        "c",
+        "a",
+        "t"
+      ],
+      "word": "cat"
+    },
+    {
+      "sounds": [
+        "m",
+        "a",
+        "p"
+      ],
+      "word": "map"
+    },
+    {
+      "sounds": [
+        "s",
+        "i",
+        "t"
+      ],
+      "word": "sit"
+    },
+    {
+      "sounds": [
+        "d",
+        "o",
+        "g"
+      ],
+      "word": "dog"
+    },
+    {
+      "sounds": [
+        "p",
+        "e",
+        "n"
+      ],
+      "word": "pen"
+    },
+    {
+      "sounds": [
+        "f",
+        "u",
+        "n"
+      ],
+      "word": "fun"
+    },
+    {
+      "sounds": [
+        "h",
+        "o",
+        "p"
+      ],
+      "word": "hop"
+    },
+    {
+      "sounds": [
+        "r",
+        "e",
+        "d"
+      ],
+      "word": "red"
+    },
+    {
+      "sounds": [
+        "b",
+        "u",
+        "g"
+      ],
+      "word": "bug"
+    },
+    {
+      "sounds": [
+        "l",
+        "i",
+        "d"
+      ],
+      "word": "lid"
+    },
+    {
+      "sounds": [
+        "s",
+        "t",
+        "e",
+        "p"
+      ],
+      "word": "step"
+    },
+    {
+      "sounds": [
+        "sh",
+        "i",
+        "p"
+      ],
+      "word": "ship"
+    },
+    {
+      "sounds": [
+        "ch",
+        "a",
+        "t"
+      ],
+      "word": "chat"
+    },
+    {
+      "sounds": [
+        "tr",
+        "ai",
+        "n"
+      ],
+      "word": "train"
+    },
+    {
+      "sounds": [
+        "b",
+        "oa",
+        "t"
+      ],
+      "word": "boat"
+    },
+    {
+      "sounds": [
+        "tr",
+        "ee"
+      ],
+      "word": "tree"
+    }
+  ],
+  "decode": {
+    "read.phonics.cvc": [
+      "cat",
+      "map",
+      "sit",
+      "dog",
+      "pen",
+      "fun",
+      "hop",
+      "red",
+      "bug",
+      "lid",
+      "cup",
+      "hat",
+      "bed",
+      "top",
+      "run",
+      "win",
+      "jam",
+      "net",
+      "fox",
+      "box"
+    ],
+    "read.phonics.blends": [
+      "stop",
+      "flag",
+      "trap",
+      "sled",
+      "crab",
+      "swim",
+      "plan",
+      "drop",
+      "clap",
+      "grin",
+      "snap",
+      "drum",
+      "spin",
+      "frog",
+      "slip",
+      "glad"
+    ],
+    "read.phonics.digraphs": [
+      "ship",
+      "chat",
+      "thin",
+      "duck",
+      "fish",
+      "chop",
+      "bath",
+      "lock",
+      "wish",
+      "rich",
+      "path",
+      "sock",
+      "much",
+      "then",
+      "when",
+      "that"
+    ],
+    "read.phonics.silent_e": [
+      "cake",
+      "bike",
+      "home",
+      "cute",
+      "rope",
+      "name",
+      "ride",
+      "hope",
+      "lake",
+      "time",
+      "note",
+      "mule",
+      "game",
+      "side",
+      "bone",
+      "tune"
+    ],
+    "read.phonics.vowel_teams": [
+      "rain",
+      "team",
+      "boat",
+      "tree",
+      "read",
+      "coat",
+      "sleep",
+      "paint",
+      "mail",
+      "seed",
+      "road",
+      "green",
+      "train",
+      "beach",
+      "soap",
+      "queen"
+    ],
+    "read.phonics.r_controlled": [
+      "car",
+      "bird",
+      "corn",
+      "star",
+      "turn",
+      "fork",
+      "herd",
+      "burn",
+      "farm",
+      "shirt",
+      "short",
+      "hurt",
+      "park",
+      "girl",
+      "horn",
+      "curl"
+    ],
+    "read.phonics.multisyllable": [
+      "sunset",
+      "basket",
+      "rabbit",
+      "picnic",
+      "helmet",
+      "magnet",
+      "laptop",
+      "sunset",
+      "napkin",
+      "pencil",
+      "tiger",
+      "robot",
+      "planet",
+      "ticket"
+    ],
+    "read.hf.irregular": [
+      "the",
+      "said",
+      "was",
+      "are",
+      "come",
+      "have",
+      "what",
+      "they",
+      "you",
+      "were",
+      "does",
+      "from",
+      "some",
+      "could",
+      "would",
+      "there",
+      "where",
+      "who"
+    ],
+    "read.phonics.cvcc": [
+      "jump",
+      "help",
+      "gift",
+      "tent",
+      "lamp",
+      "desk",
+      "milk",
+      "bend",
+      "soft",
+      "park",
+      "nest",
+      "wind"
+    ],
+    "read.phonics.prefixes": [
+      "unhappy",
+      "redo",
+      "unlock",
+      "reread",
+      "unfair",
+      "remake",
+      "unable",
+      "rebuild"
+    ],
+    "read.phonics.suffixes": [
+      "jumping",
+      "helped",
+      "playing",
+      "wanted",
+      "faster",
+      "smallest",
+      "boxes",
+      "runs"
+    ],
+    "read.phonics.diphthongs": [
+      "coin",
+      "boy",
+      "cloud",
+      "cow",
+      "out",
+      "oil",
+      "town",
+      "point"
+    ],
+    "read.phonics.soft_c_g": [
+      "city",
+      "cent",
+      "giant",
+      "gem",
+      "cage",
+      "page",
+      "face",
+      "race"
+    ],
+    "read.phonics.contractions": [
+      "I'm",
+      "don't",
+      "can't",
+      "we'll",
+      "it's",
+      "she's",
+      "they're",
+      "won't"
+    ],
+    "read.phonics.compound": [
+      "sunset",
+      "backpack",
+      "rainbow",
+      "football",
+      "cupcake",
+      "notebook",
+      "sunshine",
+      "bedroom"
+    ],
+    "read.phonics.y_as_vowel": [
+      "happy",
+      "funny",
+      "my",
+      "cry",
+      "fly",
+      "puppy",
+      "baby",
+      "try"
+    ],
+    "read.phonics.schwa": [
+      "about",
+      "again",
+      "the",
+      "sofa",
+      "pencil",
+      "balloon",
+      "support",
+      "family"
+    ],
+    "read.phonics.ough": [
+      "though",
+      "thought",
+      "through",
+      "rough",
+      "enough",
+      "cough",
+      "bough",
+      "dough"
+    ]
+  },
+  "fluency": [
+    {
+      "id": "fluency_park",
+      "title": "At the Park",
+      "text": "Sam and Mia ran to the park. They sat on a red bench. A dog ran past. Sam said, \"Look at that dog!\" Mia smiled and waved."
+    },
+    {
+      "id": "fluency_rain",
+      "title": "Rain Day",
+      "text": "The rain fell on the boat. Tess had a green coat. She read a book inside. Then the sun came out."
+    },
+    {
+      "id": "fluency_train",
+      "title": "The Little Train",
+      "text": "The little train went up the hill. It did not stop. Kids waved from the seats. The train made a soft sound."
+    },
+    {
+      "id": "fluency_space",
+      "title": "Moon Trip",
+      "text": "Nova put on a space suit. The rocket lit up. It went up, up, up. Stars filled the dark sky."
+    },
+    {
+      "id": "fluency_dino",
+      "title": "Big Footprints",
+      "text": "Rex saw big footprints in the mud. He followed them to a nest. Three eggs sat in soft leaves."
+    },
+    {
+      "id": "fluency_ocean",
+      "title": "Shell Hunt",
+      "text": "Coral walked by the sea. She found five shells. A crab ran sideways. Coral put the shells in a bag."
+    }
+  ],
+  "comprehension": [
+    {
+      "passage": "Nina has a small fish. The fish is blue. Nina feeds the fish every day. The fish swims fast.",
+      "question": "What color is the fish?",
+      "options": [
+        "blue",
+        "red",
+        "green"
+      ],
+      "answer": "blue",
+      "kind": "literal"
+    },
+    {
+      "passage": "Omar packed a bag for a picnic. He put in bread, apples, and juice. Then he checked the map.",
+      "question": "Why did Omar check the map?",
+      "options": [
+        "to find the picnic place",
+        "to feed a fish",
+        "to wash a cup"
+      ],
+      "answer": "to find the picnic place",
+      "kind": "infer"
+    },
+    {
+      "passage": "A fox hid behind a tree. A hen walked by. The fox stayed still and quiet.",
+      "question": "Why did the fox stay still?",
+      "options": [
+        "so the hen would not see it",
+        "because it was sleepy",
+        "to catch the rain"
+      ],
+      "answer": "so the hen would not see it",
+      "kind": "infer"
+    },
+    {
+      "passage": "Luna built a rocket from blocks. She counted down from five. The rocket did not fly. It was a toy.",
+      "question": "What was the rocket made from?",
+      "options": [
+        "blocks",
+        "cake",
+        "paper"
+      ],
+      "answer": "blocks",
+      "kind": "literal"
+    },
+    {
+      "passage": "Tess missed the train. She sat on a bench and waited. A bird sat next to her.",
+      "question": "How did Tess feel most likely?",
+      "options": [
+        "patient while waiting",
+        "hungry for cake",
+        "angry at a fish"
+      ],
+      "answer": "patient while waiting",
+      "kind": "infer"
+    },
+    {
+      "passage": "Finn found ten shells. He gave three to Pearl. Then he had seven shells.",
+      "question": "How many shells did Finn give away?",
+      "options": [
+        "three",
+        "ten",
+        "seven"
+      ],
+      "answer": "three",
+      "kind": "literal"
+    },
+    {
+      "passage": "Rex saw footprints. First he saw mud. Next he saw a nest. Last he saw eggs.",
+      "question": "What did Rex see last?",
+      "options": [
+        "eggs",
+        "a boat",
+        "rain"
+      ],
+      "answer": "eggs",
+      "kind": "literal"
+    },
+    {
+      "passage": "The class planted seeds. They watered them every day. Green sprouts came up.",
+      "question": "What is the main idea?",
+      "options": [
+        "The class grew plants",
+        "A rocket went to space",
+        "A fish swam fast"
+      ],
+      "answer": "The class grew plants",
+      "kind": "infer"
+    }
+  ]
+}

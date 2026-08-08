@@ -1,0 +1,42 @@
+{
+  "space": {
+    "label": "Space",
+    "names": ["Nova", "Orbit", "Luna"],
+    "items": ["stars", "rockets", "moons", "planets"],
+    "item": "stars",
+    "emoji": "🚀",
+    "accent": "#6C8CFF"
+  },
+  "dinos": {
+    "label": "Dinosaurs",
+    "names": ["Rex", "Tessa", "Dino"],
+    "items": ["eggs", "leaves", "bones", "footprints"],
+    "item": "eggs",
+    "emoji": "🦕",
+    "accent": "#7BBF6A"
+  },
+  "trains": {
+    "label": "Trains",
+    "names": ["Tess", "Choo", "Rail"],
+    "items": ["cars", "tickets", "tracks", "whistles"],
+    "item": "cars",
+    "emoji": "🚂",
+    "accent": "#E07A5F"
+  },
+  "animals": {
+    "label": "Animals",
+    "names": ["Mia", "Omar", "Pip"],
+    "items": ["apples", "balls", "fish", "birds"],
+    "item": "apples",
+    "emoji": "🐾",
+    "accent": "#F2CC8F"
+  },
+  "ocean": {
+    "label": "Ocean",
+    "names": ["Coral", "Finn", "Pearl"],
+    "items": ["shells", "fish", "boats", "waves"],
+    "item": "shells",
+    "emoji": "🌊",
+    "accent": "#4DB6AC"
+  }
+}

@@ -1,0 +1,394 @@
+{
+  "letters": [
+    {
+      "letter": "a",
+      "pathHint": "start as shown"
+    },
+    {
+      "letter": "b",
+      "pathHint": "start as shown"
+    },
+    {
+      "letter": "c",
+      "pathHint": "start as shown"
+    },
+    {
+      "letter": "d",
+      "pathHint": "start as shown"
+    },
+    {
+      "letter": "e",
+      "pathHint": "start as shown"
+    },
+    {
+      "letter": "f",
+      "pathHint": "start as shown"
+    },
+    {
+      "letter": "g",
+      "pathHint": "start as shown"
+    },
+    {
+      "letter": "h",
+      "pathHint": "start as shown"
+    },
+    {
+      "letter": "i",
+      "pathHint": "start as shown"
+    },
+    {
+      "letter": "j",
+      "pathHint": "start as shown"
+    },
+    {
+      "letter": "k",
+      "pathHint": "start as shown"
+    },
+    {
+      "letter": "l",
+      "pathHint": "start as shown"
+    },
+    {
+      "letter": "m",
+      "pathHint": "start as shown"
+    },
+    {
+      "letter": "n",
+      "pathHint": "start as shown"
+    },
+    {
+      "letter": "o",
+      "pathHint": "start as shown"
+    },
+    {
+      "letter": "p",
+      "pathHint": "start as shown"
+    },
+    {
+      "letter": "q",
+      "pathHint": "start as shown"
+    },
+    {
+      "letter": "r",
+      "pathHint": "start as shown"
+    },
+    {
+      "letter": "s",
+      "pathHint": "start as shown"
+    },
+    {
+      "letter": "t",
+      "pathHint": "start as shown"
+    },
+    {
+      "letter": "u",
+      "pathHint": "start as shown"
+    },
+    {
+      "letter": "v",
+      "pathHint": "start as shown"
+    },
+    {
+      "letter": "w",
+      "pathHint": "start as shown"
+    },
+    {
+      "letter": "x",
+      "pathHint": "start as shown"
+    },
+    {
+      "letter": "y",
+      "pathHint": "start as shown"
+    },
+    {
+      "letter": "z",
+      "pathHint": "start as shown"
+    },
+    {
+      "letter": "A",
+      "pathHint": "start at the top"
+    },
+    {
+      "letter": "B",
+      "pathHint": "start at the top"
+    },
+    {
+      "letter": "C",
+      "pathHint": "start at the top"
+    },
+    {
+      "letter": "D",
+      "pathHint": "start at the top"
+    },
+    {
+      "letter": "E",
+      "pathHint": "start at the top"
+    },
+    {
+      "letter": "F",
+      "pathHint": "start at the top"
+    },
+    {
+      "letter": "G",
+      "pathHint": "start at the top"
+    },
+    {
+      "letter": "H",
+      "pathHint": "start at the top"
+    },
+    {
+      "letter": "I",
+      "pathHint": "start at the top"
+    },
+    {
+      "letter": "J",
+      "pathHint": "start at the top"
+    },
+    {
+      "letter": "K",
+      "pathHint": "start at the top"
+    },
+    {
+      "letter": "L",
+      "pathHint": "start at the top"
+    },
+    {
+      "letter": "M",
+      "pathHint": "start at the top"
+    },
+    {
+      "letter": "N",
+      "pathHint": "start at the top"
+    },
+    {
+      "letter": "O",
+      "pathHint": "start at the top"
+    },
+    {
+      "letter": "P",
+      "pathHint": "start at the top"
+    },
+    {
+      "letter": "Q",
+      "pathHint": "start at the top"
+    },
+    {
+      "letter": "R",
+      "pathHint": "start at the top"
+    },
+    {
+      "letter": "S",
+      "pathHint": "start at the top"
+    },
+    {
+      "letter": "T",
+      "pathHint": "start at the top"
+    },
+    {
+      "letter": "U",
+      "pathHint": "start at the top"
+    },
+    {
+      "letter": "V",
+      "pathHint": "start at the top"
+    },
+    {
+      "letter": "W",
+      "pathHint": "start at the top"
+    },
+    {
+      "letter": "X",
+      "pathHint": "start at the top"
+    },
+    {
+      "letter": "Y",
+      "pathHint": "start at the top"
+    },
+    {
+      "letter": "Z",
+      "pathHint": "start at the top"
+    }
+  ],
+  "spelling": {
+    "write.spelling.cvc": [
+      "cat",
+      "map",
+      "sit",
+      "pen",
+      "dog",
+      "cup",
+      "hat",
+      "bed",
+      "run",
+      "hop",
+      "lid",
+      "fun",
+      "net",
+      "jam",
+      "box",
+      "win"
+    ],
+    "write.spelling.blends": [
+      "stop",
+      "flag",
+      "ship",
+      "chop",
+      "trap",
+      "duck",
+      "plan",
+      "swim",
+      "crab",
+      "drop",
+      "thin",
+      "wish"
+    ],
+    "write.spelling.vowel_teams": [
+      "rain",
+      "boat",
+      "tree",
+      "team",
+      "coat",
+      "sleep",
+      "mail",
+      "seed",
+      "road",
+      "green",
+      "train",
+      "beach"
+    ],
+    "write.spelling.dictation": [
+      "cat",
+      "map",
+      "sit",
+      "pen",
+      "dog",
+      "cup",
+      "hat",
+      "bed",
+      "run",
+      "hop",
+      "lid",
+      "fun",
+      "net",
+      "jam",
+      "box",
+      "win"
+    ]
+  },
+  "sentence_frames": [
+    {
+      "frame": "The ___ is ___ .",
+      "bank": [
+        "cat",
+        "train",
+        "moon",
+        "big",
+        "fast",
+        "soft",
+        "red",
+        "quiet"
+      ],
+      "example": "The train is fast."
+    },
+    {
+      "frame": "I see a ___ in the ___ .",
+      "bank": [
+        "fish",
+        "bird",
+        "boat",
+        "pond",
+        "sky",
+        "sea",
+        "park",
+        "nest"
+      ],
+      "example": "I see a bird in the sky."
+    },
+    {
+      "frame": "My favorite ___ is ___ .",
+      "bank": [
+        "animal",
+        "planet",
+        "dino",
+        "dog",
+        "Mars",
+        "T-Rex",
+        "train",
+        "rocket"
+      ],
+      "example": "My favorite animal is dog."
+    },
+    {
+      "frame": "Today I can ___ with ___ .",
+      "bank": [
+        "read",
+        "write",
+        "count",
+        "Mom",
+        "Lumi",
+        "care",
+        "fun",
+        "help"
+      ],
+      "example": "Today I can read with Lumi."
+    },
+    {
+      "frame": "First ___ . Then ___ .",
+      "bank": [
+        "practice",
+        "break",
+        "snack",
+        "play",
+        "read",
+        "rest"
+      ],
+      "example": "First practice. Then play."
+    },
+    {
+      "frame": "I think ___ because ___ .",
+      "bank": [
+        "trains",
+        "space",
+        "fun",
+        "safe",
+        "calm",
+        "cool"
+      ],
+      "example": "I think trains are cool because they are fast."
+    }
+  ],
+  "short_responses": [
+    {
+      "prompt": "What is one thing you like to do?",
+      "powHints": [
+        "Pick one idea",
+        "Organize: I like ___ because ___",
+        "Write your sentence"
+      ]
+    },
+    {
+      "prompt": "Tell about a place you know.",
+      "powHints": [
+        "Pick a place",
+        "Organize: place + one detail",
+        "Write 1–2 sentences"
+      ]
+    },
+    {
+      "prompt": "What makes you feel calm?",
+      "powHints": [
+        "Pick one calm thing",
+        "Say why",
+        "Write one sentence"
+      ]
+    },
+    {
+      "prompt": "Describe your favorite animal or machine.",
+      "powHints": [
+        "Name it",
+        "Add one detail",
+        "Write"
+      ]
+    }
+  ]
+}

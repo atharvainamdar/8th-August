@@ -1,0 +1,256 @@
+"use client";
+
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/Button";
+import { Card } from "@/components/ui/Card";
+
+type Profile = {
+  id: string;
+  displayName: string;
+  interestPack: string;
+  sensoryMode: string;
+  streakDays?: number;
+  stars?: number;
+  totalMinutes?: number;
+};
+
+function strengthLine(label: string, value: number) {
+  const pct = Math.round(value * 100);
+  if (pct >= 70) return `${label} looks strong (${pct}%). Keep the streak going.`;
+  if (pct >= 40) return `${label} is growing (${pct}%). Short daily practice helps.`;
+  return `${label} is just getting started (${pct}%). Lumi will keep it gentle.`;
+}
+
+export default function ParentsPage() {
+  const [profiles, setProfiles] = useState<Profile[]>([]);
+  const [selected, setSelected] = useState("");
+  const [showMore, setShowMore] = useState(false);
+  const [engines, setEngines] = useState<
+    { id: string; label: string; engine: string; detail: string }[]
+  >([]);
+  const [report, setReport] = useState<{
+    progress: { reading: number; writing: number; math: number };
+    profile: {
+      displayName: string;
+      streakDays: number;
+      stars: number;
+      totalMinutes: number;
+      sessions: {
+        domain: string;
+        itemsDone: number;
+        adaptations: number;
+        startedAt: string;
+        starsEarned?: number;
+      }[];
+    };
+  } | null>(null);
+
+  useEffect(() => {
+    void fetch("/api/profiles")
+      .then((r) => r.json())
+      .then((j) => {
+        setProfiles(j.profiles);
+        if (j.profiles[0]) setSelected(j.profiles[0].id);
+      });
+    void fetch("/api/health")
+      .then((r) => r.json())
+      .then((j) => {
+        if (Array.isArray(j.capabilities)) setEngines(j.capabilities);
+      })
+      .catch(() => undefined);
+  }, []);
+
+  useEffect(() => {
+    if (!selected) return;
+    void fetch(`/api/profiles/${selected}`)
+      .then((r) => r.json())
+      .then(setReport);
+  }, [selected]);
+
+  return (
+    <main className="mx-auto min-h-screen max-w-5xl space-y-4 px-4 py-6">
+      <header className="flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <h1 className="m-0 text-3xl font-bold">Parent hub</h1>
+          <p className="m-0 text-[color:var(--muted)]">
+            See how practice went — quick and clear.
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          <Link className="lumi-btn lumi-btn-primary" href="/setup">
+            Add child
+          </Link>
+          <Link className="lumi-btn lumi-btn-secondary" href="/app">
+            Open student app
+          </Link>
+          <Link className="lumi-btn lumi-btn-ghost" href="/">
+            About Lumi
+          </Link>
+        </div>
+      </header>
+
+      {engines.length > 0 && (
+        <Card>
+          <h2 className="mt-0 text-lg font-bold">Lumi engines</h2>
+          <p className="m-0 mb-3 text-sm text-[color:var(--muted)]">
+            Adaptive brain is always on. Extra cloud engines connect automatically when keys are
+            added — see docs/CONNECT_AI.md.
+          </p>
+          <div className="grid gap-2 sm:grid-cols-2">
+            <div className="rounded-2xl bg-[#eef5f1] p-3">
+              <p className="m-0 font-bold">Adaptive brain</p>
+              <p className="m-0 text-sm text-[color:var(--muted)]">Built-in · always on</p>
+            </div>
+            {engines.map((e) => (
+              <div key={e.id} className="rounded-2xl bg-[#eef5f1] p-3">
+                <p className="m-0 font-bold">{e.label}</p>
+                <p className="m-0 text-sm text-[color:var(--muted)]">
+                  {e.engine === "local" ? "Built-in" : `Connected · ${e.engine}`} — {e.detail}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Card>
+      )}
+
+      <Card className="flex flex-wrap gap-2">
+        {profiles.map((p) => (
+          <button
+            key={p.id}
+            type="button"
+            className="lumi-btn lumi-btn-secondary"
+            style={{ background: selected === p.id ? "#d7efe7" : undefined }}
+            onClick={() => setSelected(p.id)}
+          >
+            {p.displayName}
+          </button>
+        ))}
+        {profiles.length === 0 && (
+          <p className="m-0">No children yet. Tap Add child to start.</p>
+        )}
+      </Card>
+
+      {report && (
+        <>
+          <Card>
+            <h2 className="mt-0 text-xl font-bold">
+              How practice went for {report.profile.displayName}
+            </h2>
+            <p className="m-0 text-[color:var(--muted)]">
+              {report.profile.sessions.length === 0
+                ? "No sessions yet. Open the student app when your child is ready."
+                : `Last practice: ${new Date(report.profile.sessions[0]!.startedAt).toLocaleString()}.`}
+            </p>
+          </Card>
+
+          <div className="grid gap-4 md:grid-cols-4">
+            <Card>
+              <p className="m-0 text-sm text-[color:var(--muted)]">Day streak</p>
+              <p className="m-0 text-3xl font-bold">{report.profile.streakDays ?? 0}</p>
+            </Card>
+            <Card>
+              <p className="m-0 text-sm text-[color:var(--muted)]">Stars earned</p>
+              <p className="m-0 text-3xl font-bold">{report.profile.stars ?? 0}</p>
+            </Card>
+            <Card>
+              <p className="m-0 text-sm text-[color:var(--muted)]">Minutes practiced</p>
+              <p className="m-0 text-3xl font-bold">{report.profile.totalMinutes ?? 0}</p>
+            </Card>
+            <Card>
+              <p className="m-0 text-sm text-[color:var(--muted)]">Sessions</p>
+              <p className="m-0 text-3xl font-bold">{report.profile.sessions.length}</p>
+            </Card>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-3">
+            {(
+              [
+                ["Reading", report.progress.reading],
+                ["Writing", report.progress.writing],
+                ["Math", report.progress.math],
+              ] as const
+            ).map(([label, value]) => (
+              <Card key={label}>
+                <h2 className="mt-0 text-lg font-bold">{label}</h2>
+                <p className="m-0 text-3xl font-bold">{Math.round(value * 100)}%</p>
+                <p className="m-0 mt-2 text-sm text-[color:var(--muted)]">
+                  {strengthLine(label, value)}
+                </p>
+              </Card>
+            ))}
+          </div>
+
+          <Card>
+            <h2 className="mt-0 text-xl font-bold">Recent practice</h2>
+            <div className="space-y-2">
+              {report.profile.sessions.map((s, idx) => (
+                <div key={`${s.startedAt}-${idx}`} className="rounded-2xl bg-[#eef5f1] p-3">
+                  <strong className="capitalize">{s.domain}</strong> · finished {s.itemsDone}{" "}
+                  activities
+                  {typeof s.starsEarned === "number" ? ` · ⭐ ${s.starsEarned}` : ""} ·{" "}
+                  {new Date(s.startedAt).toLocaleString()}
+                </div>
+              ))}
+              {report.profile.sessions.length === 0 && (
+                <p>No sessions yet. Start from the student app.</p>
+              )}
+            </div>
+          </Card>
+
+          <div className="flex flex-wrap gap-2">
+            <Link className="lumi-btn lumi-btn-primary" href={`/parents/weekly/${selected}`}>
+              Weekly report
+            </Link>
+            <Link className="lumi-btn lumi-btn-secondary" href={`/progress?childId=${selected}`}>
+              Kid growth story
+            </Link>
+            <Link className="lumi-btn lumi-btn-ghost" href={`/rewards?childId=${selected}`}>
+              Rewards
+            </Link>
+            <button
+              type="button"
+              className="lumi-btn lumi-btn-ghost"
+              onClick={() => setShowMore((v) => !v)}
+            >
+              {showMore ? "Hide more tools" : "More tools"}
+            </button>
+          </div>
+
+          {showMore && (
+            <div className="flex flex-wrap gap-2">
+              <a className="lumi-btn lumi-btn-ghost" href={`/api/export/${selected}`}>
+                Download progress JSON
+              </a>
+              <a
+                className="lumi-btn lumi-btn-ghost"
+                href={`/api/export/${selected}?format=csv`}
+              >
+                Download CSV
+              </a>
+              <a className="lumi-btn lumi-btn-ghost" href={`/api/report/weekly/${selected}`}>
+                Printable report
+              </a>
+              <Link className="lumi-btn lumi-btn-ghost" href={`/share/${selected}`}>
+                Teacher share link
+              </Link>
+              <Button
+                variant="ghost"
+                onClick={async () => {
+                  if (!confirm("Delete this child profile and practice data?")) return;
+                  await fetch(`/api/profiles/${selected}`, { method: "DELETE" });
+                  const j = await fetch("/api/profiles").then((r) => r.json());
+                  setProfiles(j.profiles);
+                  setSelected(j.profiles[0]?.id || "");
+                  setReport(null);
+                }}
+              >
+                Delete profile
+              </Button>
+            </div>
+          )}
+        </>
+      )}
+    </main>
+  );
+}
