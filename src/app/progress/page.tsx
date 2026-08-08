@@ -11,7 +11,7 @@ function ProgressInner() {
   const childId = params.get("childId") || "";
   const done = params.get("done");
   const [data, setData] = useState<{
-    profile: { displayName: string; interestPack: string };
+    profile: { displayName: string; interestPack: string; mastery?: { skillId: string; alpha: number; beta: number }[] };
     progress: {
       reading: number;
       writing: number;
@@ -69,6 +69,34 @@ function ProgressInner() {
           ))}
         </div>
       </Card>
+
+      {data.profile.mastery && (
+        <Card>
+          <h2 className="mt-0 text-xl font-bold">Skill map</h2>
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+            {data.profile.mastery
+              .map((m) => ({
+                id: m.skillId,
+                mean: m.alpha / (m.alpha + m.beta),
+              }))
+              .sort((a, b) => b.mean - a.mean)
+              .slice(0, 12)
+              .map((m) => (
+                <div
+                  key={m.id}
+                  className="rounded-xl p-2 text-xs font-semibold"
+                  style={{
+                    background: `rgba(61,143,122,${0.15 + m.mean * 0.7})`,
+                    color: m.mean > 0.55 ? "white" : "var(--fg)",
+                  }}
+                  title={m.id}
+                >
+                  {m.id.split(".").slice(-1)[0]} · {Math.round(m.mean * 100)}%
+                </div>
+              ))}
+          </div>
+        </Card>
+      )}
 
       <div className="grid gap-4 md:grid-cols-2">
         <Card>

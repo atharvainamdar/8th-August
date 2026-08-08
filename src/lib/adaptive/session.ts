@@ -1,5 +1,5 @@
 import { buildActivity } from "../curriculum/activities";
-import { ensureMasteryMap } from "../curriculum/skills";
+import { ensureMasteryMap, getSkill, placementProbeSkills } from "../curriculum/skills";
 import { updateMastery } from "./mastery";
 import { applyModalityWeight } from "./signals";
 import { decideNext, defaultModalityWeights, defaultScaffolds } from "./policy";
@@ -54,24 +54,59 @@ export interface SessionRuntime {
   itemsPlanned: number;
   adaptations: number;
   domain: Domain | "mixed" | "placement";
+  placementIds?: string[];
+}
+
+function placementDecision(
+  state: LearnerState,
+  skillId: string,
+  action: PolicyDecision["action"] = "next_item"
+): PolicyDecision {
+  const skill = getSkill(skillId);
+  return {
+    action,
+    skillId,
+    domain: skill.domain,
+    scaffold: state.scaffoldByDomain[skill.domain],
+    modality: skill.defaultModalities[0] ?? "visual",
+    activityKind: skill.activityKinds[0] ?? "placement_probe",
+    reason: "Placement probe",
+    theme: state.interestPack,
+  };
 }
 
 export function startSession(
   state: LearnerState,
   opts: { domain?: Domain; placement?: boolean; itemsPlanned?: number } = {}
 ): SessionRuntime {
+  if (opts.placement) {
+    const probes = placementProbeSkills();
+    const placementIds = probes.map((p) => p.id);
+    const itemsPlanned = Math.min(8, placementIds.length);
+    const decision = placementDecision(state, placementIds[0]!);
+    const item = buildActivity({ ...decision, activityKind: "placement_probe" });
+    return {
+      state,
+      events: [],
+      decision,
+      item,
+      itemsDone: 0,
+      itemsPlanned,
+      adaptations: 0,
+      domain: "placement",
+      placementIds: placementIds.slice(0, itemsPlanned),
+    };
+  }
+
   const itemsPlanned =
     opts.itemsPlanned ??
     Math.max(4, Math.min(8, Math.round((state.sessionMinutes / 15) * 6)));
-  const domain = opts.placement ? undefined : opts.domain;
   const { state: nextState, decision } = decideNext(state, [], {
-    domain,
+    domain: opts.domain,
     itemsDone: 0,
     itemsPlanned,
   });
-  const item = buildActivity(
-    opts.placement ? { ...decision, activityKind: "placement_probe" } : decision
-  );
+  const item = buildActivity(decision);
   return {
     state: nextState,
     events: [],
@@ -80,7 +115,7 @@ export function startSession(
     itemsDone: 0,
     itemsPlanned,
     adaptations: 0,
-    domain: opts.placement ? "placement" : opts.domain ?? "mixed",
+    domain: opts.domain ?? "mixed",
   };
 }
 
@@ -127,7 +162,6 @@ export function applyResult(runtime: SessionRuntime, result: ActivityResult): Se
     result.correct
   );
 
-  // Track simple error patterns
   if (!result.correct && result.response) {
     state = {
       ...state,
@@ -136,11 +170,36 @@ export function applyResult(runtime: SessionRuntime, result: ActivityResult): Se
   }
 
   const itemsDone = runtime.itemsDone + 1;
-  const domain =
-    runtime.domain === "mixed" || runtime.domain === "placement"
-      ? undefined
-      : runtime.domain;
 
+  if (runtime.domain === "placement" && runtime.placementIds) {
+    if (itemsDone >= runtime.itemsPlanned) {
+      const decision = placementDecision(state, result.skillId, "end_session");
+      return {
+        ...runtime,
+        state,
+        events,
+        decision,
+        itemsDone,
+        adaptations: runtime.adaptations,
+      };
+    }
+    const nextSkillId = runtime.placementIds[itemsDone]!;
+    const decision = placementDecision(state, nextSkillId);
+    const item = buildActivity({ ...decision, activityKind: "placement_probe" });
+    return {
+      ...runtime,
+      state,
+      events,
+      decision,
+      item,
+      itemsDone,
+    };
+  }
+
+  const domain: Domain | undefined =
+    runtime.domain === "reading" || runtime.domain === "writing" || runtime.domain === "math"
+      ? runtime.domain
+      : undefined;
   const beforeScaffold = state.scaffoldByDomain;
   const { state: nextState, decision } = decideNext(state, events, {
     domain,
@@ -153,20 +212,13 @@ export function applyResult(runtime: SessionRuntime, result: ActivityResult): Se
       ? runtime.adaptations + 1
       : runtime.adaptations;
 
-  // Detect scaffold/modality change as adaptation even on next_item after stress recovery
   const scaffoldChanged =
     beforeScaffold.reading !== nextState.scaffoldByDomain.reading ||
     beforeScaffold.writing !== nextState.scaffoldByDomain.writing ||
     beforeScaffold.math !== nextState.scaffoldByDomain.math;
 
   const item =
-    decision.action === "end_session"
-      ? runtime.item
-      : buildActivity(
-          runtime.domain === "placement"
-            ? { ...decision, activityKind: "placement_probe" }
-            : decision
-        );
+    decision.action === "end_session" ? runtime.item : buildActivity(decision);
 
   return {
     state: nextState,

@@ -197,6 +197,7 @@ export default function LandingPage() {
           <Link href="/legal/privacy">Privacy</Link>
           <Link href="/legal/terms">Terms</Link>
           <Link href="/docs/pilot">Pilot protocol</Link>
+          <Link href="/contact">Contact</Link>
           <Link href="/app">Student app</Link>
         </div>
       </footer>

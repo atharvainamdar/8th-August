@@ -8,7 +8,7 @@ async function check(path, expect = 200) {
   return res;
 }
 
-const pages = ["/", "/app", "/syllabus", "/parents", "/faq", "/legal/privacy", "/legal/terms", "/checkout", "/demo", "/setup", "/docs/pilot"];
+const pages = ["/", "/app", "/syllabus", "/parents", "/faq", "/legal/privacy", "/legal/terms", "/checkout", "/demo", "/setup", "/docs/pilot", "/guide", "/contact"];
 for (const p of pages) {
   await check(p);
   console.log("ok", p);

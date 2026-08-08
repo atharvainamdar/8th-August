@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
@@ -14,10 +14,35 @@ const PLANS = {
 
 function CheckoutInner() {
   const params = useSearchParams();
+  const router = useRouter();
   const plan = (params.get("plan") as keyof typeof PLANS) || "trial";
   const selected = PLANS[plan] ?? PLANS.trial;
   const [email, setEmail] = useState("");
-  const [done, setDone] = useState(false);
+  const [name, setName] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState("");
+
+  const confirm = async () => {
+    setBusy(true);
+    setError("");
+    try {
+      const res = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, name, plan }),
+      });
+      const json = await res.json();
+      if (!res.ok) {
+        setError(json.error || "Checkout failed");
+        setBusy(false);
+        return;
+      }
+      router.push(json.continueUrl);
+    } catch {
+      setError("Network error. Try again.");
+      setBusy(false);
+    }
+  };
 
   return (
     <main className="mx-auto min-h-screen max-w-xl space-y-4 px-4 py-8">
@@ -26,38 +51,31 @@ function CheckoutInner() {
         <h2 className="mt-0 text-xl font-bold">{selected.label}</h2>
         <p className="m-0 text-3xl font-bold">{selected.price}</p>
         <p className="m-0 text-[color:var(--muted)]">{selected.detail}</p>
-        {!done ? (
-          <>
-            <label className="block space-y-1">
-              <span className="font-semibold">Parent email</span>
-              <input
-                className="w-full rounded-2xl border-2 border-[color:var(--border)] px-4 py-3"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="you@email.com"
-              />
-            </label>
-            <p className="text-sm text-[color:var(--muted)]">
-              Card payments can connect to Stripe next. For now, start instantly and set up your child.
-            </p>
-            <Button
-              disabled={!email.includes("@")}
-              onClick={() => setDone(true)}
-            >
-              Confirm {selected.label}
-            </Button>
-          </>
-        ) : (
-          <>
-            <p className="font-semibold">You&apos;re in. Next: create your child profile.</p>
-            <Link
-              className="lumi-btn lumi-btn-primary inline-flex"
-              href={`/setup?plan=${plan}&email=${encodeURIComponent(email)}`}
-            >
-              Continue to setup
-            </Link>
-          </>
-        )}
+        <label className="block space-y-1">
+          <span className="font-semibold">Parent name</span>
+          <input
+            className="w-full rounded-2xl border-2 border-[color:var(--border)] px-4 py-3"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Your name"
+          />
+        </label>
+        <label className="block space-y-1">
+          <span className="font-semibold">Parent email</span>
+          <input
+            className="w-full rounded-2xl border-2 border-[color:var(--border)] px-4 py-3"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="you@email.com"
+          />
+        </label>
+        <p className="text-sm text-[color:var(--muted)]">
+          Instant access today. When Stripe keys are connected, paid plans can use hosted card checkout.
+        </p>
+        {error && <p className="text-[color:var(--warn)]">{error}</p>}
+        <Button disabled={busy || !email.includes("@")} onClick={confirm}>
+          {busy ? "Working..." : `Confirm ${selected.label}`}
+        </Button>
       </Card>
       <Link className="lumi-btn lumi-btn-ghost inline-flex" href="/">
         Back
