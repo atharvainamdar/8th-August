@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { applyResult, type SessionRuntime } from "@/lib/adaptive/session";
 import { persistLearnerState } from "@/lib/db/profile";
 import { prisma } from "@/lib/db/prisma";
-import { generateTutorCoach } from "@/lib/ai/provider";
+import { generateNextHint, generateTutorCoach } from "@/lib/ai/registry";
 import { getSkill } from "@/lib/curriculum/skills";
 import type { ActivityResult } from "@/lib/adaptive/types";
 
@@ -102,15 +102,29 @@ export async function POST(req: Request) {
   });
 
   const skill = getSkill(result.skillId);
-  const coachMessage = await generateTutorCoach({
-    childName: next.state.displayName,
-    skillTitle: skill.title,
-    modality: result.modality,
-    scaffold: result.scaffold,
-    correct: result.correct,
-    interest: next.state.interestPack,
-    errorNote: result.correct ? undefined : `Response was ${result.response ?? "blank"}`,
-  });
+  const needsHint =
+    next.decision.action === "increase_scaffold" ||
+    next.decision.action === "switch_modality" ||
+    next.decision.action === "offer_break";
+
+  const coachMessage = needsHint
+    ? await generateNextHint({
+        childName: next.state.displayName,
+        skillTitle: skill.title,
+        interest: next.state.interestPack,
+        scaffold: next.decision.scaffold,
+        modality: next.decision.modality,
+        lastResponse: result.response,
+      })
+    : await generateTutorCoach({
+        childName: next.state.displayName,
+        skillTitle: skill.title,
+        modality: result.modality,
+        scaffold: result.scaffold,
+        correct: result.correct,
+        interest: next.state.interestPack,
+        errorNote: result.correct ? undefined : `Response was ${result.response ?? "blank"}`,
+      });
 
   return NextResponse.json({
     runtime: next,
@@ -118,5 +132,6 @@ export async function POST(req: Request) {
     starsEarned,
     streakDays,
     sessionStars: session.starsEarned + starsEarned,
+    adaptationAction: next.decision.action,
   });
 }

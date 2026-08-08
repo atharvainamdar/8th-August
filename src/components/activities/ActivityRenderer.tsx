@@ -6,6 +6,7 @@ import { listenOnce, scoreReadAloud, speakText } from "@/lib/audio/voice";
 import { Button } from "../ui/Button";
 import { Card } from "../ui/Card";
 import { VideoModel } from "../media/VideoModel";
+import { presentationLabel } from "@/lib/ui/labels";
 
 const CHOICE_KINDS = new Set([
   "operation",
@@ -93,11 +94,9 @@ export function ActivityRenderer({
 
   return (
     <Card className="space-y-4">
-      <div className="flex flex-wrap items-center gap-2">
-        <span className="lumi-chip">Skill: {item.skillId.split(".").slice(-1)[0]}</span>
-        <span className="lumi-chip">Mode: {item.modality}</span>
-        <span className="lumi-chip">Help: {item.scaffold}</span>
-      </div>
+      <p className="m-0 text-sm font-semibold text-[color:var(--primary)]">
+        {presentationLabel(item.modality, item.scaffold)}
+      </p>
       <h2 className="m-0 whitespace-pre-wrap text-2xl font-bold leading-snug">{item.prompt}</h2>
 
       <div className="flex flex-wrap gap-2">
@@ -160,6 +159,7 @@ export function ActivityRenderer({
         item.activityKind === "ten_frame" ||
         (item.activityKind === "operation" && String(data.op) === "*")) && (
         <VideoModel
+          soundEnabled={soundEnabled}
           kind={
             item.activityKind === "letter_trace"
               ? "letter"

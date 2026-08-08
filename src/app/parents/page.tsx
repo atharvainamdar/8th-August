@@ -26,6 +26,9 @@ export default function ParentsPage() {
   const [profiles, setProfiles] = useState<Profile[]>([]);
   const [selected, setSelected] = useState("");
   const [showMore, setShowMore] = useState(false);
+  const [engines, setEngines] = useState<
+    { id: string; label: string; engine: string; detail: string }[]
+  >([]);
   const [report, setReport] = useState<{
     progress: { reading: number; writing: number; math: number };
     profile: {
@@ -50,6 +53,12 @@ export default function ParentsPage() {
         setProfiles(j.profiles);
         if (j.profiles[0]) setSelected(j.profiles[0].id);
       });
+    void fetch("/api/health")
+      .then((r) => r.json())
+      .then((j) => {
+        if (Array.isArray(j.capabilities)) setEngines(j.capabilities);
+      })
+      .catch(() => undefined);
   }, []);
 
   useEffect(() => {
@@ -80,6 +89,30 @@ export default function ParentsPage() {
           </Link>
         </div>
       </header>
+
+      {engines.length > 0 && (
+        <Card>
+          <h2 className="mt-0 text-lg font-bold">Lumi engines</h2>
+          <p className="m-0 mb-3 text-sm text-[color:var(--muted)]">
+            Adaptive brain is always on. Extra cloud engines connect automatically when keys are
+            added — see docs/CONNECT_AI.md.
+          </p>
+          <div className="grid gap-2 sm:grid-cols-2">
+            <div className="rounded-2xl bg-[#eef5f1] p-3">
+              <p className="m-0 font-bold">Adaptive brain</p>
+              <p className="m-0 text-sm text-[color:var(--muted)]">Built-in · always on</p>
+            </div>
+            {engines.map((e) => (
+              <div key={e.id} className="rounded-2xl bg-[#eef5f1] p-3">
+                <p className="m-0 font-bold">{e.label}</p>
+                <p className="m-0 text-sm text-[color:var(--muted)]">
+                  {e.engine === "local" ? "Built-in" : `Connected · ${e.engine}`} — {e.detail}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Card>
+      )}
 
       <Card className="flex flex-wrap gap-2">
         {profiles.map((p) => (

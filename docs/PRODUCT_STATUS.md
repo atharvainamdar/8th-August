@@ -1,45 +1,46 @@
-# Lumi Product Status (Plan Completion)
+# Lumi Product Status
 
-## YC Primer wedge checklist
+## Product wedge
 
-| Plan item | Status |
+| Item | Status |
 |---|---|
 | Reading / Writing / Arithmetic practice | Done |
-| Real adaptive engine (difficulty, scaffold, modality, sensory, interest, pacing) | Done |
-| Multimodal: voice + video models + manipulatives | Done |
-| Curriculum skill graph (~90–120) | Done (120 skills, 35 lessons) |
-| 8-week syllabus + lessons | Done |
-| Placement | Done (multi-probe R/W/M) |
-| Kid UX: companion, schedule, Calm Corner, First→Then | Done |
-| Progress: mastery, streaks, stars, weekly report, certificates | Done |
-| Parent funnel: landing, pricing, checkout, setup, hub | Done |
-| Educator share / pilot protocol | Done |
-| Offline-first + optional AI keys | Done |
-| Tests + smoke + simulation proof | Done |
-| **Simplicity pass** (parent/student plain language + kid session controls) | Done |
-| Durable public hosting (Vercel / Cloudflare Pages) | Pending secrets — user skipped; quick tunnel demo available |
-| Real card billing (Stripe) | Pending secrets — checkout API is Stripe-ready |
+| Adaptive engine (mastery + policy + signals) | Done |
+| Multimodal practice (voice, listen, video demos, companion) | Done |
+| Curriculum (120 skills, 35 lessons) | Done |
+| Placement, Calm Corner, kid session controls | Done |
+| Parent hub + weekly reports | Done |
+| Simplicity UX (parent/student doors) | Done |
+| **Plug-and-play AI capability registry** | Done |
+| **CONNECT_AI.md one-page key guide** | Done |
+| Durable hosting (Vercel/Cloudflare) | Pending secrets |
+| Live Stripe billing | Pending secrets |
 
-## Live demo
+## Offline-first MOAT
 
-Cloudflare quick tunnel (session-bound): check PR description / agent notes.
-Local: `http://localhost:3000`
+Works with **zero API keys**:
+- Adaptive next-item policy + beta-binomial mastery
+- Browser TTS + speech recognition
+- Narrated video models
+- Interest-themed local coaching + hints
+- Kid agency: Calm / Too hard / Skip / I'm done
 
-## Simplicity notes
+## Hot-pluggable upgrades
 
-- Landing has two clear doors: parent setup / student start
-- Student home: one big Start; grown-up links tucked away
-- Session: Calm Corner, Need a break, Too hard, Skip, I'm done
-- Parent hub: plain-English “how practice went”
+See `docs/CONNECT_AI.md` and `.env.example`.
 
-## How to verify locally
+| Key | Upgrade |
+|---|---|
+| `OPENAI_API_KEY` | Richer coach + vision |
+| `GOOGLE_GENERATIVE_AI_API_KEY` | Richer coach + vision |
+| `ELEVENLABS_API_KEY` | Premium tutor voice via `/api/tts` |
+
+Check: `GET /api/health` → `capabilities`
+
+## Verify
 
 ```bash
-npm install
-npx prisma migrate dev
-npm run db:seed
-npm run dev
 npm test
 npm run smoke
-npx tsx scripts/simulate-learners.mjs
+curl -s http://localhost:3000/api/health
 ```

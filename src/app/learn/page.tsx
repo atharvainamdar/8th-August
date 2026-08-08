@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import type { SessionRuntime } from "@/lib/adaptive/session";
 import type { ActivityResult } from "@/lib/adaptive/types";
-import { interestLabel } from "@/lib/ui/labels";
+import { adaptationMessage, interestLabel } from "@/lib/ui/labels";
 
 function LearnInner() {
   const params = useSearchParams();
@@ -101,18 +101,11 @@ function LearnInner() {
     if (json.starsEarned) setStarsEarned(newStars);
 
     if (next.decision.offerCalmCorner || next.decision.action === "offer_break") {
-      setTransition("Nice pause time. Calm Corner is ready.");
+      setTransition(adaptationMessage("offer_break") || "Let's take a calm break.");
       setShowCalm(true);
       next.events = [...next.events, { type: "break_accepted", at: Date.now() }];
-    } else if (
-      next.decision.action === "switch_modality" ||
-      next.decision.action === "increase_scaffold"
-    ) {
-      setTransition("Lumi will help a different way.");
-    } else if (next.decision.action === "change_skill") {
-      setTransition("Let's try a new one.");
     } else {
-      setTransition(null);
+      setTransition(adaptationMessage(next.decision.action));
     }
 
     if (next.decision.action === "end_session") {
