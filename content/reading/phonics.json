@@ -473,6 +473,16 @@
       "balloon",
       "support",
       "family"
+    ],
+    "read.phonics.ough": [
+      "though",
+      "thought",
+      "through",
+      "rough",
+      "enough",
+      "cough",
+      "bough",
+      "dough"
     ]
   },
   "fluency": [

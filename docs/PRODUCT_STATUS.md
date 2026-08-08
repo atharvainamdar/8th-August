@@ -7,7 +7,7 @@
 | Reading / Writing / Arithmetic practice | Done |
 | Real adaptive engine (difficulty, scaffold, modality, sensory, interest, pacing) | Done |
 | Multimodal: voice + video models + manipulatives | Done |
-| Curriculum skill graph (~90–120) | Done (115 skills, 35 lessons) |
+| Curriculum skill graph (~90–120) | Done (120 skills, 35 lessons) |
 | 8-week syllabus + lessons | Done |
 | Placement | Done (multi-probe R/W/M) |
 | Kid UX: companion, schedule, Calm Corner, First→Then | Done |

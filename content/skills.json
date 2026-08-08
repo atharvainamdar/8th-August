@@ -2346,5 +2346,105 @@
     "activityKinds": [
       "number_sense"
     ]
+  },
+  {
+    "id": "read.phonics.ough",
+    "domain": "reading",
+    "title": "Tough patterns",
+    "description": "Read tough/ough patterns",
+    "prerequisites": [
+      "read.phonics.diphthongs"
+    ],
+    "standards": [
+      "RF.3.3"
+    ],
+    "difficulty": 8,
+    "defaultModalities": [
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "decode"
+    ]
+  },
+  {
+    "id": "read.comp.theme",
+    "domain": "reading",
+    "title": "Theme lite",
+    "description": "Find lesson of a story",
+    "prerequisites": [
+      "read.comp.character"
+    ],
+    "standards": [
+      "RL.3.2"
+    ],
+    "difficulty": 8,
+    "defaultModalities": [
+      "visual",
+      "avatar"
+    ],
+    "activityKinds": [
+      "comprehension"
+    ]
+  },
+  {
+    "id": "write.spelling.plurals",
+    "domain": "writing",
+    "title": "Plurals",
+    "description": "Spell regular plurals",
+    "prerequisites": [
+      "write.spelling.cvc"
+    ],
+    "standards": [
+      "L.1.1"
+    ],
+    "difficulty": 3,
+    "defaultModalities": [
+      "typing",
+      "visual"
+    ],
+    "activityKinds": [
+      "spelling_ccc"
+    ]
+  },
+  {
+    "id": "write.grammar.subject_verb",
+    "domain": "writing",
+    "title": "Subject-verb",
+    "description": "Match subject and verb",
+    "prerequisites": [
+      "write.grammar.tense"
+    ],
+    "standards": [
+      "L.3.1"
+    ],
+    "difficulty": 6,
+    "defaultModalities": [
+      "typing",
+      "visual"
+    ],
+    "activityKinds": [
+      "sentence_build"
+    ]
+  },
+  {
+    "id": "math.ops.rel_mul_div",
+    "domain": "math",
+    "title": "Mul-div relation",
+    "description": "Use fact families for ×÷",
+    "prerequisites": [
+      "math.ops.div_facts"
+    ],
+    "standards": [
+      "3.OA"
+    ],
+    "difficulty": 7,
+    "defaultModalities": [
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "fact_fluency"
+    ]
   }
 ]

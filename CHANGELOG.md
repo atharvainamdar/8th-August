@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.2 — Full curriculum target
+
+- Curriculum expanded to plan ceiling: 120 skills
+
 ## 0.2.1 — Curriculum + a11y polish
 
 - Curriculum expanded to 115 skills

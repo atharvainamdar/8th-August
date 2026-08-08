@@ -1,6 +1,6 @@
 # Curriculum Overview
 
-Skill graph lives in `content/skills.json` (115 nodes across reading, writing, math).
+Skill graph lives in `content/skills.json` (120 nodes across reading, writing, math).
 
 ## Reading
 
