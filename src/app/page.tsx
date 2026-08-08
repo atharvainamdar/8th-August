@@ -141,7 +141,7 @@ export default function LandingPage() {
               <h3 className="mt-2 text-xl font-bold">Monthly</h3>
               <p className="text-3xl font-bold">$29<span className="text-base font-semibold">/mo</span></p>
               <p className="text-[color:var(--muted)]">Unlimited practice · progress reports · 2 children</p>
-              <Link className="lumi-btn lumi-btn-primary mt-4 inline-flex" href="/setup?plan=monthly">
+              <Link className="lumi-btn lumi-btn-primary mt-4 inline-flex" href="/checkout?plan=monthly">
                 Choose monthly
               </Link>
             </div>
@@ -149,7 +149,7 @@ export default function LandingPage() {
               <h3 className="mt-0 text-xl font-bold">Yearly</h3>
               <p className="text-3xl font-bold">$199<span className="text-base font-semibold">/yr</span></p>
               <p className="text-[color:var(--muted)]">Best value · educator export · priority support</p>
-              <Link className="lumi-btn lumi-btn-secondary mt-4 inline-flex" href="/setup?plan=yearly">
+              <Link className="lumi-btn lumi-btn-secondary mt-4 inline-flex" href="/checkout?plan=yearly">
                 Choose yearly
               </Link>
             </div>
