@@ -16,12 +16,21 @@
 | Educator share / pilot protocol | Done |
 | Offline-first + optional AI keys | Done |
 | Tests + smoke + simulation proof | Done |
-| Durable public hosting (Vercel) | Pending secrets — run `npm run deploy` after setting `VERCEL_TOKEN` |
-| Real card billing (Stripe) | Pending secrets — run `npm run stripe:check`; checkout API is Stripe-ready |
+| **Simplicity pass** (parent/student plain language + kid session controls) | Done |
+| Durable public hosting (Vercel / Cloudflare Pages) | Pending secrets — user skipped; quick tunnel demo available |
+| Real card billing (Stripe) | Pending secrets — checkout API is Stripe-ready |
 
 ## Live demo
 
-Cloudflare tunnel URL is published in the PR description (session-bound).
+Cloudflare quick tunnel (session-bound): check PR description / agent notes.
+Local: `http://localhost:3000`
+
+## Simplicity notes
+
+- Landing has two clear doors: parent setup / student start
+- Student home: one big Start; grown-up links tucked away
+- Session: Calm Corner, Need a break, Too hard, Skip, I'm done
+- Parent hub: plain-English “how practice went”
 
 ## How to verify locally
 

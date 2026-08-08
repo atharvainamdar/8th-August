@@ -135,6 +135,7 @@ function LearnInner() {
     setCoachMessage("No problem. We can do an easier step together.");
     await onResult({
       skillId: runtime.item.skillId,
+      activityKind: runtime.item.activityKind,
       correct: false,
       partial: 0.2,
       latencyMs: 45_000,
@@ -263,6 +264,7 @@ function LearnInner() {
           onClick={() =>
             void onResult({
               skillId: runtime.item.skillId,
+              activityKind: runtime.item.activityKind,
               correct: false,
               partial: 0,
               latencyMs: 1_000,
