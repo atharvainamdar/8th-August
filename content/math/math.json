@@ -720,6 +720,34 @@
       "b": 5,
       "answer": 4,
       "skill": "math.ops.div_concept"
+    },
+    {
+      "op": "+",
+      "a": 58,
+      "b": 27,
+      "answer": 85,
+      "skill": "math.ops.add_regroup"
+    },
+    {
+      "op": "+",
+      "a": 39,
+      "b": 46,
+      "answer": 85,
+      "skill": "math.ops.add_regroup"
+    },
+    {
+      "op": "-",
+      "a": 70,
+      "b": 28,
+      "answer": 42,
+      "skill": "math.ops.sub_regroup"
+    },
+    {
+      "op": "-",
+      "a": 63,
+      "b": 19,
+      "answer": 44,
+      "skill": "math.ops.sub_regroup"
     }
   ],
   "facts": [
@@ -1472,6 +1500,276 @@
       "b": 10,
       "op": "+",
       "answer": 20
+    },
+    {
+      "a": 2,
+      "b": 1,
+      "op": "-",
+      "answer": 1
+    },
+    {
+      "a": 3,
+      "b": 1,
+      "op": "-",
+      "answer": 2
+    },
+    {
+      "a": 3,
+      "b": 2,
+      "op": "-",
+      "answer": 1
+    },
+    {
+      "a": 4,
+      "b": 1,
+      "op": "-",
+      "answer": 3
+    },
+    {
+      "a": 4,
+      "b": 2,
+      "op": "-",
+      "answer": 2
+    },
+    {
+      "a": 4,
+      "b": 3,
+      "op": "-",
+      "answer": 1
+    },
+    {
+      "a": 5,
+      "b": 1,
+      "op": "-",
+      "answer": 4
+    },
+    {
+      "a": 5,
+      "b": 2,
+      "op": "-",
+      "answer": 3
+    },
+    {
+      "a": 5,
+      "b": 3,
+      "op": "-",
+      "answer": 2
+    },
+    {
+      "a": 5,
+      "b": 4,
+      "op": "-",
+      "answer": 1
+    },
+    {
+      "a": 6,
+      "b": 1,
+      "op": "-",
+      "answer": 5
+    },
+    {
+      "a": 6,
+      "b": 2,
+      "op": "-",
+      "answer": 4
+    },
+    {
+      "a": 6,
+      "b": 3,
+      "op": "-",
+      "answer": 3
+    },
+    {
+      "a": 6,
+      "b": 4,
+      "op": "-",
+      "answer": 2
+    },
+    {
+      "a": 6,
+      "b": 5,
+      "op": "-",
+      "answer": 1
+    },
+    {
+      "a": 7,
+      "b": 1,
+      "op": "-",
+      "answer": 6
+    },
+    {
+      "a": 7,
+      "b": 2,
+      "op": "-",
+      "answer": 5
+    },
+    {
+      "a": 7,
+      "b": 3,
+      "op": "-",
+      "answer": 4
+    },
+    {
+      "a": 7,
+      "b": 4,
+      "op": "-",
+      "answer": 3
+    },
+    {
+      "a": 7,
+      "b": 5,
+      "op": "-",
+      "answer": 2
+    },
+    {
+      "a": 7,
+      "b": 6,
+      "op": "-",
+      "answer": 1
+    },
+    {
+      "a": 8,
+      "b": 1,
+      "op": "-",
+      "answer": 7
+    },
+    {
+      "a": 8,
+      "b": 2,
+      "op": "-",
+      "answer": 6
+    },
+    {
+      "a": 8,
+      "b": 3,
+      "op": "-",
+      "answer": 5
+    },
+    {
+      "a": 8,
+      "b": 4,
+      "op": "-",
+      "answer": 4
+    },
+    {
+      "a": 8,
+      "b": 5,
+      "op": "-",
+      "answer": 3
+    },
+    {
+      "a": 8,
+      "b": 6,
+      "op": "-",
+      "answer": 2
+    },
+    {
+      "a": 8,
+      "b": 7,
+      "op": "-",
+      "answer": 1
+    },
+    {
+      "a": 9,
+      "b": 1,
+      "op": "-",
+      "answer": 8
+    },
+    {
+      "a": 9,
+      "b": 2,
+      "op": "-",
+      "answer": 7
+    },
+    {
+      "a": 9,
+      "b": 3,
+      "op": "-",
+      "answer": 6
+    },
+    {
+      "a": 9,
+      "b": 4,
+      "op": "-",
+      "answer": 5
+    },
+    {
+      "a": 9,
+      "b": 5,
+      "op": "-",
+      "answer": 4
+    },
+    {
+      "a": 9,
+      "b": 6,
+      "op": "-",
+      "answer": 3
+    },
+    {
+      "a": 9,
+      "b": 7,
+      "op": "-",
+      "answer": 2
+    },
+    {
+      "a": 9,
+      "b": 8,
+      "op": "-",
+      "answer": 1
+    },
+    {
+      "a": 10,
+      "b": 1,
+      "op": "-",
+      "answer": 9
+    },
+    {
+      "a": 10,
+      "b": 2,
+      "op": "-",
+      "answer": 8
+    },
+    {
+      "a": 10,
+      "b": 3,
+      "op": "-",
+      "answer": 7
+    },
+    {
+      "a": 10,
+      "b": 4,
+      "op": "-",
+      "answer": 6
+    },
+    {
+      "a": 10,
+      "b": 5,
+      "op": "-",
+      "answer": 5
+    },
+    {
+      "a": 10,
+      "b": 6,
+      "op": "-",
+      "answer": 4
+    },
+    {
+      "a": 10,
+      "b": 7,
+      "op": "-",
+      "answer": 3
+    },
+    {
+      "a": 10,
+      "b": 8,
+      "op": "-",
+      "answer": 2
+    },
+    {
+      "a": 10,
+      "b": 9,
+      "op": "-",
+      "answer": 1
     }
   ],
   "word_problems": [
@@ -1538,6 +1836,14 @@
       "a": 4,
       "b": 5,
       "answer": 20
+    },
+    {
+      "schema": "twostep",
+      "skill": "math.word.twostep",
+      "template": "{name} has {a} {item}. {name} gets {b} more, then gives away 2. How many now?",
+      "a": 5,
+      "b": 4,
+      "answer": 7
     }
   ]
 }

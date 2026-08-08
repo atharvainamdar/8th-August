@@ -14,8 +14,20 @@ export async function GET(
     const age = Date.now() - new Date(s.startedAt).getTime();
     return age < 7 * 24 * 60 * 60 * 1000;
   });
+  const prevWeekSessions = profile.sessions.filter((s) => {
+    const age = Date.now() - new Date(s.startedAt).getTime();
+    return age >= 7 * 24 * 60 * 60 * 1000 && age < 14 * 24 * 60 * 60 * 1000;
+  });
   const adaptations = weekSessions.reduce((n, s) => n + s.adaptations, 0);
   const items = weekSessions.reduce((n, s) => n + s.itemsDone, 0);
+  const prevItems = prevWeekSessions.reduce((n, s) => n + s.itemsDone, 0);
+  const delta = items - prevItems;
+  const deltaLabel =
+    prevWeekSessions.length === 0
+      ? "First measured week"
+      : delta >= 0
+        ? `+${delta} practice items vs last week`
+        : `${delta} practice items vs last week`;
   const top = profile.mastery
     .map((m) => ({ id: m.skillId, mean: masteryMean(m) }))
     .sort((a, b) => b.mean - a.mean)
@@ -36,6 +48,7 @@ h1,h2{margin:0 0 8px}
 <div class="card">
   <h2>This week</h2>
   <p>Sessions: ${weekSessions.length} · Items practiced: ${items} · Adaptations: ${adaptations}</p>
+  <p>${deltaLabel}</p>
   <p>Streak: ${profile.streakDays} days · Stars: ${profile.stars} · Total minutes: ${profile.totalMinutes}</p>
 </div>
 <div class="card">

@@ -255,6 +255,24 @@
       "green",
       "train",
       "beach"
+    ],
+    "write.spelling.dictation": [
+      "cat",
+      "map",
+      "sit",
+      "pen",
+      "dog",
+      "cup",
+      "hat",
+      "bed",
+      "run",
+      "hop",
+      "lid",
+      "fun",
+      "net",
+      "jam",
+      "box",
+      "win"
     ]
   },
   "sentence_frames": [
@@ -325,6 +343,18 @@
         "rest"
       ],
       "example": "First practice. Then play."
+    },
+    {
+      "frame": "I think ___ because ___ .",
+      "bank": [
+        "trains",
+        "space",
+        "fun",
+        "safe",
+        "calm",
+        "cool"
+      ],
+      "example": "I think trains are cool because they are fast."
     }
   ],
   "short_responses": [

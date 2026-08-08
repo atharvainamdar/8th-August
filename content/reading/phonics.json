@@ -379,6 +379,40 @@
       "there",
       "where",
       "who"
+    ],
+    "read.phonics.cvcc": [
+      "jump",
+      "help",
+      "gift",
+      "tent",
+      "lamp",
+      "desk",
+      "milk",
+      "bend",
+      "soft",
+      "park",
+      "nest",
+      "wind"
+    ],
+    "read.phonics.prefixes": [
+      "unhappy",
+      "redo",
+      "unlock",
+      "reread",
+      "unfair",
+      "remake",
+      "unable",
+      "rebuild"
+    ],
+    "read.phonics.suffixes": [
+      "jumping",
+      "helped",
+      "playing",
+      "wanted",
+      "faster",
+      "smallest",
+      "boxes",
+      "runs"
     ]
   },
   "fluency": [
@@ -479,6 +513,28 @@
       ],
       "answer": "three",
       "kind": "literal"
+    },
+    {
+      "passage": "Rex saw footprints. First he saw mud. Next he saw a nest. Last he saw eggs.",
+      "question": "What did Rex see last?",
+      "options": [
+        "eggs",
+        "a boat",
+        "rain"
+      ],
+      "answer": "eggs",
+      "kind": "literal"
+    },
+    {
+      "passage": "The class planted seeds. They watered them every day. Green sprouts came up.",
+      "question": "What is the main idea?",
+      "options": [
+        "The class grew plants",
+        "A rocket went to space",
+        "A fish swam fast"
+      ],
+      "answer": "The class grew plants",
+      "kind": "infer"
     }
   ]
 }
