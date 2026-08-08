@@ -8,6 +8,9 @@ import { Card } from "@/components/ui/Card";
 export default function SetupPage() {
   const router = useRouter();
   const [form, setForm] = useState({
+    parentName: "",
+    parentEmail: "",
+    plan: "trial",
     displayName: "",
     ageBand: "7-8",
     sensoryMode: "balanced",
@@ -29,7 +32,7 @@ export default function SetupPage() {
     });
     const json = await res.json();
     setSaving(false);
-    router.push(`/?created=${json.profile.id}`);
+    router.push(`/app?created=${json.profile.id}`);
   };
 
   return (
@@ -40,7 +43,38 @@ export default function SetupPage() {
       </p>
       <Card className="mt-4 space-y-4">
         <label className="block space-y-1">
-          <span className="font-semibold">Name</span>
+          <span className="font-semibold">Parent name</span>
+          <input
+            className="w-full rounded-2xl border-2 border-[color:var(--border)] px-4 py-3"
+            value={form.parentName}
+            onChange={(e) => setForm({ ...form, parentName: e.target.value })}
+            placeholder="Your name"
+          />
+        </label>
+        <label className="block space-y-1">
+          <span className="font-semibold">Parent email</span>
+          <input
+            type="email"
+            className="w-full rounded-2xl border-2 border-[color:var(--border)] px-4 py-3"
+            value={form.parentEmail}
+            onChange={(e) => setForm({ ...form, parentEmail: e.target.value })}
+            placeholder="you@email.com"
+          />
+        </label>
+        <label className="block space-y-1">
+          <span className="font-semibold">Plan</span>
+          <select
+            className="w-full rounded-2xl border-2 border-[color:var(--border)] px-4 py-3"
+            value={form.plan}
+            onChange={(e) => setForm({ ...form, plan: e.target.value })}
+          >
+            <option value="trial">Free trial (7 days)</option>
+            <option value="monthly">Monthly $29</option>
+            <option value="yearly">Yearly $199</option>
+          </select>
+        </label>
+        <label className="block space-y-1">
+          <span className="font-semibold">Child name</span>
           <input
             className="w-full rounded-2xl border-2 border-[color:var(--border)] px-4 py-3"
             value={form.displayName}

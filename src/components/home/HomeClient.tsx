@@ -11,6 +11,8 @@ type Profile = {
   sensoryMode: string;
   interestPack: string;
   placed: boolean;
+  streakDays?: number;
+  stars?: number;
 };
 
 export function HomeClient({ profiles }: { profiles: Profile[] }) {
@@ -42,6 +44,9 @@ export function HomeClient({ profiles }: { profiles: Profile[] }) {
                 <h3 className="m-0 text-xl font-bold">{p.displayName}</h3>
                 <p className="m-0 text-[color:var(--muted)]">
                   Ages {p.ageBand} · {p.interestPack} · {p.sensoryMode}
+                </p>
+                <p className="m-0 mt-1 text-sm font-semibold">
+                  🔥 {p.streakDays ?? 0} day streak · ⭐ {p.stars ?? 0} stars
                 </p>
               </div>
               <span className="lumi-chip">{p.placed ? "Ready" : "Needs placement"}</span>

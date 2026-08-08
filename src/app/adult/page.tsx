@@ -51,8 +51,11 @@ function AdultInner() {
             Practice mastery and adaptation traces. Not a clinical assessment.
           </p>
         </div>
-        <Link className="lumi-btn lumi-btn-ghost" href="/">
+        <Link className="lumi-btn lumi-btn-ghost" href="/app">
           Kid home
+        </Link>
+        <Link className="lumi-btn lumi-btn-secondary" href="/parents">
+          Parent hub
         </Link>
       </header>
 

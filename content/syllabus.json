@@ -1,0 +1,162 @@
+{
+  "name": "Lumi Core Syllabus",
+  "audience": "Ages 7–10, skill-based (not grade-locked)",
+  "cadence": "4–5 sessions/week, 12–15 minutes",
+  "domains": ["reading", "writing", "math"],
+  "weeks": [
+    {
+      "id": "week-1",
+      "title": "Foundations Week",
+      "goals": ["Letter sounds", "Numbers to 20", "Trace + spell CVC"],
+      "lessons": ["lesson.read.1", "lesson.math.1", "lesson.write.1", "lesson.mixed.1"]
+    },
+    {
+      "id": "week-2",
+      "title": "Blend & Build",
+      "goals": ["Blend CVC", "Add within 20", "Sentence frames"],
+      "lessons": ["lesson.read.2", "lesson.math.2", "lesson.write.2", "lesson.mixed.2"]
+    },
+    {
+      "id": "week-3",
+      "title": "Fluency Start",
+      "goals": ["Short passages", "Tens and ones", "Spelling blends"],
+      "lessons": ["lesson.read.3", "lesson.math.3", "lesson.write.3", "lesson.mixed.3"]
+    },
+    {
+      "id": "week-4",
+      "title": "Stories & Strategies",
+      "goals": ["Comprehension", "Word problems", "Short responses"],
+      "lessons": ["lesson.read.4", "lesson.math.4", "lesson.write.4", "lesson.mixed.4"]
+    },
+    {
+      "id": "week-5",
+      "title": "Longer Patterns",
+      "goals": ["Vowel teams", "Add within 100", "Expand sentences"],
+      "lessons": ["lesson.read.5", "lesson.math.5", "lesson.write.5", "lesson.mixed.5"]
+    },
+    {
+      "id": "week-6",
+      "title": "Confident Practice",
+      "goals": ["Multisyllable decode", "Equal groups", "Independent writing"],
+      "lessons": ["lesson.read.6", "lesson.math.6", "lesson.write.6", "lesson.mixed.6"]
+    },
+    {
+      "id": "week-7",
+      "title": "Fluency Growth",
+      "goals": ["Expressive reading", "Fact fluency", "POW responses"],
+      "lessons": ["lesson.read.7", "lesson.math.7", "lesson.write.7", "lesson.mixed.7"]
+    },
+    {
+      "id": "week-8",
+      "title": "Show What You Know",
+      "goals": ["Mixed review", "Parent progress report", "Celebrate mastery"],
+      "lessons": ["lesson.review.1", "lesson.review.2", "lesson.review.3", "lesson.showcase.1"]
+    }
+  ],
+  "units": [
+    {
+      "id": "unit.read.1",
+      "domain": "reading",
+      "title": "Sounds to Words",
+      "skills": ["read.phoneme.isolate", "read.phoneme.blend", "read.letters.sounds", "read.phonics.cvc"],
+      "lessons": [
+        { "id": "lesson.read.1", "title": "Hear the first sound", "skills": ["read.phoneme.isolate", "read.letters.sounds"], "modalities": ["audio", "visual", "avatar"], "minutes": 12 },
+        { "id": "lesson.read.2", "title": "Blend into words", "skills": ["read.phoneme.blend", "read.phonics.cvc"], "modalities": ["audio", "speak", "avatar"], "minutes": 12 }
+      ]
+    },
+    {
+      "id": "unit.read.2",
+      "domain": "reading",
+      "title": "Patterns & Passages",
+      "skills": ["read.phonics.blends", "read.phonics.digraphs", "read.fluency.short", "read.comp.literal"],
+      "lessons": [
+        { "id": "lesson.read.3", "title": "Blends and digraphs", "skills": ["read.phonics.blends", "read.phonics.digraphs"], "modalities": ["visual", "audio", "speak"], "minutes": 15 },
+        { "id": "lesson.read.4", "title": "Read and answer", "skills": ["read.fluency.short", "read.comp.literal"], "modalities": ["visual", "audio", "speak"], "minutes": 15 }
+      ]
+    },
+    {
+      "id": "unit.read.3",
+      "domain": "reading",
+      "title": "Advanced Decoding",
+      "skills": ["read.phonics.vowel_teams", "read.phonics.multisyllable", "read.comp.infer", "read.fluency.prosody"],
+      "lessons": [
+        { "id": "lesson.read.5", "title": "Vowel teams", "skills": ["read.phonics.vowel_teams"], "modalities": ["visual", "audio", "speak"], "minutes": 15 },
+        { "id": "lesson.read.6", "title": "Bigger words", "skills": ["read.phonics.multisyllable", "read.comp.infer"], "modalities": ["visual", "avatar", "speak"], "minutes": 15 },
+        { "id": "lesson.read.7", "title": "Read with feeling", "skills": ["read.fluency.prosody"], "modalities": ["speak", "audio", "avatar"], "minutes": 12 }
+      ]
+    },
+    {
+      "id": "unit.write.1",
+      "domain": "writing",
+      "title": "Letters to Sentences",
+      "skills": ["write.letters.lowercase", "write.spelling.cvc", "write.sentence.frame"],
+      "lessons": [
+        { "id": "lesson.write.1", "title": "Trace and write", "skills": ["write.letters.lowercase"], "modalities": ["video_model", "visual", "typing"], "minutes": 12 },
+        { "id": "lesson.write.2", "title": "Spell CVC", "skills": ["write.spelling.cvc", "write.sentence.frame"], "modalities": ["typing", "audio", "speak"], "minutes": 12 }
+      ]
+    },
+    {
+      "id": "unit.write.2",
+      "domain": "writing",
+      "title": "Spell, Build, Explain",
+      "skills": ["write.spelling.blends", "write.spelling.vowel_teams", "write.sentence.expand", "write.response.pow"],
+      "lessons": [
+        { "id": "lesson.write.3", "title": "Blend spelling", "skills": ["write.spelling.blends"], "modalities": ["typing", "visual"], "minutes": 12 },
+        { "id": "lesson.write.4", "title": "Short answers", "skills": ["write.response.pow"], "modalities": ["typing", "speak"], "minutes": 15 },
+        { "id": "lesson.write.5", "title": "Expand sentences", "skills": ["write.sentence.expand", "write.spelling.vowel_teams"], "modalities": ["typing", "avatar"], "minutes": 15 },
+        { "id": "lesson.write.6", "title": "Independent write", "skills": ["write.response.pow"], "modalities": ["typing", "speak"], "minutes": 15 },
+        { "id": "lesson.write.7", "title": "Writing showcase", "skills": ["write.sentence.expand", "write.response.pow"], "modalities": ["typing", "speak"], "minutes": 12 }
+      ]
+    },
+    {
+      "id": "unit.math.1",
+      "domain": "math",
+      "title": "Number Sense",
+      "skills": ["math.number.10", "math.number.20", "math.ops.add_20", "math.ops.sub_20"],
+      "lessons": [
+        { "id": "lesson.math.1", "title": "Count and show", "skills": ["math.number.10", "math.number.20"], "modalities": ["manipulative", "visual", "audio"], "minutes": 12 },
+        { "id": "lesson.math.2", "title": "Add and take away", "skills": ["math.ops.add_20", "math.ops.sub_20"], "modalities": ["manipulative", "visual"], "minutes": 12 }
+      ]
+    },
+    {
+      "id": "unit.math.2",
+      "domain": "math",
+      "title": "Place Value & Problems",
+      "skills": ["math.placevalue.tens", "math.ops.add_100", "math.word.addto", "math.word.compare"],
+      "lessons": [
+        { "id": "lesson.math.3", "title": "Tens and ones", "skills": ["math.placevalue.tens"], "modalities": ["manipulative", "avatar"], "minutes": 12 },
+        { "id": "lesson.math.4", "title": "Story problems", "skills": ["math.word.addto", "math.word.compare"], "modalities": ["visual", "audio", "manipulative"], "minutes": 15 }
+      ]
+    },
+    {
+      "id": "unit.math.3",
+      "domain": "math",
+      "title": "Equal Groups & Fluency",
+      "skills": ["math.ops.mul_concept", "math.ops.div_concept", "math.facts.add", "math.facts.mul"],
+      "lessons": [
+        { "id": "lesson.math.5", "title": "Add bigger numbers", "skills": ["math.ops.add_100"], "modalities": ["visual", "manipulative"], "minutes": 15 },
+        { "id": "lesson.math.6", "title": "Equal groups", "skills": ["math.ops.mul_concept", "math.word.equal_groups"], "modalities": ["manipulative", "video_model"], "minutes": 15 },
+        { "id": "lesson.math.7", "title": "Quick facts", "skills": ["math.facts.add", "math.facts.mul"], "modalities": ["visual", "audio"], "minutes": 12 }
+      ]
+    },
+    {
+      "id": "unit.mixed.1",
+      "domain": "mixed",
+      "title": "Integrated Practice",
+      "skills": [],
+      "lessons": [
+        { "id": "lesson.mixed.1", "title": "Sounds + counts", "skills": ["read.phoneme.blend", "math.number.20"], "modalities": ["audio", "manipulative"], "minutes": 12 },
+        { "id": "lesson.mixed.2", "title": "Words + sentences", "skills": ["read.phonics.cvc", "write.sentence.frame"], "modalities": ["visual", "typing"], "minutes": 12 },
+        { "id": "lesson.mixed.3", "title": "Read + solve", "skills": ["read.fluency.short", "math.ops.add_20"], "modalities": ["speak", "visual"], "minutes": 15 },
+        { "id": "lesson.mixed.4", "title": "Story + write", "skills": ["read.comp.literal", "write.response.pow"], "modalities": ["visual", "typing"], "minutes": 15 },
+        { "id": "lesson.mixed.5", "title": "Patterns day", "skills": ["read.phonics.vowel_teams", "math.placevalue.tens"], "modalities": ["audio", "manipulative"], "minutes": 15 },
+        { "id": "lesson.mixed.6", "title": "Challenge mix", "skills": ["read.comp.infer", "math.ops.mul_concept"], "modalities": ["avatar", "visual"], "minutes": 15 },
+        { "id": "lesson.mixed.7", "title": "Confidence mix", "skills": ["write.sentence.expand", "math.facts.add"], "modalities": ["typing", "visual"], "minutes": 12 },
+        { "id": "lesson.review.1", "title": "Reading review", "skills": ["read.phonics.cvc", "read.fluency.short", "read.comp.literal"], "modalities": ["visual", "speak"], "minutes": 15 },
+        { "id": "lesson.review.2", "title": "Math review", "skills": ["math.ops.add_20", "math.word.compare", "math.facts.add"], "modalities": ["manipulative", "visual"], "minutes": 15 },
+        { "id": "lesson.review.3", "title": "Writing review", "skills": ["write.spelling.cvc", "write.sentence.frame", "write.response.pow"], "modalities": ["typing", "speak"], "minutes": 15 },
+        { "id": "lesson.showcase.1", "title": "Showcase day", "skills": ["read.fluency.short", "write.response.pow", "math.word.equal_groups"], "modalities": ["speak", "typing", "visual"], "minutes": 15 }
+      ]
+    }
+  ]
+}

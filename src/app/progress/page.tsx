@@ -94,7 +94,7 @@ function ProgressInner() {
       </div>
 
       <div className="flex flex-wrap gap-2">
-        <Link className="lumi-btn lumi-btn-primary" href={`/?focus=${childId}`}>
+        <Link className="lumi-btn lumi-btn-primary" href={`/app?focus=${childId}`}>
           Home
         </Link>
         <Link className="lumi-btn lumi-btn-secondary" href={`/learn?childId=${childId}`}>

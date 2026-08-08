@@ -1,37 +1,1478 @@
 {
   "number_sense": [
-    { "prompt": "How many dots?", "count": 4, "options": [3, 4, 5] },
-    { "prompt": "How many dots?", "count": 7, "options": [6, 7, 8] },
-    { "prompt": "Which number is greater?", "a": 12, "b": 9, "answer": 12 },
-    { "prompt": "Which number is less?", "a": 18, "b": 21, "answer": 18 },
-    { "prompt": "What number is this?", "value": 34, "options": [43, 34, 24] }
+    {
+      "prompt": "How many dots?",
+      "count": 4,
+      "options": [
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "prompt": "How many dots?",
+      "count": 7,
+      "options": [
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "prompt": "How many dots?",
+      "count": 9,
+      "options": [
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "prompt": "Which number is greater?",
+      "a": 12,
+      "b": 9,
+      "answer": 12
+    },
+    {
+      "prompt": "Which number is less?",
+      "a": 18,
+      "b": 21,
+      "answer": 18
+    },
+    {
+      "prompt": "What number is this?",
+      "value": 34,
+      "options": [
+        43,
+        34,
+        24
+      ]
+    },
+    {
+      "prompt": "What number is this?",
+      "value": 70,
+      "options": [
+        17,
+        70,
+        7
+      ]
+    },
+    {
+      "prompt": "Which number is greater?",
+      "a": 45,
+      "b": 54,
+      "answer": 54
+    }
   ],
   "ten_frames": [
-    { "prompt": "Show 6 on the ten frame", "value": 6 },
-    { "prompt": "Show 10 on the ten frame", "value": 10 },
-    { "prompt": "Show 14 using tens and ones", "value": 14 },
-    { "prompt": "Show 23 using tens and ones", "value": 23 }
+    {
+      "prompt": "Show 6 on the ten frame",
+      "value": 6
+    },
+    {
+      "prompt": "Show 10 on the ten frame",
+      "value": 10
+    },
+    {
+      "prompt": "Show 14 using tens and ones",
+      "value": 14
+    },
+    {
+      "prompt": "Show 23 using tens and ones",
+      "value": 23
+    },
+    {
+      "prompt": "Show 8 on the ten frame",
+      "value": 8
+    },
+    {
+      "prompt": "Show 19 using tens and ones",
+      "value": 19
+    }
   ],
   "operations": [
-    { "op": "+", "a": 3, "b": 4, "answer": 7, "skill": "math.ops.add_20" },
-    { "op": "+", "a": 8, "b": 5, "answer": 13, "skill": "math.ops.add_20" },
-    { "op": "-", "a": 9, "b": 4, "answer": 5, "skill": "math.ops.sub_20" },
-    { "op": "-", "a": 15, "b": 7, "answer": 8, "skill": "math.ops.sub_20" },
-    { "op": "+", "a": 26, "b": 13, "answer": 39, "skill": "math.ops.add_100" },
-    { "op": "+", "a": 47, "b": 25, "answer": 72, "skill": "math.ops.add_100" },
-    { "op": "-", "a": 50, "b": 18, "answer": 32, "skill": "math.ops.sub_100" },
-    { "op": "*", "a": 3, "b": 4, "answer": 12, "skill": "math.ops.mul_concept" },
-    { "op": "*", "a": 5, "b": 2, "answer": 10, "skill": "math.ops.mul_concept" },
-    { "op": "/", "a": 12, "b": 3, "answer": 4, "skill": "math.ops.div_concept" }
+    {
+      "op": "+",
+      "a": 1,
+      "b": 1,
+      "answer": 2,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 1,
+      "b": 2,
+      "answer": 3,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 1,
+      "b": 3,
+      "answer": 4,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 1,
+      "b": 4,
+      "answer": 5,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 1,
+      "b": 5,
+      "answer": 6,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 1,
+      "b": 6,
+      "answer": 7,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 1,
+      "b": 7,
+      "answer": 8,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 1,
+      "b": 8,
+      "answer": 9,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 1,
+      "b": 9,
+      "answer": 10,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 1,
+      "b": 10,
+      "answer": 11,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 1,
+      "b": 11,
+      "answer": 12,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 1,
+      "b": 12,
+      "answer": 13,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 2,
+      "b": 1,
+      "answer": 3,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "-",
+      "a": 2,
+      "b": 1,
+      "answer": 1,
+      "skill": "math.ops.sub_20"
+    },
+    {
+      "op": "+",
+      "a": 2,
+      "b": 2,
+      "answer": 4,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 2,
+      "b": 3,
+      "answer": 5,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 2,
+      "b": 4,
+      "answer": 6,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 2,
+      "b": 5,
+      "answer": 7,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 2,
+      "b": 6,
+      "answer": 8,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 2,
+      "b": 7,
+      "answer": 9,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 2,
+      "b": 8,
+      "answer": 10,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 2,
+      "b": 9,
+      "answer": 11,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 2,
+      "b": 10,
+      "answer": 12,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 2,
+      "b": 11,
+      "answer": 13,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 2,
+      "b": 12,
+      "answer": 14,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 3,
+      "b": 1,
+      "answer": 4,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "-",
+      "a": 3,
+      "b": 1,
+      "answer": 2,
+      "skill": "math.ops.sub_20"
+    },
+    {
+      "op": "+",
+      "a": 3,
+      "b": 2,
+      "answer": 5,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "-",
+      "a": 3,
+      "b": 2,
+      "answer": 1,
+      "skill": "math.ops.sub_20"
+    },
+    {
+      "op": "+",
+      "a": 3,
+      "b": 3,
+      "answer": 6,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 3,
+      "b": 4,
+      "answer": 7,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 3,
+      "b": 5,
+      "answer": 8,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 3,
+      "b": 6,
+      "answer": 9,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 3,
+      "b": 7,
+      "answer": 10,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 3,
+      "b": 8,
+      "answer": 11,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 3,
+      "b": 9,
+      "answer": 12,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 3,
+      "b": 10,
+      "answer": 13,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 3,
+      "b": 11,
+      "answer": 14,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 3,
+      "b": 12,
+      "answer": 15,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 4,
+      "b": 1,
+      "answer": 5,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "-",
+      "a": 4,
+      "b": 1,
+      "answer": 3,
+      "skill": "math.ops.sub_20"
+    },
+    {
+      "op": "+",
+      "a": 4,
+      "b": 2,
+      "answer": 6,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "-",
+      "a": 4,
+      "b": 2,
+      "answer": 2,
+      "skill": "math.ops.sub_20"
+    },
+    {
+      "op": "+",
+      "a": 4,
+      "b": 3,
+      "answer": 7,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "-",
+      "a": 4,
+      "b": 3,
+      "answer": 1,
+      "skill": "math.ops.sub_20"
+    },
+    {
+      "op": "+",
+      "a": 4,
+      "b": 4,
+      "answer": 8,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 4,
+      "b": 5,
+      "answer": 9,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 4,
+      "b": 6,
+      "answer": 10,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 4,
+      "b": 7,
+      "answer": 11,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 4,
+      "b": 8,
+      "answer": 12,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 4,
+      "b": 9,
+      "answer": 13,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 4,
+      "b": 10,
+      "answer": 14,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 4,
+      "b": 11,
+      "answer": 15,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 4,
+      "b": 12,
+      "answer": 16,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 5,
+      "b": 1,
+      "answer": 6,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "-",
+      "a": 5,
+      "b": 1,
+      "answer": 4,
+      "skill": "math.ops.sub_20"
+    },
+    {
+      "op": "+",
+      "a": 5,
+      "b": 2,
+      "answer": 7,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "-",
+      "a": 5,
+      "b": 2,
+      "answer": 3,
+      "skill": "math.ops.sub_20"
+    },
+    {
+      "op": "+",
+      "a": 5,
+      "b": 3,
+      "answer": 8,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "-",
+      "a": 5,
+      "b": 3,
+      "answer": 2,
+      "skill": "math.ops.sub_20"
+    },
+    {
+      "op": "+",
+      "a": 5,
+      "b": 4,
+      "answer": 9,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "-",
+      "a": 5,
+      "b": 4,
+      "answer": 1,
+      "skill": "math.ops.sub_20"
+    },
+    {
+      "op": "+",
+      "a": 5,
+      "b": 5,
+      "answer": 10,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 5,
+      "b": 6,
+      "answer": 11,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 5,
+      "b": 7,
+      "answer": 12,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 5,
+      "b": 8,
+      "answer": 13,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 5,
+      "b": 9,
+      "answer": 14,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 5,
+      "b": 10,
+      "answer": 15,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 5,
+      "b": 11,
+      "answer": 16,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 5,
+      "b": 12,
+      "answer": 17,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "+",
+      "a": 6,
+      "b": 1,
+      "answer": 7,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "-",
+      "a": 6,
+      "b": 1,
+      "answer": 5,
+      "skill": "math.ops.sub_20"
+    },
+    {
+      "op": "+",
+      "a": 6,
+      "b": 2,
+      "answer": 8,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "-",
+      "a": 6,
+      "b": 2,
+      "answer": 4,
+      "skill": "math.ops.sub_20"
+    },
+    {
+      "op": "+",
+      "a": 6,
+      "b": 3,
+      "answer": 9,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "-",
+      "a": 6,
+      "b": 3,
+      "answer": 3,
+      "skill": "math.ops.sub_20"
+    },
+    {
+      "op": "+",
+      "a": 6,
+      "b": 4,
+      "answer": 10,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "-",
+      "a": 6,
+      "b": 4,
+      "answer": 2,
+      "skill": "math.ops.sub_20"
+    },
+    {
+      "op": "+",
+      "a": 6,
+      "b": 5,
+      "answer": 11,
+      "skill": "math.ops.add_20"
+    },
+    {
+      "op": "-",
+      "a": 6,
+      "b": 5,
+      "answer": 1,
+      "skill": "math.ops.sub_20"
+    },
+    {
+      "op": "+",
+      "a": 26,
+      "b": 13,
+      "answer": 39,
+      "skill": "math.ops.add_100"
+    },
+    {
+      "op": "+",
+      "a": 47,
+      "b": 25,
+      "answer": 72,
+      "skill": "math.ops.add_100"
+    },
+    {
+      "op": "+",
+      "a": 38,
+      "b": 45,
+      "answer": 83,
+      "skill": "math.ops.add_100"
+    },
+    {
+      "op": "-",
+      "a": 50,
+      "b": 18,
+      "answer": 32,
+      "skill": "math.ops.sub_100"
+    },
+    {
+      "op": "-",
+      "a": 73,
+      "b": 29,
+      "answer": 44,
+      "skill": "math.ops.sub_100"
+    },
+    {
+      "op": "*",
+      "a": 3,
+      "b": 4,
+      "answer": 12,
+      "skill": "math.ops.mul_concept"
+    },
+    {
+      "op": "*",
+      "a": 5,
+      "b": 2,
+      "answer": 10,
+      "skill": "math.ops.mul_concept"
+    },
+    {
+      "op": "*",
+      "a": 6,
+      "b": 3,
+      "answer": 18,
+      "skill": "math.ops.mul_concept"
+    },
+    {
+      "op": "/",
+      "a": 12,
+      "b": 3,
+      "answer": 4,
+      "skill": "math.ops.div_concept"
+    },
+    {
+      "op": "/",
+      "a": 20,
+      "b": 5,
+      "answer": 4,
+      "skill": "math.ops.div_concept"
+    }
   ],
   "facts": [
-    { "a": 2, "b": 3, "op": "+", "answer": 5 },
-    { "a": 4, "b": 4, "op": "+", "answer": 8 },
-    { "a": 6, "b": 3, "op": "+", "answer": 9 },
-    { "a": 7, "b": 2, "op": "+", "answer": 9 },
-    { "a": 3, "b": 3, "op": "*", "answer": 9 },
-    { "a": 4, "b": 5, "op": "*", "answer": 20 },
-    { "a": 2, "b": 6, "op": "*", "answer": 12 }
+    {
+      "a": 1,
+      "b": 1,
+      "op": "+",
+      "answer": 2
+    },
+    {
+      "a": 1,
+      "b": 1,
+      "op": "*",
+      "answer": 1
+    },
+    {
+      "a": 1,
+      "b": 2,
+      "op": "+",
+      "answer": 3
+    },
+    {
+      "a": 1,
+      "b": 2,
+      "op": "*",
+      "answer": 2
+    },
+    {
+      "a": 1,
+      "b": 3,
+      "op": "+",
+      "answer": 4
+    },
+    {
+      "a": 1,
+      "b": 3,
+      "op": "*",
+      "answer": 3
+    },
+    {
+      "a": 1,
+      "b": 4,
+      "op": "+",
+      "answer": 5
+    },
+    {
+      "a": 1,
+      "b": 4,
+      "op": "*",
+      "answer": 4
+    },
+    {
+      "a": 1,
+      "b": 5,
+      "op": "+",
+      "answer": 6
+    },
+    {
+      "a": 1,
+      "b": 5,
+      "op": "*",
+      "answer": 5
+    },
+    {
+      "a": 1,
+      "b": 6,
+      "op": "+",
+      "answer": 7
+    },
+    {
+      "a": 1,
+      "b": 7,
+      "op": "+",
+      "answer": 8
+    },
+    {
+      "a": 1,
+      "b": 8,
+      "op": "+",
+      "answer": 9
+    },
+    {
+      "a": 1,
+      "b": 9,
+      "op": "+",
+      "answer": 10
+    },
+    {
+      "a": 1,
+      "b": 10,
+      "op": "+",
+      "answer": 11
+    },
+    {
+      "a": 2,
+      "b": 1,
+      "op": "+",
+      "answer": 3
+    },
+    {
+      "a": 2,
+      "b": 1,
+      "op": "*",
+      "answer": 2
+    },
+    {
+      "a": 2,
+      "b": 2,
+      "op": "+",
+      "answer": 4
+    },
+    {
+      "a": 2,
+      "b": 2,
+      "op": "*",
+      "answer": 4
+    },
+    {
+      "a": 2,
+      "b": 3,
+      "op": "+",
+      "answer": 5
+    },
+    {
+      "a": 2,
+      "b": 3,
+      "op": "*",
+      "answer": 6
+    },
+    {
+      "a": 2,
+      "b": 4,
+      "op": "+",
+      "answer": 6
+    },
+    {
+      "a": 2,
+      "b": 4,
+      "op": "*",
+      "answer": 8
+    },
+    {
+      "a": 2,
+      "b": 5,
+      "op": "+",
+      "answer": 7
+    },
+    {
+      "a": 2,
+      "b": 5,
+      "op": "*",
+      "answer": 10
+    },
+    {
+      "a": 2,
+      "b": 6,
+      "op": "+",
+      "answer": 8
+    },
+    {
+      "a": 2,
+      "b": 7,
+      "op": "+",
+      "answer": 9
+    },
+    {
+      "a": 2,
+      "b": 8,
+      "op": "+",
+      "answer": 10
+    },
+    {
+      "a": 2,
+      "b": 9,
+      "op": "+",
+      "answer": 11
+    },
+    {
+      "a": 2,
+      "b": 10,
+      "op": "+",
+      "answer": 12
+    },
+    {
+      "a": 3,
+      "b": 1,
+      "op": "+",
+      "answer": 4
+    },
+    {
+      "a": 3,
+      "b": 1,
+      "op": "*",
+      "answer": 3
+    },
+    {
+      "a": 3,
+      "b": 2,
+      "op": "+",
+      "answer": 5
+    },
+    {
+      "a": 3,
+      "b": 2,
+      "op": "*",
+      "answer": 6
+    },
+    {
+      "a": 3,
+      "b": 3,
+      "op": "+",
+      "answer": 6
+    },
+    {
+      "a": 3,
+      "b": 3,
+      "op": "*",
+      "answer": 9
+    },
+    {
+      "a": 3,
+      "b": 4,
+      "op": "+",
+      "answer": 7
+    },
+    {
+      "a": 3,
+      "b": 4,
+      "op": "*",
+      "answer": 12
+    },
+    {
+      "a": 3,
+      "b": 5,
+      "op": "+",
+      "answer": 8
+    },
+    {
+      "a": 3,
+      "b": 5,
+      "op": "*",
+      "answer": 15
+    },
+    {
+      "a": 3,
+      "b": 6,
+      "op": "+",
+      "answer": 9
+    },
+    {
+      "a": 3,
+      "b": 7,
+      "op": "+",
+      "answer": 10
+    },
+    {
+      "a": 3,
+      "b": 8,
+      "op": "+",
+      "answer": 11
+    },
+    {
+      "a": 3,
+      "b": 9,
+      "op": "+",
+      "answer": 12
+    },
+    {
+      "a": 3,
+      "b": 10,
+      "op": "+",
+      "answer": 13
+    },
+    {
+      "a": 4,
+      "b": 1,
+      "op": "+",
+      "answer": 5
+    },
+    {
+      "a": 4,
+      "b": 1,
+      "op": "*",
+      "answer": 4
+    },
+    {
+      "a": 4,
+      "b": 2,
+      "op": "+",
+      "answer": 6
+    },
+    {
+      "a": 4,
+      "b": 2,
+      "op": "*",
+      "answer": 8
+    },
+    {
+      "a": 4,
+      "b": 3,
+      "op": "+",
+      "answer": 7
+    },
+    {
+      "a": 4,
+      "b": 3,
+      "op": "*",
+      "answer": 12
+    },
+    {
+      "a": 4,
+      "b": 4,
+      "op": "+",
+      "answer": 8
+    },
+    {
+      "a": 4,
+      "b": 4,
+      "op": "*",
+      "answer": 16
+    },
+    {
+      "a": 4,
+      "b": 5,
+      "op": "+",
+      "answer": 9
+    },
+    {
+      "a": 4,
+      "b": 5,
+      "op": "*",
+      "answer": 20
+    },
+    {
+      "a": 4,
+      "b": 6,
+      "op": "+",
+      "answer": 10
+    },
+    {
+      "a": 4,
+      "b": 7,
+      "op": "+",
+      "answer": 11
+    },
+    {
+      "a": 4,
+      "b": 8,
+      "op": "+",
+      "answer": 12
+    },
+    {
+      "a": 4,
+      "b": 9,
+      "op": "+",
+      "answer": 13
+    },
+    {
+      "a": 4,
+      "b": 10,
+      "op": "+",
+      "answer": 14
+    },
+    {
+      "a": 5,
+      "b": 1,
+      "op": "+",
+      "answer": 6
+    },
+    {
+      "a": 5,
+      "b": 1,
+      "op": "*",
+      "answer": 5
+    },
+    {
+      "a": 5,
+      "b": 2,
+      "op": "+",
+      "answer": 7
+    },
+    {
+      "a": 5,
+      "b": 2,
+      "op": "*",
+      "answer": 10
+    },
+    {
+      "a": 5,
+      "b": 3,
+      "op": "+",
+      "answer": 8
+    },
+    {
+      "a": 5,
+      "b": 3,
+      "op": "*",
+      "answer": 15
+    },
+    {
+      "a": 5,
+      "b": 4,
+      "op": "+",
+      "answer": 9
+    },
+    {
+      "a": 5,
+      "b": 4,
+      "op": "*",
+      "answer": 20
+    },
+    {
+      "a": 5,
+      "b": 5,
+      "op": "+",
+      "answer": 10
+    },
+    {
+      "a": 5,
+      "b": 5,
+      "op": "*",
+      "answer": 25
+    },
+    {
+      "a": 5,
+      "b": 6,
+      "op": "+",
+      "answer": 11
+    },
+    {
+      "a": 5,
+      "b": 7,
+      "op": "+",
+      "answer": 12
+    },
+    {
+      "a": 5,
+      "b": 8,
+      "op": "+",
+      "answer": 13
+    },
+    {
+      "a": 5,
+      "b": 9,
+      "op": "+",
+      "answer": 14
+    },
+    {
+      "a": 5,
+      "b": 10,
+      "op": "+",
+      "answer": 15
+    },
+    {
+      "a": 6,
+      "b": 1,
+      "op": "+",
+      "answer": 7
+    },
+    {
+      "a": 6,
+      "b": 2,
+      "op": "+",
+      "answer": 8
+    },
+    {
+      "a": 6,
+      "b": 3,
+      "op": "+",
+      "answer": 9
+    },
+    {
+      "a": 6,
+      "b": 4,
+      "op": "+",
+      "answer": 10
+    },
+    {
+      "a": 6,
+      "b": 5,
+      "op": "+",
+      "answer": 11
+    },
+    {
+      "a": 6,
+      "b": 6,
+      "op": "+",
+      "answer": 12
+    },
+    {
+      "a": 6,
+      "b": 7,
+      "op": "+",
+      "answer": 13
+    },
+    {
+      "a": 6,
+      "b": 8,
+      "op": "+",
+      "answer": 14
+    },
+    {
+      "a": 6,
+      "b": 9,
+      "op": "+",
+      "answer": 15
+    },
+    {
+      "a": 6,
+      "b": 10,
+      "op": "+",
+      "answer": 16
+    },
+    {
+      "a": 7,
+      "b": 1,
+      "op": "+",
+      "answer": 8
+    },
+    {
+      "a": 7,
+      "b": 2,
+      "op": "+",
+      "answer": 9
+    },
+    {
+      "a": 7,
+      "b": 3,
+      "op": "+",
+      "answer": 10
+    },
+    {
+      "a": 7,
+      "b": 4,
+      "op": "+",
+      "answer": 11
+    },
+    {
+      "a": 7,
+      "b": 5,
+      "op": "+",
+      "answer": 12
+    },
+    {
+      "a": 7,
+      "b": 6,
+      "op": "+",
+      "answer": 13
+    },
+    {
+      "a": 7,
+      "b": 7,
+      "op": "+",
+      "answer": 14
+    },
+    {
+      "a": 7,
+      "b": 8,
+      "op": "+",
+      "answer": 15
+    },
+    {
+      "a": 7,
+      "b": 9,
+      "op": "+",
+      "answer": 16
+    },
+    {
+      "a": 7,
+      "b": 10,
+      "op": "+",
+      "answer": 17
+    },
+    {
+      "a": 8,
+      "b": 1,
+      "op": "+",
+      "answer": 9
+    },
+    {
+      "a": 8,
+      "b": 2,
+      "op": "+",
+      "answer": 10
+    },
+    {
+      "a": 8,
+      "b": 3,
+      "op": "+",
+      "answer": 11
+    },
+    {
+      "a": 8,
+      "b": 4,
+      "op": "+",
+      "answer": 12
+    },
+    {
+      "a": 8,
+      "b": 5,
+      "op": "+",
+      "answer": 13
+    },
+    {
+      "a": 8,
+      "b": 6,
+      "op": "+",
+      "answer": 14
+    },
+    {
+      "a": 8,
+      "b": 7,
+      "op": "+",
+      "answer": 15
+    },
+    {
+      "a": 8,
+      "b": 8,
+      "op": "+",
+      "answer": 16
+    },
+    {
+      "a": 8,
+      "b": 9,
+      "op": "+",
+      "answer": 17
+    },
+    {
+      "a": 8,
+      "b": 10,
+      "op": "+",
+      "answer": 18
+    },
+    {
+      "a": 9,
+      "b": 1,
+      "op": "+",
+      "answer": 10
+    },
+    {
+      "a": 9,
+      "b": 2,
+      "op": "+",
+      "answer": 11
+    },
+    {
+      "a": 9,
+      "b": 3,
+      "op": "+",
+      "answer": 12
+    },
+    {
+      "a": 9,
+      "b": 4,
+      "op": "+",
+      "answer": 13
+    },
+    {
+      "a": 9,
+      "b": 5,
+      "op": "+",
+      "answer": 14
+    },
+    {
+      "a": 9,
+      "b": 6,
+      "op": "+",
+      "answer": 15
+    },
+    {
+      "a": 9,
+      "b": 7,
+      "op": "+",
+      "answer": 16
+    },
+    {
+      "a": 9,
+      "b": 8,
+      "op": "+",
+      "answer": 17
+    },
+    {
+      "a": 9,
+      "b": 9,
+      "op": "+",
+      "answer": 18
+    },
+    {
+      "a": 9,
+      "b": 10,
+      "op": "+",
+      "answer": 19
+    },
+    {
+      "a": 10,
+      "b": 1,
+      "op": "+",
+      "answer": 11
+    },
+    {
+      "a": 10,
+      "b": 2,
+      "op": "+",
+      "answer": 12
+    },
+    {
+      "a": 10,
+      "b": 3,
+      "op": "+",
+      "answer": 13
+    },
+    {
+      "a": 10,
+      "b": 4,
+      "op": "+",
+      "answer": 14
+    },
+    {
+      "a": 10,
+      "b": 5,
+      "op": "+",
+      "answer": 15
+    },
+    {
+      "a": 10,
+      "b": 6,
+      "op": "+",
+      "answer": 16
+    },
+    {
+      "a": 10,
+      "b": 7,
+      "op": "+",
+      "answer": 17
+    },
+    {
+      "a": 10,
+      "b": 8,
+      "op": "+",
+      "answer": 18
+    },
+    {
+      "a": 10,
+      "b": 9,
+      "op": "+",
+      "answer": 19
+    },
+    {
+      "a": 10,
+      "b": 10,
+      "op": "+",
+      "answer": 20
+    }
   ],
   "word_problems": [
     {
@@ -43,12 +1484,28 @@
       "answer": 7
     },
     {
+      "schema": "addto",
+      "skill": "math.word.addto",
+      "template": "{name} found {a} {item}. Then {name} found {b} more. How many in all?",
+      "a": 6,
+      "b": 5,
+      "answer": 11
+    },
+    {
       "schema": "takefrom",
       "skill": "math.word.takefrom",
       "template": "{name} has {a} {item}. {name} gives away {b}. How many are left?",
       "a": 9,
       "b": 4,
       "answer": 5
+    },
+    {
+      "schema": "takefrom",
+      "skill": "math.word.takefrom",
+      "template": "{name} had {a} {item}. {b} rolled away. How many remain?",
+      "a": 12,
+      "b": 5,
+      "answer": 7
     },
     {
       "schema": "compare",
@@ -59,12 +1516,28 @@
       "answer": 4
     },
     {
+      "schema": "compare",
+      "skill": "math.word.compare",
+      "template": "{name} collected {a} {item}. Mia collected {b}. Who has more, and by how many for {name}?",
+      "a": 15,
+      "b": 9,
+      "answer": 6
+    },
+    {
       "schema": "equal_groups",
       "skill": "math.word.equal_groups",
       "template": "There are {a} boxes. Each box has {b} {item}. How many {item} in all?",
       "a": 3,
       "b": 4,
       "answer": 12
+    },
+    {
+      "schema": "equal_groups",
+      "skill": "math.word.equal_groups",
+      "template": "{name} makes {a} rows with {b} {item} in each row. How many {item}?",
+      "a": 4,
+      "b": 5,
+      "answer": 20
     }
   ]
 }

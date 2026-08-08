@@ -29,6 +29,7 @@ function LearnInner() {
   const [busy, setBusy] = useState(false);
   const [feedback, setFeedback] = useState<string | null>(null);
   const [homeworkNote, setHomeworkNote] = useState<string | null>(null);
+  const [starsEarned, setStarsEarned] = useState(0);
 
   useEffect(() => {
     if (!childId) return;
@@ -78,6 +79,7 @@ function LearnInner() {
     const json = await res.json();
     const next = json.runtime as SessionRuntime;
     setCoachMessage(json.coachMessage);
+    if (json.starsEarned) setStarsEarned((s) => s + Number(json.starsEarned || 0));
     if (next.decision.offerCalmCorner || next.decision.action === "offer_break") {
       setTransition("Next: a short calm break is available.");
       setShowCalm(true);
@@ -180,6 +182,16 @@ function LearnInner() {
       </header>
 
       <VisualSchedule items={schedule} currentIndex={Math.min(runtime.itemsDone, schedule.length - 1)} />
+
+      <Card className="flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <p className="m-0 text-sm font-semibold uppercase text-[color:var(--muted)]">First → Then</p>
+          <p className="m-0 text-lg font-bold">
+            First: practice · Then: stars & break
+          </p>
+        </div>
+        <p className="m-0 text-lg font-bold">⭐ Session stars: {starsEarned}</p>
+      </Card>
 
       {transition && (
         <Card className="border-[color:var(--accent)] bg-[#eef2ff]">

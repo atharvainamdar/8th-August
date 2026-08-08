@@ -33,7 +33,7 @@ export default async function DemoPage() {
         {ava ? (
           <Link
             className="lumi-btn lumi-btn-primary inline-flex"
-            href={`/?focus=${ava.id}`}
+            href={`/app?focus=${ava.id}`}
           >
             Start with {ava.displayName}
           </Link>

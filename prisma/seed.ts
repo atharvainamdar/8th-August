@@ -1,17 +1,24 @@
 import { PrismaClient } from "@prisma/client";
 import { ensureMasteryMap } from "../src/lib/curriculum/skills";
+import { getAllLessons } from "../src/lib/curriculum/syllabus";
 
 const prisma = new PrismaClient();
 
-async function seedChild(data: {
-  displayName: string;
-  ageBand: string;
-  sensoryMode: string;
-  interestPack: string;
-  masteryBoosts?: Record<string, number>;
-}) {
+async function seedChild(
+  parentId: string,
+  data: {
+    displayName: string;
+    ageBand: string;
+    sensoryMode: string;
+    interestPack: string;
+    masteryBoosts?: Record<string, number>;
+    streakDays?: number;
+    stars?: number;
+  }
+) {
   const child = await prisma.childProfile.create({
     data: {
+      parentId,
       displayName: data.displayName,
       ageBand: data.ageBand,
       sensoryMode: data.sensoryMode,
@@ -19,6 +26,11 @@ async function seedChild(data: {
       placed: true,
       celebrationLevel: data.sensoryMode === "calm" ? "low" : "medium",
       motionEnabled: data.sensoryMode !== "calm",
+      streakDays: data.streakDays ?? 0,
+      bestStreak: data.streakDays ?? 0,
+      stars: data.stars ?? 0,
+      totalMinutes: (data.streakDays ?? 0) * 12,
+      lastPracticeDate: data.streakDays ? new Date().toISOString().slice(0, 10) : null,
     },
   });
 
@@ -41,20 +53,50 @@ async function seedChild(data: {
     })),
   });
 
+  const lessons = getAllLessons();
+  await prisma.lessonProgress.createMany({
+    data: lessons.map((lesson, idx) => ({
+      childId: child.id,
+      lessonId: lesson.id,
+      unitId: lesson.id.startsWith("lesson.read")
+        ? "unit.read.1"
+        : lesson.id.startsWith("lesson.write")
+          ? "unit.write.1"
+          : lesson.id.startsWith("lesson.math")
+            ? "unit.math.1"
+            : "unit.mixed.1",
+      status: idx < 3 ? "done" : idx < 6 ? "available" : "locked",
+      score: idx < 3 ? 0.8 : 0,
+      completedAt: idx < 3 ? new Date() : null,
+    })),
+  });
+
   return child;
 }
 
 async function main() {
   await prisma.learnerEvent.deleteMany();
   await prisma.session.deleteMany();
+  await prisma.lessonProgress.deleteMany();
   await prisma.skillMastery.deleteMany();
   await prisma.childProfile.deleteMany();
+  await prisma.parentAccount.deleteMany();
 
-  await seedChild({
+  const parent = await prisma.parentAccount.create({
+    data: {
+      email: "parent@demo.lumi",
+      name: "Demo Parent",
+      plan: "trial",
+    },
+  });
+
+  await seedChild(parent.id, {
     displayName: "Ava",
     ageBand: "7-8",
     sensoryMode: "calm",
     interestPack: "trains",
+    streakDays: 3,
+    stars: 24,
     masteryBoosts: {
       "read.phoneme.isolate": 0.75,
       "read.letters.sounds": 0.6,
@@ -63,11 +105,13 @@ async function main() {
     },
   });
 
-  await seedChild({
+  await seedChild(parent.id, {
     displayName: "Leo",
     ageBand: "9-10",
     sensoryMode: "balanced",
     interestPack: "dinos",
+    streakDays: 5,
+    stars: 40,
     masteryBoosts: {
       "read.phonics.cvc": 0.85,
       "read.phonics.blends": 0.7,
@@ -78,11 +122,13 @@ async function main() {
     },
   });
 
-  await seedChild({
+  await seedChild(parent.id, {
     displayName: "Sam",
     ageBand: "7-8",
     sensoryMode: "bright",
     interestPack: "space",
+    streakDays: 1,
+    stars: 12,
     masteryBoosts: {
       "math.number.20": 0.8,
       "math.placevalue.tens": 0.7,
@@ -92,7 +138,7 @@ async function main() {
     },
   });
 
-  console.log("Seeded Ava, Leo, Sam demo profiles");
+  console.log("Seeded Demo Parent + Ava, Leo, Sam with syllabus progress");
 }
 
 main()

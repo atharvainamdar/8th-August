@@ -2,8 +2,10 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { ActivityResult, PlannedItem } from "@/lib/adaptive/types";
+import { listenOnce, scoreReadAloud, speakText } from "@/lib/audio/voice";
 import { Button } from "../ui/Button";
 import { Card } from "../ui/Card";
+import { VideoModel } from "../media/VideoModel";
 
 const CHOICE_KINDS = new Set([
   "operation",
@@ -33,6 +35,7 @@ export function ActivityRenderer({
   const [tenCount, setTenCount] = useState(0);
   const [covered, setCovered] = useState(false);
   const [traceDone, setTraceDone] = useState(false);
+  const [listenStatus, setListenStatus] = useState("");
 
   useEffect(() => {
     started.current = Date.now();
@@ -42,14 +45,11 @@ export function ActivityRenderer({
     setTenCount(0);
     setCovered(false);
     setTraceDone(false);
+    setListenStatus("");
   }, [item.id]);
 
   const speak = (value: string) => {
-    if (!soundEnabled || typeof window === "undefined" || !window.speechSynthesis) return;
-    const u = new SpeechSynthesisUtterance(value);
-    u.rate = 0.9;
-    window.speechSynthesis.cancel();
-    window.speechSynthesis.speak(u);
+    void speakText(value, { enabled: soundEnabled });
   };
 
   const finish = (
@@ -100,14 +100,85 @@ export function ActivityRenderer({
       </div>
       <h2 className="m-0 whitespace-pre-wrap text-2xl font-bold leading-snug">{item.prompt}</h2>
 
-      {(item.modality === "audio" || item.modality === "avatar" || item.modality === "speak") && (
-        <Button
-          type="button"
-          variant="secondary"
-          onClick={() => speak(item.prompt.split("\n")[0] || item.prompt)}
-        >
-          Play voice
-        </Button>
+      <div className="flex flex-wrap gap-2">
+        {(item.modality === "audio" ||
+          item.modality === "avatar" ||
+          item.modality === "speak" ||
+          item.activityKind === "blend" ||
+          item.activityKind === "decode" ||
+          item.activityKind === "fluency") && (
+          <Button
+            type="button"
+            variant="secondary"
+            onClick={() => speak(item.prompt.split("\n")[0] || item.prompt)}
+          >
+            Play voice
+          </Button>
+        )}
+        {(item.modality === "speak" ||
+          item.activityKind === "fluency" ||
+          item.activityKind === "decode" ||
+          item.activityKind === "blend") && (
+          <Button
+            type="button"
+            variant="secondary"
+            onClick={async () => {
+              try {
+                setListenStatus("Listening...");
+                const heard = await listenOnce();
+                setListenStatus(`Heard: ${heard}`);
+                const target =
+                  typeof data.word === "string"
+                    ? data.word
+                    : typeof data.text === "string"
+                      ? data.text
+                      : String(data.answer ?? "");
+                if (target) {
+                  const scored = scoreReadAloud(target, heard);
+                  finish(scored.correct, heard, scored.partial, {
+                    matched: scored.matched,
+                    total: scored.total,
+                  });
+                } else {
+                  setText(heard);
+                }
+              } catch (e) {
+                setListenStatus(e instanceof Error ? e.message : "Could not listen");
+                setHintsUsed((h) => h + 1);
+              }
+            }}
+          >
+            Speak answer
+          </Button>
+        )}
+      </div>
+      {listenStatus && <p className="m-0 text-sm text-[color:var(--muted)]">{listenStatus}</p>}
+
+      {(item.modality === "video_model" ||
+        item.activityKind === "letter_trace" ||
+        item.activityKind === "blend" ||
+        item.activityKind === "ten_frame" ||
+        (item.activityKind === "operation" && String(data.op) === "*")) && (
+        <VideoModel
+          kind={
+            item.activityKind === "letter_trace"
+              ? "letter"
+              : item.activityKind === "ten_frame"
+                ? "ten_frame"
+                : item.activityKind === "operation"
+                  ? "equal_groups"
+                  : "blend"
+          }
+          label={
+            item.activityKind === "letter_trace"
+              ? String(data.letter ?? "a")
+              : item.activityKind === "ten_frame"
+                ? String(data.value ?? 6)
+                : item.activityKind === "blend"
+                  ? String((data.sounds as string[] | undefined)?.join("") ?? data.word ?? "cat")
+                  : "3x4"
+          }
+        />
       )}
 
       {item.activityKind === "comprehension" && typeof data.passage === "string" && (

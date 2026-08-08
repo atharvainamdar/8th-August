@@ -7,23 +7,41 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model ParentAccount {
+  id        String         @id @default(cuid())
+  email     String         @unique
+  name      String
+  plan      String         @default("trial") // trial | monthly | yearly
+  createdAt DateTime       @default(now())
+  children  ChildProfile[]
+}
+
 model ChildProfile {
-  id              String   @id @default(cuid())
-  displayName     String
-  ageBand         String   // "7-8" | "9-10"
-  sensoryMode     String   @default("balanced") // calm | balanced | bright
-  interestPack    String   @default("space")
-  dyslexiaFont    Boolean  @default(false)
-  soundEnabled     Boolean  @default(true)
-  motionEnabled   Boolean  @default(true)
-  celebrationLevel String  @default("medium") // off | low | medium
-  sessionMinutes  Int      @default(15)
-  placed          Boolean  @default(false)
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-  mastery         SkillMastery[]
-  sessions        Session[]
-  events          LearnerEvent[]
+  id               String   @id @default(cuid())
+  parentId         String?
+  parent           ParentAccount? @relation(fields: [parentId], references: [id], onDelete: SetNull)
+  displayName      String
+  ageBand          String
+  sensoryMode      String   @default("balanced")
+  interestPack     String   @default("space")
+  dyslexiaFont     Boolean  @default(false)
+  soundEnabled      Boolean  @default(true)
+  motionEnabled    Boolean  @default(true)
+  celebrationLevel String   @default("medium")
+  sessionMinutes   Int      @default(15)
+  placed           Boolean  @default(false)
+  currentUnitId    String   @default("unit.read.1")
+  streakDays       Int      @default(0)
+  bestStreak       Int      @default(0)
+  lastPracticeDate String?
+  totalMinutes     Int      @default(0)
+  stars            Int      @default(0)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  mastery          SkillMastery[]
+  sessions         Session[]
+  events           LearnerEvent[]
+  lessons          LessonProgress[]
 }
 
 model SkillMastery {
@@ -33,7 +51,7 @@ model SkillMastery {
   skillId   String
   alpha     Float    @default(1)
   beta      Float    @default(1)
-  level     Int      @default(0) // scaffold ceiling proxy
+  level     Int      @default(0)
   updatedAt DateTime @updatedAt
 
   @@unique([childId, skillId])
@@ -44,7 +62,7 @@ model Session {
   id            String   @id @default(cuid())
   childId       String
   child         ChildProfile @relation(fields: [childId], references: [id], onDelete: Cascade)
-  domain        String   // reading | writing | math | mixed | placement
+  domain        String
   moodStart     String?
   moodEnd       String?
   startedAt     DateTime @default(now())
@@ -52,6 +70,7 @@ model Session {
   itemsPlanned  Int      @default(0)
   itemsDone     Int      @default(0)
   adaptations   Int      @default(0)
+  starsEarned   Int      @default(0)
   summaryJson   String   @default("{}")
   events        LearnerEvent[]
 }
@@ -68,4 +87,19 @@ model LearnerEvent {
 
   @@index([childId, createdAt])
   @@index([sessionId])
+}
+
+model LessonProgress {
+  id          String   @id @default(cuid())
+  childId     String
+  child       ChildProfile @relation(fields: [childId], references: [id], onDelete: Cascade)
+  lessonId    String
+  unitId      String
+  status      String   @default("locked") // locked | available | done
+  score       Float    @default(0)
+  completedAt DateTime?
+  updatedAt   DateTime @updatedAt
+
+  @@unique([childId, lessonId])
+  @@index([childId, unitId])
 }
