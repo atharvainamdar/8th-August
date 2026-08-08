@@ -1,12 +1,13 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense, useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 
-export default function SetupPage() {
+function SetupInner() {
   const router = useRouter();
+  const params = useSearchParams();
   const [form, setForm] = useState({
     parentName: "",
     parentEmail: "",
@@ -23,6 +24,16 @@ export default function SetupPage() {
   });
   const [saving, setSaving] = useState(false);
 
+  useEffect(() => {
+    const plan = params.get("plan");
+    const email = params.get("email");
+    setForm((f) => ({
+      ...f,
+      plan: plan || f.plan,
+      parentEmail: email || f.parentEmail,
+    }));
+  }, [params]);
+
   const save = async () => {
     setSaving(true);
     const res = await fetch("/api/profiles", {
@@ -37,9 +48,9 @@ export default function SetupPage() {
 
   return (
     <main className="mx-auto min-h-screen max-w-2xl px-4 py-6">
-      <h1 className="text-3xl font-bold">Set up a learner</h1>
+      <h1 className="text-3xl font-bold">Set up your family</h1>
       <p className="text-[color:var(--muted)]">
-        Adults complete this once. Students use the home screen after that.
+        Parents complete this once. Then your child uses the student app.
       </p>
       <Card className="mt-4 space-y-4">
         <label className="block space-y-1">
@@ -149,9 +160,17 @@ export default function SetupPage() {
         </label>
 
         <Button disabled={saving || !form.displayName.trim()} onClick={save}>
-          {saving ? "Saving..." : "Save profile"}
+          {saving ? "Saving..." : "Save and open student app"}
         </Button>
       </Card>
     </main>
+  );
+}
+
+export default function SetupPage() {
+  return (
+    <Suspense>
+      <SetupInner />
+    </Suspense>
   );
 }

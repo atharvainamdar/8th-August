@@ -37,6 +37,14 @@ export async function POST(req: Request) {
   });
 
   const ended = next.decision.action === "end_session";
+  const existing = await prisma.session.findUniqueOrThrow({ where: { id: sessionId } });
+  let lessonId: string | undefined;
+  try {
+    lessonId = JSON.parse(existing.summaryJson || "{}").lessonId;
+  } catch {
+    lessonId = undefined;
+  }
+
   const session = await prisma.session.update({
     where: { id: sessionId },
     data: {
@@ -47,9 +55,29 @@ export async function POST(req: Request) {
       summaryJson: JSON.stringify({
         decision: next.decision,
         regulation: next.state.regulation,
+        lessonId,
       }),
     },
   });
+
+  if (ended && lessonId) {
+    await prisma.lessonProgress.upsert({
+      where: { childId_lessonId: { childId: next.state.childId, lessonId } },
+      create: {
+        childId: next.state.childId,
+        lessonId,
+        unitId: "unit.mixed.1",
+        status: "done",
+        score: Math.min(1, next.itemsDone / Math.max(1, next.itemsPlanned)),
+        completedAt: new Date(),
+      },
+      update: {
+        status: "done",
+        score: Math.min(1, next.itemsDone / Math.max(1, next.itemsPlanned)),
+        completedAt: new Date(),
+      },
+    });
+  }
 
   const child = await prisma.childProfile.findUniqueOrThrow({
     where: { id: next.state.childId },

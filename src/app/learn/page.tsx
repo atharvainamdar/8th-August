@@ -20,6 +20,7 @@ function LearnInner() {
   const mood = params.get("mood") || "ok";
   const domain = params.get("domain") || undefined;
   const placement = params.get("placement") === "1";
+  const lessonId = params.get("lessonId") || undefined;
 
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [runtime, setRuntime] = useState<SessionRuntime | null>(null);
@@ -38,14 +39,16 @@ function LearnInner() {
       const res = await fetch("/api/session/start", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ childId, mood, domain, placement }),
+        body: JSON.stringify({ childId, mood, domain, placement, lessonId }),
       });
       const json = await res.json();
       if (cancelled) return;
       setSessionId(json.sessionId);
       setRuntime(json.runtime);
       setCoachMessage(
-        `Hi ${json.runtime.state.displayName}. We will practice with your ${json.runtime.state.interestPack} theme.`
+        lessonId
+          ? `Hi ${json.runtime.state.displayName}. Today we will do your lesson with your ${json.runtime.state.interestPack} theme.`
+          : `Hi ${json.runtime.state.displayName}. We will practice with your ${json.runtime.state.interestPack} theme.`
       );
       document.documentElement.dataset.sensory = json.runtime.state.sensoryMode;
       document.documentElement.dataset.font = json.runtime.state.dyslexiaFont
@@ -55,7 +58,7 @@ function LearnInner() {
     return () => {
       cancelled = true;
     };
-  }, [childId, mood, domain, placement]);
+  }, [childId, mood, domain, placement, lessonId]);
 
   const schedule = useMemo(() => {
     if (!runtime) return [];
@@ -104,7 +107,11 @@ function LearnInner() {
     if (next.decision.action === "end_session") {
       setRuntime(next);
       setBusy(false);
-      router.push(`/progress?childId=${childId}&done=1`);
+      router.push(
+        starsEarned + Number(json.starsEarned || 0) >= 4
+          ? `/certificate/${childId}`
+          : `/progress?childId=${childId}&done=1`
+      );
       return;
     }
 

@@ -103,6 +103,12 @@ function ProgressInner() {
         <Link className="lumi-btn lumi-btn-ghost" href={`/adult?childId=${childId}`}>
           Adult report
         </Link>
+        <Link className="lumi-btn lumi-btn-ghost" href={`/certificate/${childId}`}>
+          Certificate
+        </Link>
+        <Link className="lumi-btn lumi-btn-ghost" href={`/parents`}>
+          Parent hub
+        </Link>
       </div>
     </main>
   );

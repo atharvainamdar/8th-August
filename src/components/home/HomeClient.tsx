@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Card } from "../ui/Card";
+import { TodayPlan } from "./TodayPlan";
 
 type Profile = {
   id: string;
@@ -55,6 +56,8 @@ export function HomeClient({ profiles }: { profiles: Profile[] }) {
         ))}
       </div>
 
+      <div className="space-y-4">
+      <TodayPlan childId={profile.id} />
       <Card className="space-y-4">
         <h3 className="m-0 text-xl font-bold">How do you feel?</h3>
         <div className="grid grid-cols-3 gap-2">
@@ -109,6 +112,7 @@ export function HomeClient({ profiles }: { profiles: Profile[] }) {
           ))}
         </div>
       </Card>
+      </div>
     </div>
   );
 }

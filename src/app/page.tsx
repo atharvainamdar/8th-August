@@ -162,8 +162,11 @@ export default function LandingPage() {
 
       <footer className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-8 text-sm text-[color:var(--muted)]">
         <p className="m-0">Lumi · Educational practice tool · Not clinical therapy</p>
-        <div className="flex gap-3">
+        <div className="flex flex-wrap gap-3">
           <Link href="/parents">Parent hub</Link>
+          <Link href="/faq">FAQ</Link>
+          <Link href="/legal/privacy">Privacy</Link>
+          <Link href="/legal/terms">Terms</Link>
           <Link href="/docs/pilot">Pilot protocol</Link>
           <Link href="/app">Student app</Link>
         </div>

@@ -51,11 +51,18 @@ export default function SyllabusPage() {
           <div className="space-y-2">
             {unit.lessons.map((lesson) => (
               <div key={lesson.id} className="rounded-2xl border border-[color:var(--border)] p-3">
-                <p className="m-0 font-semibold">{lesson.title}</p>
-                <p className="m-0 text-sm text-[color:var(--muted)]">
-                  {lesson.minutes} min · skills: {lesson.skills.join(", ") || "mixed"} · modes:{" "}
-                  {lesson.modalities.join(", ")}
-                </p>
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <div>
+                    <p className="m-0 font-semibold">{lesson.title}</p>
+                    <p className="m-0 text-sm text-[color:var(--muted)]">
+                      {lesson.minutes} min · skills: {lesson.skills.join(", ") || "mixed"} · modes:{" "}
+                      {lesson.modalities.join(", ")}
+                    </p>
+                  </div>
+                  <Link className="lumi-btn lumi-btn-secondary" href={`/lessons/${lesson.id}`}>
+                    Open lesson
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
