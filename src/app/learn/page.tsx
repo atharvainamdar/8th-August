@@ -81,6 +81,11 @@ function LearnInner() {
     if (next.decision.offerCalmCorner || next.decision.action === "offer_break") {
       setTransition("Next: a short calm break is available.");
       setShowCalm(true);
+      // Mark break acceptance in local event stream so policy won't loop
+      next.events = [
+        ...next.events,
+        { type: "break_accepted", at: Date.now() },
+      ];
     } else if (
       next.decision.action === "switch_modality" ||
       next.decision.action === "increase_scaffold"

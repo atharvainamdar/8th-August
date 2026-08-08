@@ -56,7 +56,15 @@ export function buildActivity(decision: PolicyDecision): PlannedItem {
           decision.scaffold,
           `Say ${item.sounds.join("-")} → ${item.word}`
         ),
-        data: { ...item, options: shuffle([item.word, item.word + "s", "map", "sun"]).slice(0, 3) },
+        data: {
+          ...item,
+          options: shuffle([
+            item.word,
+            item.word.endsWith("p") ? item.word.slice(0, -1) + "t" : item.word + "n",
+            "map",
+            "sun",
+          ]).filter((w, i, arr) => arr.indexOf(w) === i).slice(0, 3),
+        },
       };
     }
     case "decode": {

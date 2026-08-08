@@ -108,8 +108,11 @@ export function decideNext(
     };
   }
 
-  // Offer break / calm corner when stressed
-  if (summary.stressed && summary.consecutiveWrong >= 2) {
+  // Offer break / calm corner when stressed — once per struggle streak
+  const recentlyOfferedBreak = events
+    .slice(-6)
+    .some((e) => e.type === "break_accepted" || e.type === "break_declined");
+  if (summary.stressed && summary.consecutiveWrong >= 2 && !recentlyOfferedBreak) {
     const skill = opts.forceSkillId ? getSkill(opts.forceSkillId) : chooseSkill(nextState, domain);
     const scaffold = bumpScaffold(nextState.scaffoldByDomain[domain], 1);
     nextState = {
