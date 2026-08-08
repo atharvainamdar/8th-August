@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-08T12:06:28.440Z",
+  "generatedAt": "2026-08-08T12:09:05.552Z",
   "note": "Simulated learners under identical early struggle; adaptive recovers via support, fixed stays independent.",
   "adaptive": {
     "adaptations": 24,
     "itemsDone": 50,
     "correctCount": 24,
     "accuracy": 0.48,
-    "avgMasteryAll": 0.3513,
+    "avgMasteryAll": 0.3512,
     "avgMasteryPracticed": 0.4704
   },
   "fixed": {

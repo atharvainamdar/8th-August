@@ -16,8 +16,8 @@
 | Educator share / pilot protocol | Done |
 | Offline-first + optional AI keys | Done |
 | Tests + smoke + simulation proof | Done |
-| Durable public hosting (Vercel) | Pending secrets (`VERCEL_TOKEN`) |
-| Real card billing (Stripe) | Pending secrets (Stripe keys); API ready |
+| Durable public hosting (Vercel) | Pending secrets — run `npm run deploy` after setting `VERCEL_TOKEN` |
+| Real card billing (Stripe) | Pending secrets — run `npm run stripe:check`; checkout API is Stripe-ready |
 
 ## Live demo
 
