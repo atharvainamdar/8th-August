@@ -137,8 +137,11 @@ export default function ParentsPage() {
             <a className="lumi-btn lumi-btn-secondary" href={`/api/export/${selected}?format=csv`}>
               Download CSV
             </a>
-            <a className="lumi-btn lumi-btn-ghost" href={`/api/report/weekly/${selected}`}>
+            <Link className="lumi-btn lumi-btn-ghost" href={`/parents/weekly/${selected}`}>
               Weekly report
+            </Link>
+            <a className="lumi-btn lumi-btn-ghost" href={`/api/report/weekly/${selected}`}>
+              Printable report
             </a>
             <Link className="lumi-btn lumi-btn-ghost" href={`/progress?childId=${selected}`}>
               Kid Growth Story

@@ -65,6 +65,7 @@ GOOGLE_GENERATIVE_AI_API_KEY=
 - `npm test` — adaptive engine tests
 - `npm run db:seed` — demo parent + children
 - `npm run build` — production build
+- `npm run smoke` — route smoke checks against local server
 
 ## Docs
 
