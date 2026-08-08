@@ -14,39 +14,28 @@ export default async function KidAppHomePage() {
       <header className="mb-6 flex flex-wrap items-center justify-between gap-3">
         <div>
           <p className="m-0 text-sm font-semibold uppercase tracking-wide text-[color:var(--muted)]">
-            Student home
+            Hi friend
           </p>
           <h1 className="m-0 text-4xl font-bold">Lumi</h1>
         </div>
-        <nav className="flex flex-wrap gap-2">
-          <Link className="lumi-btn lumi-btn-secondary" href="/setup">
-            New profile
-          </Link>
-          <Link className="lumi-btn lumi-btn-ghost" href="/syllabus">
-            Syllabus
-          </Link>
-          <Link className="lumi-btn lumi-btn-ghost" href="/parents">
-            Parent hub
-          </Link>
-          <Link className="lumi-btn lumi-btn-ghost" href="/">
-            About Lumi
-          </Link>
-        </nav>
+        <Link className="text-sm font-semibold text-[color:var(--muted)] underline" href="/parents">
+          Parent hub
+        </Link>
       </header>
 
       <OnboardingTip />
       <Card className="mb-6">
-        <h2 className="mt-0 text-2xl font-bold">Choose who is learning</h2>
-        <p className="text-[color:var(--muted)]">
-          Pick a profile, check how you feel, then practice with Lumi.
+        <h2 className="mt-0 text-2xl font-bold">Let&apos;s practice</h2>
+        <p className="m-0 text-[color:var(--muted)]">
+          Pick your name, tap how you feel, then press Start.
         </p>
       </Card>
 
       {profiles.length === 0 ? (
-        <Card>
-          <p>No profiles yet. Create one to begin.</p>
+        <Card className="space-y-3">
+          <p className="m-0">A grown-up needs to make your profile first.</p>
           <Link className="lumi-btn lumi-btn-primary inline-flex" href="/setup">
-            Create profile
+            Grown-up setup
           </Link>
         </Card>
       ) : (

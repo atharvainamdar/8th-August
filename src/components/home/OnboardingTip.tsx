@@ -19,12 +19,11 @@ export function OnboardingTip() {
 
   return (
     <Card className="mb-4 space-y-3 border-2 border-[color:var(--primary)]">
-      <h2 className="m-0 text-xl font-bold">Quick start for kids</h2>
-      <ol className="m-0 pl-5">
+      <h2 className="m-0 text-xl font-bold">Quick start</h2>
+      <ol className="m-0 pl-5 text-lg">
         <li>Pick your name.</li>
         <li>Tap how you feel.</li>
-        <li>Start Today&apos;s plan or Reading / Writing / Math.</li>
-        <li>Use Calm Corner anytime.</li>
+        <li>Press Start practice. Use Calm Corner anytime.</li>
       </ol>
       <Button
         onClick={() => {

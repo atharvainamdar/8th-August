@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import type { SessionRuntime } from "@/lib/adaptive/session";
 import type { ActivityResult } from "@/lib/adaptive/types";
-import { modalityLabel } from "@/lib/curriculum/activities";
+import { interestLabel } from "@/lib/ui/labels";
 
 function LearnInner() {
   const params = useSearchParams();
@@ -25,8 +25,10 @@ function LearnInner() {
 
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [runtime, setRuntime] = useState<SessionRuntime | null>(null);
-  const [coachMessage, setCoachMessage] = useState("Loading your plan...");
+  const [coachMessage, setCoachMessage] = useState("Getting ready...");
   const [showCalm, setShowCalm] = useState(false);
+  const [showHomework, setShowHomework] = useState(false);
+  const [showDone, setShowDone] = useState(false);
   const [transition, setTransition] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const [feedback, setFeedback] = useState<string | null>(null);
@@ -46,10 +48,11 @@ function LearnInner() {
       if (cancelled) return;
       setSessionId(json.sessionId);
       setRuntime(json.runtime);
+      const theme = interestLabel(json.runtime.state.interestPack);
       setCoachMessage(
         lessonId
-          ? `Hi ${json.runtime.state.displayName}. Today we will do your lesson with your ${json.runtime.state.interestPack} theme.`
-          : `Hi ${json.runtime.state.displayName}. We will practice with your ${json.runtime.state.interestPack} theme.`
+          ? `Hi ${json.runtime.state.displayName}. Today we practice with your ${theme} theme.`
+          : `Hi ${json.runtime.state.displayName}. Let's practice with your ${theme} theme.`
       );
       document.documentElement.dataset.sensory = json.runtime.state.sensoryMode;
       document.documentElement.dataset.font = json.runtime.state.dyslexiaFont
@@ -65,16 +68,27 @@ function LearnInner() {
     if (!runtime) return [];
     const labels = Array.from({ length: runtime.itemsPlanned }).map((_, i) => {
       if (i < runtime.itemsDone) return "Done";
-      if (i === runtime.itemsDone) return runtime.item.activityKind.replaceAll("_", " ");
-      return "Practice";
+      if (i === runtime.itemsDone) return "Now";
+      return "Next";
     });
     return labels.slice(0, Math.min(5, labels.length));
   }, [runtime]);
 
+  const finishSession = (totalStars: number) => {
+    setShowDone(true);
+    setTimeout(() => {
+      router.push(
+        totalStars >= 4
+          ? `/certificate/${childId}`
+          : `/progress?childId=${childId}&done=1`
+      );
+    }, 1600);
+  };
+
   const onResult = async (result: ActivityResult) => {
     if (!runtime || !sessionId || busy) return;
     setBusy(true);
-    setFeedback(result.correct ? "Yes. That works." : "Good try. We can use more help.");
+    setFeedback(result.correct ? "Yes! That works." : "Good try. Lumi will help.");
     const res = await fetch("/api/session/answer", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -83,24 +97,20 @@ function LearnInner() {
     const json = await res.json();
     const next = json.runtime as SessionRuntime;
     setCoachMessage(json.coachMessage);
-    if (json.starsEarned) setStarsEarned((s) => s + Number(json.starsEarned || 0));
+    const newStars = starsEarned + Number(json.starsEarned || 0);
+    if (json.starsEarned) setStarsEarned(newStars);
+
     if (next.decision.offerCalmCorner || next.decision.action === "offer_break") {
-      setTransition("Next: a short calm break is available.");
+      setTransition("Nice pause time. Calm Corner is ready.");
       setShowCalm(true);
-      // Mark break acceptance in local event stream so policy won't loop
-      next.events = [
-        ...next.events,
-        { type: "break_accepted", at: Date.now() },
-      ];
+      next.events = [...next.events, { type: "break_accepted", at: Date.now() }];
     } else if (
       next.decision.action === "switch_modality" ||
       next.decision.action === "increase_scaffold"
     ) {
-      setTransition(
-        `Next: ${modalityLabel(next.decision.modality)} · more support (${next.decision.scaffold})`
-      );
+      setTransition("Lumi will help a different way.");
     } else if (next.decision.action === "change_skill") {
-      setTransition("Next: a new skill.");
+      setTransition("Let's try a new one.");
     } else {
       setTransition(null);
     }
@@ -108,11 +118,7 @@ function LearnInner() {
     if (next.decision.action === "end_session") {
       setRuntime(next);
       setBusy(false);
-      router.push(
-        starsEarned + Number(json.starsEarned || 0) >= 4
-          ? `/certificate/${childId}`
-          : `/progress?childId=${childId}&done=1`
-      );
+      finishSession(newStars);
       return;
     }
 
@@ -121,6 +127,23 @@ function LearnInner() {
       setFeedback(null);
       setBusy(false);
     }, next.state.sensoryMode === "calm" ? 400 : 700);
+  };
+
+  const askEasier = async () => {
+    if (!runtime || busy) return;
+    setTransition("Okay — Lumi will make this easier.");
+    setCoachMessage("No problem. We can do an easier step together.");
+    await onResult({
+      skillId: runtime.item.skillId,
+      correct: false,
+      partial: 0.2,
+      latencyMs: 45_000,
+      modality: runtime.item.modality,
+      scaffold: runtime.item.scaffold,
+      hintsUsed: 2,
+      skipped: true,
+      response: "too_hard",
+    });
   };
 
   const onHomework = async (file: File) => {
@@ -136,7 +159,21 @@ function LearnInner() {
     return (
       <main className="p-6">
         <p>Missing child profile.</p>
-        <Link href="/">Go home</Link>
+        <Link href="/app">Go to student home</Link>
+      </main>
+    );
+  }
+
+  if (showDone) {
+    return (
+      <main className="grid min-h-screen place-items-center p-6 text-center">
+        <div className="space-y-3">
+          <p className="m-0 text-5xl" aria-hidden>
+            ⭐
+          </p>
+          <h1 className="m-0 text-3xl font-bold">Nice work!</h1>
+          <p className="m-0 text-xl">You earned {starsEarned} stars this time.</p>
+        </div>
       </main>
     );
   }
@@ -147,7 +184,7 @@ function LearnInner() {
         <CalmCorner
           onDone={() => {
             setShowCalm(false);
-            setTransition("Back to practice.");
+            setTransition("Welcome back. Ready when you are.");
           }}
         />
       </main>
@@ -157,7 +194,7 @@ function LearnInner() {
   if (!runtime) {
     return (
       <main className="grid min-h-screen place-items-center p-6">
-        <p className="text-xl font-semibold">Lumi is getting your plan ready...</p>
+        <p className="text-xl font-semibold">Lumi is getting ready...</p>
       </main>
     );
   }
@@ -183,33 +220,70 @@ function LearnInner() {
           <Button variant="secondary" onClick={() => setShowCalm(true)}>
             Calm Corner
           </Button>
-          <Link className="lumi-btn lumi-btn-ghost" href="/">
-            Stop
-          </Link>
+          <Button
+            variant="ghost"
+            onClick={() => finishSession(starsEarned)}
+          >
+            I&apos;m done
+          </Button>
         </div>
       </header>
 
-      <VisualSchedule items={schedule} currentIndex={Math.min(runtime.itemsDone, schedule.length - 1)} />
+      <VisualSchedule
+        items={schedule}
+        currentIndex={Math.min(runtime.itemsDone, schedule.length - 1)}
+      />
 
       <Card className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <p className="m-0 text-sm font-semibold uppercase text-[color:var(--muted)]">First → Then</p>
-          <p className="m-0 text-lg font-bold">
-            First: practice · Then: stars & break
+          <p className="m-0 text-sm font-semibold uppercase text-[color:var(--muted)]">
+            First → Then
           </p>
+          <p className="m-0 text-lg font-bold">First: practice · Then: stars</p>
         </div>
         <div className="flex flex-wrap items-center gap-3">
-          <SessionTimer minutes={runtime.state.sessionMinutes} running={!showCalm && !busy} />
-          <p className="m-0 text-lg font-bold">⭐ Session stars: {starsEarned}</p>
+          <SessionTimer
+            minutes={runtime.state.sessionMinutes}
+            running={!showCalm && !busy}
+          />
+          <p className="m-0 text-lg font-bold">⭐ {starsEarned}</p>
         </div>
       </Card>
+
+      <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+        <Button variant="secondary" onClick={() => setShowCalm(true)} disabled={busy}>
+          Need a break
+        </Button>
+        <Button variant="secondary" onClick={() => void askEasier()} disabled={busy}>
+          Too hard
+        </Button>
+        <Button
+          variant="secondary"
+          disabled={busy}
+          onClick={() =>
+            void onResult({
+              skillId: runtime.item.skillId,
+              correct: false,
+              partial: 0,
+              latencyMs: 1_000,
+              modality: runtime.item.modality,
+              scaffold: runtime.item.scaffold,
+              hintsUsed: 0,
+              skipped: true,
+              response: "skip",
+            })
+          }
+        >
+          Skip
+        </Button>
+        <Button variant="ghost" onClick={() => finishSession(starsEarned)} disabled={busy}>
+          I&apos;m done
+        </Button>
+      </div>
 
       {transition && (
         <Card className="border-[color:var(--accent)] bg-[#eef2ff]">
           <p className="m-0 font-semibold">{transition}</p>
-          <p className="m-0 mt-1 text-sm text-[color:var(--muted)]">
-            Adaptation #{runtime.adaptations} · Regulation: {runtime.state.regulation}
-          </p>
         </Card>
       )}
 
@@ -226,19 +300,31 @@ function LearnInner() {
       />
 
       <Card className="space-y-3">
-        <h3 className="m-0 text-lg font-bold">Homework photo help</h3>
-        <p className="m-0 text-[color:var(--muted)]">
-          Optional. Lumi gives one small step, not a full answer dump.
-        </p>
-        <input
-          type="file"
-          accept="image/*"
-          onChange={(e) => {
-            const file = e.target.files?.[0];
-            if (file) void onHomework(file);
-          }}
-        />
-        {homeworkNote && <p className="m-0 rounded-2xl bg-[#eef5f1] p-3">{homeworkNote}</p>}
+        <button
+          type="button"
+          className="m-0 w-full text-left text-lg font-bold"
+          onClick={() => setShowHomework((v) => !v)}
+        >
+          {showHomework ? "▾" : "▸"} Need help with a worksheet?
+        </button>
+        {showHomework && (
+          <>
+            <p className="m-0 text-[color:var(--muted)]">
+              Optional. Take a photo and Lumi gives one small next step.
+            </p>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) => {
+                const file = e.target.files?.[0];
+                if (file) void onHomework(file);
+              }}
+            />
+            {homeworkNote && (
+              <p className="m-0 rounded-2xl bg-[#eef5f1] p-3">{homeworkNote}</p>
+            )}
+          </>
+        )}
       </Card>
     </main>
   );

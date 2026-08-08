@@ -48,9 +48,9 @@ function SetupInner() {
 
   return (
     <main className="mx-auto min-h-screen max-w-2xl px-4 py-6">
-      <h1 className="text-3xl font-bold">Set up your family</h1>
+      <h1 className="text-3xl font-bold">Tell Lumi about your child</h1>
       <p className="text-[color:var(--muted)]">
-        Parents complete this once. Then your child uses the student app.
+        About 2 minutes. Then your child can practice on their own.
       </p>
       <Card className="mt-4 space-y-4">
         <label className="block space-y-1">

@@ -13,58 +13,63 @@ export default function LandingPage() {
           </div>
           <div>
             <p className="m-0 text-xs font-semibold uppercase tracking-wide text-[color:var(--muted)]">
-              AI tutor for autistic kids
+              Calm homework help for ages 7–10
             </p>
             <h1 className="m-0 text-2xl font-bold">Lumi</h1>
           </div>
         </div>
         <nav className="flex flex-wrap gap-2">
-          <a className="lumi-btn lumi-btn-ghost" href="#how">How it works</a>
-          <a className="lumi-btn lumi-btn-ghost" href="#syllabus">Syllabus</a>
-          <a className="lumi-btn lumi-btn-ghost" href="#pricing">Pricing</a>
-          <Link className="lumi-btn lumi-btn-primary" href="/setup">Start free</Link>
+          <a className="lumi-btn lumi-btn-ghost" href="#how">
+            How it works
+          </a>
+          <a className="lumi-btn lumi-btn-ghost" href="#pricing">
+            Pricing
+          </a>
+          <Link className="lumi-btn lumi-btn-primary" href="/setup">
+            I&apos;m a parent
+          </Link>
         </nav>
       </header>
 
       <section className="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-2 md:items-center">
         <div className="space-y-5">
-          <p className="lumi-chip">YC Primer wedge · Reading · Writing · Arithmetic</p>
+          <p className="lumi-chip">Reading · Writing · Math practice</p>
           <h2 className="m-0 text-4xl font-bold leading-tight md:text-5xl">
-            A calm 1:1 AI tutor that autistic kids actually want to open.
+            Homework help your child can do alone for 15 calm minutes.
           </h2>
           <p className="m-0 text-lg text-[color:var(--muted)]">
-            Lumi adapts difficulty, voice, visuals, video models, and support in real time —
-            so homework practice gets done, skills grow, and parents get time back.
+            Lumi is a friendly one-on-one tutor for autistic kids. It helps with reading, writing,
+            and math — and makes practice easier when things feel hard.
           </p>
-          <div className="flex flex-wrap gap-3">
-            <Link className="lumi-btn lumi-btn-primary" href="/setup">
-              Start free trial
+          <div className="grid gap-3 sm:grid-cols-2">
+            <Link
+              className="lumi-btn lumi-btn-primary justify-center px-6 py-4 text-lg"
+              href="/setup"
+            >
+              I&apos;m a parent — set up
             </Link>
-            <Link className="lumi-btn lumi-btn-secondary" href="/app">
-              Open student app
-            </Link>
-            <Link className="lumi-btn lumi-btn-ghost" href="/demo">
-              See YC demo
-            </Link>
-            <Link className="lumi-btn lumi-btn-ghost" href="/guide">
-              Parent guide
+            <Link
+              className="lumi-btn lumi-btn-secondary justify-center px-6 py-4 text-lg"
+              href="/app"
+            >
+              I&apos;m a student — start
             </Link>
           </div>
           <ul className="m-0 grid gap-2 p-0 text-base" style={{ listStyle: "none" }}>
-            <li>✓ Science-of-reading + arithmetic syllabus for ages 7–10</li>
-            <li>✓ Voice practice, video models, Calm Corner</li>
-            <li>✓ Weekly progress parents and educators can trust</li>
-            <li>✓ Not therapy. Not clinical. Pure skill practice that compounds.</li>
+            <li>✓ Short sessions that finish cleanly</li>
+            <li>✓ Voice, pictures, and video examples</li>
+            <li>✓ Calm Corner anytime if practice feels too much</li>
+            <li>✓ Parents see simple weekly progress</li>
           </ul>
         </div>
         <div className="lumi-card space-y-4 p-6">
           <h3 className="m-0 text-xl font-bold">What parents get</h3>
           <div className="grid gap-3">
             {[
-              ["15 focused minutes", "Short sessions that finish cleanly"],
-              ["Real adaptation", "Scaffold + modality switch when stuck"],
-              ["Special interests", "Trains, space, dinos, animals, ocean"],
-              ["Measurable growth", "Mastery maps, streaks, weekly reports"],
+              ["15 quiet minutes", "Your child practices while you step away"],
+              ["Help that flexes", "Lumi gives more support when they struggle"],
+              ["Built around interests", "Trains, space, dinos, animals, ocean"],
+              ["Clear progress", "Streaks, stars, and a simple weekly report"],
             ].map(([t, d]) => (
               <div key={t} className="rounded-2xl bg-[#eef5f1] p-4">
                 <p className="m-0 font-bold">{t}</p>
@@ -76,20 +81,20 @@ export default function LandingPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-10">
-        <h2 className="mt-0 text-3xl font-bold">What families say they need</h2>
+        <h2 className="mt-0 text-3xl font-bold">Built for real family nights</h2>
         <div className="mt-6 grid gap-4 md:grid-cols-3">
           {[
             [
-              "Homework without meltdowns",
-              "Parents want a calm helper that finishes practice without a fight every night.",
+              "Less homework fighting",
+              "A calm helper that finishes practice without a battle every night.",
             ],
             [
-              "Skills that actually move",
-              "Special educators asked for measurable reading, writing, and arithmetic growth—not fluff.",
+              "Skills that move",
+              "Reading, writing, and math practice you can actually see improve.",
             ],
             [
-              "Respect for sensory needs",
-              "Kids need predictable screens, voice options, and a way out when things feel too hard.",
+              "A way out when it is hard",
+              "Kids can pause, take a calm break, or ask for an easier step anytime.",
             ],
           ].map(([t, d]) => (
             <div key={t} className="lumi-card p-5">
@@ -102,13 +107,12 @@ export default function LandingPage() {
 
       <section id="how" className="border-y border-[color:var(--border)] bg-white/60 py-12">
         <div className="mx-auto max-w-6xl px-4">
-          <h2 className="mt-0 text-3xl font-bold">How Lumi works</h2>
-          <div className="mt-6 grid gap-4 md:grid-cols-4">
+          <h2 className="mt-0 text-3xl font-bold">How it works</h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
             {[
-              ["1. Setup once", "Sensory mode, interest, goals"],
-              ["2. Placement", "Find the right skill level"],
-              ["3. Daily practice", "Voice, video, manipulatives"],
-              ["4. See growth", "Parent hub + weekly report"],
+              ["1. Parent sets up once", "Tell Lumi about your child in about 2 minutes."],
+              ["2. Child practices", "About 15 minutes. Lumi guides. Kid can pause anytime."],
+              ["3. You see how it went", "Open the parent hub for streaks and growth."],
             ].map(([t, d]) => (
               <div key={t} className="lumi-card p-5">
                 <h3 className="mt-0 text-lg font-bold">{t}</h3>
@@ -116,36 +120,6 @@ export default function LandingPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section id="syllabus" className="mx-auto max-w-6xl px-4 py-12">
-        <div className="flex flex-wrap items-end justify-between gap-3">
-          <div>
-            <h2 className="m-0 text-3xl font-bold">8-week core syllabus</h2>
-            <p className="text-[color:var(--muted)]">
-              Skill-based, age-respectful. Reading, writing, and arithmetic intertwined.
-            </p>
-          </div>
-          <Link className="lumi-btn lumi-btn-secondary" href="/syllabus">
-            View full syllabus
-          </Link>
-        </div>
-        <div className="mt-6 grid gap-3 md:grid-cols-4">
-          {[
-            "Sounds → words",
-            "Blend & build",
-            "Fluency passages",
-            "Comprehension",
-            "Letters → sentences",
-            "Number sense",
-            "Word problems",
-            "Showcase week",
-          ].map((item) => (
-            <div key={item} className="lumi-card p-4 font-semibold">
-              {item}
-            </div>
-          ))}
         </div>
       </section>
 
@@ -159,46 +133,57 @@ export default function LandingPage() {
             <div className="lumi-card p-6">
               <h3 className="mt-0 text-xl font-bold">Free trial</h3>
               <p className="text-3xl font-bold">$0</p>
-              <p className="text-[color:var(--muted)]">7 days · 1 child · full syllabus access</p>
+              <p className="text-[color:var(--muted)]">7 days · 1 child · full practice</p>
               <Link className="lumi-btn lumi-btn-secondary mt-4 inline-flex" href="/setup">
-                Start trial
+                Start free today
               </Link>
             </div>
             <div className="lumi-card border-2 border-[color:var(--primary)] p-6">
               <p className="lumi-chip">Most families</p>
               <h3 className="mt-2 text-xl font-bold">Monthly</h3>
-              <p className="text-3xl font-bold">$29<span className="text-base font-semibold">/mo</span></p>
-              <p className="text-[color:var(--muted)]">Unlimited practice · progress reports · 2 children</p>
-              <Link className="lumi-btn lumi-btn-primary mt-4 inline-flex" href="/checkout?plan=monthly">
+              <p className="text-3xl font-bold">
+                $29<span className="text-base font-semibold">/mo</span>
+              </p>
+              <p className="text-[color:var(--muted)]">
+                Unlimited practice · progress reports · 2 children
+              </p>
+              <Link
+                className="lumi-btn lumi-btn-primary mt-4 inline-flex"
+                href="/checkout?plan=monthly"
+              >
                 Choose monthly
               </Link>
             </div>
             <div className="lumi-card p-6">
               <h3 className="mt-0 text-xl font-bold">Yearly</h3>
-              <p className="text-3xl font-bold">$199<span className="text-base font-semibold">/yr</span></p>
-              <p className="text-[color:var(--muted)]">Best value · educator export · priority support</p>
-              <Link className="lumi-btn lumi-btn-secondary mt-4 inline-flex" href="/checkout?plan=yearly">
+              <p className="text-3xl font-bold">
+                $199<span className="text-base font-semibold">/yr</span>
+              </p>
+              <p className="text-[color:var(--muted)]">Best value · share with teachers · support</p>
+              <Link
+                className="lumi-btn lumi-btn-secondary mt-4 inline-flex"
+                href="/checkout?plan=yearly"
+              >
                 Choose yearly
               </Link>
             </div>
           </div>
           <p className="mt-4 text-sm text-[color:var(--muted)]">
-            Payment can be connected later (Stripe). Trial unlocks the full product experience today.
+            Start free today. You can upgrade when your family is ready.
           </p>
         </div>
       </section>
 
       <footer className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-8 text-sm text-[color:var(--muted)]">
-        <p className="m-0">Lumi · Educational practice tool · Not clinical therapy</p>
+        <p className="m-0">Lumi · Homework practice tool · Not therapy</p>
         <div className="flex flex-wrap gap-3">
           <Link href="/parents">Parent hub</Link>
-          <Link href="/guide">Guide</Link>
+          <Link href="/guide">Parent guide</Link>
           <Link href="/faq">FAQ</Link>
-          <Link href="/legal/privacy">Privacy</Link>
-          <Link href="/legal/terms">Terms</Link>
-          <Link href="/docs/pilot">Pilot protocol</Link>
-          <Link href="/contact">Contact</Link>
           <Link href="/app">Student app</Link>
+          <Link href="/demo">Investor demo</Link>
+          <Link href="/legal/privacy">Privacy</Link>
+          <Link href="/contact">Contact</Link>
         </div>
       </footer>
     </main>
