@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 
 type Profile = {
@@ -142,6 +143,22 @@ export default function ParentsPage() {
             <Link className="lumi-btn lumi-btn-ghost" href={`/progress?childId=${selected}`}>
               Kid Growth Story
             </Link>
+            <Link className="lumi-btn lumi-btn-ghost" href={`/rewards?childId=${selected}`}>
+              Rewards
+            </Link>
+            <Button
+              variant="ghost"
+              onClick={async () => {
+                if (!confirm("Delete this child profile and practice data?")) return;
+                await fetch(`/api/profiles/${selected}`, { method: "DELETE" });
+                const j = await fetch("/api/profiles").then((r) => r.json());
+                setProfiles(j.profiles);
+                setSelected(j.profiles[0]?.id || "");
+                setReport(null);
+              }}
+            >
+              Delete profile
+            </Button>
           </div>
         </>
       )}

@@ -72,6 +72,31 @@ export default function LandingPage() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-6xl px-4 py-10">
+        <h2 className="mt-0 text-3xl font-bold">What families say they need</h2>
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          {[
+            [
+              "Homework without meltdowns",
+              "Parents want a calm helper that finishes practice without a fight every night.",
+            ],
+            [
+              "Skills that actually move",
+              "Special educators asked for measurable reading, writing, and arithmetic growth—not fluff.",
+            ],
+            [
+              "Respect for sensory needs",
+              "Kids need predictable screens, voice options, and a way out when things feel too hard.",
+            ],
+          ].map(([t, d]) => (
+            <div key={t} className="lumi-card p-5">
+              <h3 className="mt-0 text-lg font-bold">{t}</h3>
+              <p className="m-0 text-[color:var(--muted)]">{d}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section id="how" className="border-y border-[color:var(--border)] bg-white/60 py-12">
         <div className="mx-auto max-w-6xl px-4">
           <h2 className="mt-0 text-3xl font-bold">How Lumi works</h2>

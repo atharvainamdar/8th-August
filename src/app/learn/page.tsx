@@ -7,6 +7,7 @@ import { ActivityRenderer } from "@/components/activities/ActivityRenderer";
 import { CalmCorner } from "@/components/calm/CalmCorner";
 import { LumiCompanion } from "@/components/companion/Lumi";
 import { VisualSchedule } from "@/components/session/VisualSchedule";
+import { SessionTimer } from "@/components/session/SessionTimer";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import type { SessionRuntime } from "@/lib/adaptive/session";
@@ -197,7 +198,10 @@ function LearnInner() {
             First: practice · Then: stars & break
           </p>
         </div>
-        <p className="m-0 text-lg font-bold">⭐ Session stars: {starsEarned}</p>
+        <div className="flex flex-wrap items-center gap-3">
+          <SessionTimer minutes={runtime.state.sessionMinutes} running={!showCalm && !busy} />
+          <p className="m-0 text-lg font-bold">⭐ Session stars: {starsEarned}</p>
+        </div>
       </Card>
 
       {transition && (

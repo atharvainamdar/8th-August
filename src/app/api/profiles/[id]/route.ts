@@ -30,7 +30,17 @@ export async function PATCH(
       celebrationLevel: body.celebrationLevel,
       sessionMinutes: body.sessionMinutes,
       placed: body.placed,
+      displayName: body.displayName,
     },
   });
   return NextResponse.json({ profile });
+}
+
+export async function DELETE(
+  _req: Request,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  const { id } = await params;
+  await prisma.childProfile.delete({ where: { id } });
+  return NextResponse.json({ ok: true });
 }

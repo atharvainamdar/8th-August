@@ -98,6 +98,12 @@ export function HomeClient({ profiles }: { profiles: Profile[] }) {
           >
             Growth Story
           </Link>
+          <Link
+            className="lumi-btn lumi-btn-ghost text-center"
+            href={`/rewards?childId=${profile.id}`}
+          >
+            Reward board
+          </Link>
         </div>
 
         <div className="grid grid-cols-3 gap-2">
