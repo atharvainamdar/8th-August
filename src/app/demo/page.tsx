@@ -49,6 +49,14 @@ export default async function DemoPage() {
           Hardest learners first → durable adaptive tutor → path to a full Primer for every child.
         </p>
       </Card>
+      <Card>
+        <h2 className="mt-0 text-xl font-bold">5. Simulation proof</h2>
+        <p className="m-0 text-[color:var(--muted)]">
+          Offline learner simulation (adaptive vs fixed) shows higher accuracy and practiced-skill
+          mastery under identical early struggle. See <code>docs/sim-results.json</code> and run{" "}
+          <code>npm run simulate</code>.
+        </p>
+      </Card>
     </main>
   );
 }

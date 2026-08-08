@@ -12,6 +12,7 @@
     "db:seed": "tsx prisma/seed.ts",
     "db:migrate": "prisma migrate dev",
     "smoke": "node scripts/smoke.mjs",
+    "simulate": "tsx scripts/simulate-learners.mjs",
     "postinstall": "prisma generate"
   },
   "prisma": {

@@ -27,4 +27,5 @@ await check(`/history/${id}`);
 await check(`/share/${id}`);
 await check(`/api/share/${id}`);
 await check(`/contact`);
+await check(`/api/health`);
 console.log("smoke passed", base);
