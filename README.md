@@ -32,7 +32,12 @@ Demo profiles: **Ava** (calm/trains), **Leo** (balanced/dinos), **Sam** (bright/
 
 ### Optional AI keys
 
+Lumi is **offline-first**. Adaptive reading/writing/math, browser TTS/STT, Calm Corner, mastery tracking, and educator export all work with **no cloud AI keys**.
+
+If you later add keys (optional), coaching lines and homework photo help get richer:
+
 ```bash
+# in .env — all optional
 OPENAI_API_KEY=...
 # or
 GOOGLE_GENERATIVE_AI_API_KEY=...
