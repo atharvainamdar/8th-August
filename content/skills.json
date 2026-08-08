@@ -2044,5 +2044,307 @@
     "activityKinds": [
       "word_problem"
     ]
+  },
+  {
+    "id": "read.phonics.y_as_vowel",
+    "domain": "reading",
+    "title": "Y as vowel",
+    "description": "Read happy/my/cry",
+    "prerequisites": [
+      "read.phonics.silent_e"
+    ],
+    "standards": [
+      "RF.1.3"
+    ],
+    "difficulty": 4,
+    "defaultModalities": [
+      "visual",
+      "audio",
+      "speak"
+    ],
+    "activityKinds": [
+      "decode"
+    ]
+  },
+  {
+    "id": "read.phonics.schwa",
+    "domain": "reading",
+    "title": "Schwa sound",
+    "description": "Read unstressed a/e",
+    "prerequisites": [
+      "read.phonics.multisyllable"
+    ],
+    "standards": [
+      "RF.3.3"
+    ],
+    "difficulty": 7,
+    "defaultModalities": [
+      "audio",
+      "visual"
+    ],
+    "activityKinds": [
+      "decode"
+    ]
+  },
+  {
+    "id": "read.fluency.rate",
+    "domain": "reading",
+    "title": "Reading rate",
+    "description": "Build comfortable pace",
+    "prerequisites": [
+      "read.fluency.phrase"
+    ],
+    "standards": [
+      "RF.3.4"
+    ],
+    "difficulty": 7,
+    "defaultModalities": [
+      "speak",
+      "visual"
+    ],
+    "activityKinds": [
+      "fluency"
+    ]
+  },
+  {
+    "id": "read.comp.author_purpose",
+    "domain": "reading",
+    "title": "Author purpose",
+    "description": "Decide inform/entertain/persuade",
+    "prerequisites": [
+      "read.comp.main_idea"
+    ],
+    "standards": [
+      "RI.2.6"
+    ],
+    "difficulty": 7,
+    "defaultModalities": [
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "comprehension"
+    ]
+  },
+  {
+    "id": "read.comp.character",
+    "domain": "reading",
+    "title": "Character feelings",
+    "description": "Infer how a character feels",
+    "prerequisites": [
+      "read.comp.infer"
+    ],
+    "standards": [
+      "RL.2.3"
+    ],
+    "difficulty": 6,
+    "defaultModalities": [
+      "visual",
+      "avatar"
+    ],
+    "activityKinds": [
+      "comprehension"
+    ]
+  },
+  {
+    "id": "write.spelling.doubling",
+    "domain": "writing",
+    "title": "Consonant doubling",
+    "description": "Spell running/stopped",
+    "prerequisites": [
+      "write.spelling.blends"
+    ],
+    "standards": [
+      "L.3.2"
+    ],
+    "difficulty": 6,
+    "defaultModalities": [
+      "typing",
+      "visual"
+    ],
+    "activityKinds": [
+      "spelling_ccc"
+    ]
+  },
+  {
+    "id": "write.grammar.adjectives",
+    "domain": "writing",
+    "title": "Adjectives",
+    "description": "Add describing words",
+    "prerequisites": [
+      "write.sentence.expand"
+    ],
+    "standards": [
+      "L.2.1"
+    ],
+    "difficulty": 5,
+    "defaultModalities": [
+      "typing",
+      "speak"
+    ],
+    "activityKinds": [
+      "sentence_build"
+    ]
+  },
+  {
+    "id": "write.grammar.pronouns",
+    "domain": "writing",
+    "title": "Pronouns",
+    "description": "Use he/she/they correctly",
+    "prerequisites": [
+      "write.grammar.nouns"
+    ],
+    "standards": [
+      "L.1.1"
+    ],
+    "difficulty": 4,
+    "defaultModalities": [
+      "typing",
+      "visual"
+    ],
+    "activityKinds": [
+      "sentence_build"
+    ]
+  },
+  {
+    "id": "write.response.howto",
+    "domain": "writing",
+    "title": "How-to writing",
+    "description": "Write steps in order",
+    "prerequisites": [
+      "write.response.inform"
+    ],
+    "standards": [
+      "W.2.2"
+    ],
+    "difficulty": 7,
+    "defaultModalities": [
+      "typing",
+      "visual"
+    ],
+    "activityKinds": [
+      "short_response"
+    ]
+  },
+  {
+    "id": "math.number.ordering",
+    "domain": "math",
+    "title": "Order numbers",
+    "description": "Put numbers in order",
+    "prerequisites": [
+      "math.number.compare"
+    ],
+    "standards": [
+      "1.NBT"
+    ],
+    "difficulty": 3,
+    "defaultModalities": [
+      "visual",
+      "manipulative"
+    ],
+    "activityKinds": [
+      "number_sense"
+    ]
+  },
+  {
+    "id": "math.ops.properties",
+    "domain": "math",
+    "title": "Add properties",
+    "description": "Use commute/associate",
+    "prerequisites": [
+      "math.ops.add_20"
+    ],
+    "standards": [
+      "1.OA"
+    ],
+    "difficulty": 4,
+    "defaultModalities": [
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "operation"
+    ]
+  },
+  {
+    "id": "math.ops.rel_add_sub",
+    "domain": "math",
+    "title": "Add-sub relation",
+    "description": "Use fact families",
+    "prerequisites": [
+      "math.facts.add",
+      "math.facts.sub"
+    ],
+    "standards": [
+      "1.OA"
+    ],
+    "difficulty": 4,
+    "defaultModalities": [
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "fact_fluency"
+    ]
+  },
+  {
+    "id": "math.frac.equiv",
+    "domain": "math",
+    "title": "Equivalent fractions",
+    "description": "Recognize 1/2=2/4",
+    "prerequisites": [
+      "math.frac.unit"
+    ],
+    "standards": [
+      "3.NF"
+    ],
+    "difficulty": 8,
+    "defaultModalities": [
+      "visual",
+      "manipulative"
+    ],
+    "activityKinds": [
+      "number_sense"
+    ]
+  },
+  {
+    "id": "math.word.perimeter_lite",
+    "domain": "math",
+    "title": "Around shapes",
+    "description": "Simple perimeter stories",
+    "prerequisites": [
+      "math.ops.add_100"
+    ],
+    "standards": [
+      "3.MD"
+    ],
+    "difficulty": 7,
+    "defaultModalities": [
+      "visual",
+      "manipulative"
+    ],
+    "activityKinds": [
+      "word_problem"
+    ]
+  },
+  {
+    "id": "math.data.bar",
+    "domain": "math",
+    "title": "Bar graphs",
+    "description": "Read a simple bar graph",
+    "prerequisites": [
+      "math.data.picture"
+    ],
+    "standards": [
+      "3.MD"
+    ],
+    "difficulty": 6,
+    "defaultModalities": [
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "number_sense"
+    ]
   }
 ]

@@ -453,6 +453,26 @@
       "notebook",
       "sunshine",
       "bedroom"
+    ],
+    "read.phonics.y_as_vowel": [
+      "happy",
+      "funny",
+      "my",
+      "cry",
+      "fly",
+      "puppy",
+      "baby",
+      "try"
+    ],
+    "read.phonics.schwa": [
+      "about",
+      "again",
+      "the",
+      "sofa",
+      "pencil",
+      "balloon",
+      "support",
+      "family"
     ]
   },
   "fluency": [
