@@ -1,0 +1,46 @@
+{
+  "letters": [
+    { "letter": "a", "pathHint": "around and down" },
+    { "letter": "b", "pathHint": "down, up, and around" },
+    { "letter": "c", "pathHint": "curve around" },
+    { "letter": "d", "pathHint": "around, up, and down" },
+    { "letter": "m", "pathHint": "down, up, over, up, over" },
+    { "letter": "s", "pathHint": "curve like a snake" },
+    { "letter": "t", "pathHint": "down and across" },
+    { "letter": "A", "pathHint": "up, down, and across" },
+    { "letter": "B", "pathHint": "down and two bumps" },
+    { "letter": "S", "pathHint": "big snake curve" }
+  ],
+  "spelling": {
+    "write.spelling.cvc": ["cat", "map", "sit", "pen", "dog", "cup", "hat", "bed"],
+    "write.spelling.blends": ["stop", "flag", "ship", "chop", "trap", "duck"],
+    "write.spelling.vowel_teams": ["rain", "boat", "tree", "team", "coat", "sleep"]
+  },
+  "sentence_frames": [
+    {
+      "frame": "The ___ is ___ .",
+      "bank": ["cat", "train", "moon", "big", "fast", "soft"],
+      "example": "The train is fast."
+    },
+    {
+      "frame": "I see a ___ in the ___ .",
+      "bank": ["fish", "bird", "boat", "pond", "sky", "sea"],
+      "example": "I see a bird in the sky."
+    },
+    {
+      "frame": "My favorite ___ is ___ .",
+      "bank": ["animal", "planet", "dino", "dog", "Mars", "T-Rex"],
+      "example": "My favorite animal is dog."
+    }
+  ],
+  "short_responses": [
+    {
+      "prompt": "What is one thing you like to do?",
+      "powHints": ["Pick one idea", "Organize: I like ___ because ___", "Write your sentence"]
+    },
+    {
+      "prompt": "Tell about a place you know.",
+      "powHints": ["Pick a place", "Organize: place + one detail", "Write 1–2 sentences"]
+    }
+  ]
+}

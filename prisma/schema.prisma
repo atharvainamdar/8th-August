@@ -1,0 +1,71 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model ChildProfile {
+  id              String   @id @default(cuid())
+  displayName     String
+  ageBand         String   // "7-8" | "9-10"
+  sensoryMode     String   @default("balanced") // calm | balanced | bright
+  interestPack    String   @default("space")
+  dyslexiaFont    Boolean  @default(false)
+  soundEnabled     Boolean  @default(true)
+  motionEnabled   Boolean  @default(true)
+  celebrationLevel String  @default("medium") // off | low | medium
+  sessionMinutes  Int      @default(15)
+  placed          Boolean  @default(false)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  mastery         SkillMastery[]
+  sessions        Session[]
+  events          LearnerEvent[]
+}
+
+model SkillMastery {
+  id        String   @id @default(cuid())
+  childId   String
+  child     ChildProfile @relation(fields: [childId], references: [id], onDelete: Cascade)
+  skillId   String
+  alpha     Float    @default(1)
+  beta      Float    @default(1)
+  level     Int      @default(0) // scaffold ceiling proxy
+  updatedAt DateTime @updatedAt
+
+  @@unique([childId, skillId])
+  @@index([childId])
+}
+
+model Session {
+  id            String   @id @default(cuid())
+  childId       String
+  child         ChildProfile @relation(fields: [childId], references: [id], onDelete: Cascade)
+  domain        String   // reading | writing | math | mixed | placement
+  moodStart     String?
+  moodEnd       String?
+  startedAt     DateTime @default(now())
+  endedAt       DateTime?
+  itemsPlanned  Int      @default(0)
+  itemsDone     Int      @default(0)
+  adaptations   Int      @default(0)
+  summaryJson   String   @default("{}")
+  events        LearnerEvent[]
+}
+
+model LearnerEvent {
+  id        String   @id @default(cuid())
+  childId   String
+  child     ChildProfile @relation(fields: [childId], references: [id], onDelete: Cascade)
+  sessionId String?
+  session   Session? @relation(fields: [sessionId], references: [id], onDelete: SetNull)
+  type      String
+  payload   String   @default("{}")
+  createdAt DateTime @default(now())
+
+  @@index([childId, createdAt])
+  @@index([sessionId])
+}

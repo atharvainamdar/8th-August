@@ -1,0 +1,70 @@
+{
+  "number_sense": [
+    { "prompt": "How many dots?", "count": 4, "options": [3, 4, 5] },
+    { "prompt": "How many dots?", "count": 7, "options": [6, 7, 8] },
+    { "prompt": "Which number is greater?", "a": 12, "b": 9, "answer": 12 },
+    { "prompt": "Which number is less?", "a": 18, "b": 21, "answer": 18 },
+    { "prompt": "What number is this?", "value": 34, "options": [43, 34, 24] }
+  ],
+  "ten_frames": [
+    { "prompt": "Show 6 on the ten frame", "value": 6 },
+    { "prompt": "Show 10 on the ten frame", "value": 10 },
+    { "prompt": "Show 14 using tens and ones", "value": 14 },
+    { "prompt": "Show 23 using tens and ones", "value": 23 }
+  ],
+  "operations": [
+    { "op": "+", "a": 3, "b": 4, "answer": 7, "skill": "math.ops.add_20" },
+    { "op": "+", "a": 8, "b": 5, "answer": 13, "skill": "math.ops.add_20" },
+    { "op": "-", "a": 9, "b": 4, "answer": 5, "skill": "math.ops.sub_20" },
+    { "op": "-", "a": 15, "b": 7, "answer": 8, "skill": "math.ops.sub_20" },
+    { "op": "+", "a": 26, "b": 13, "answer": 39, "skill": "math.ops.add_100" },
+    { "op": "+", "a": 47, "b": 25, "answer": 72, "skill": "math.ops.add_100" },
+    { "op": "-", "a": 50, "b": 18, "answer": 32, "skill": "math.ops.sub_100" },
+    { "op": "*", "a": 3, "b": 4, "answer": 12, "skill": "math.ops.mul_concept" },
+    { "op": "*", "a": 5, "b": 2, "answer": 10, "skill": "math.ops.mul_concept" },
+    { "op": "/", "a": 12, "b": 3, "answer": 4, "skill": "math.ops.div_concept" }
+  ],
+  "facts": [
+    { "a": 2, "b": 3, "op": "+", "answer": 5 },
+    { "a": 4, "b": 4, "op": "+", "answer": 8 },
+    { "a": 6, "b": 3, "op": "+", "answer": 9 },
+    { "a": 7, "b": 2, "op": "+", "answer": 9 },
+    { "a": 3, "b": 3, "op": "*", "answer": 9 },
+    { "a": 4, "b": 5, "op": "*", "answer": 20 },
+    { "a": 2, "b": 6, "op": "*", "answer": 12 }
+  ],
+  "word_problems": [
+    {
+      "schema": "addto",
+      "skill": "math.word.addto",
+      "template": "{name} has {a} {item}. Then {name} gets {b} more. How many {item} now?",
+      "a": 4,
+      "b": 3,
+      "answer": 7
+    },
+    {
+      "schema": "takefrom",
+      "skill": "math.word.takefrom",
+      "template": "{name} has {a} {item}. {name} gives away {b}. How many are left?",
+      "a": 9,
+      "b": 4,
+      "answer": 5
+    },
+    {
+      "schema": "compare",
+      "skill": "math.word.compare",
+      "template": "{name} has {a} {item}. Sam has {b} {item}. How many more does {name} have?",
+      "a": 12,
+      "b": 8,
+      "answer": 4
+    },
+    {
+      "schema": "equal_groups",
+      "skill": "math.word.equal_groups",
+      "template": "There are {a} boxes. Each box has {b} {item}. How many {item} in all?",
+      "a": 3,
+      "b": 4,
+      "answer": 12
+    }
+  ]
+}

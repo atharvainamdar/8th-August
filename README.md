@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lumi — Adaptive AI Tutor for Autistic Kids (YC Primer Wedge)
 
-## Getting Started
+Lumi is a one-on-one multimodal AI tutor for autistic / neurodivergent kids ages **7–10**, focused on **reading, writing, and arithmetic** homework practice.
 
-First, run the development server:
+It is built as a **YC Fall 2026 “The Primer” wedge**: start with the learners generic tutors fail, prove measurable practice growth, then expand toward a full Primer.
+
+> Educational practice tool. Not clinical diagnosis or therapy.
+
+## Features
+
+- Real adaptive engine: difficulty, scaffold, modality, sensory mode, pacing, special interests
+- Reading: phonics, blending, decoding, fluency, comprehension
+- Writing: letter tracing, Cover-Copy-Compare spelling, sentence frames, short responses, speak-to-write
+- Math: number sense, ten-frames, operations, fact fluency, schema word problems
+- Calm Corner, visual schedule, transition warnings
+- Companion character Lumi
+- Adult/educator dashboard + JSON/CSV export
+- Works offline with browser TTS/STT; OpenAI/Gemini enhance coaching + homework vision
+
+## Quick start
 
 ```bash
+npm install
+npx prisma migrate dev
+npm run db:seed
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Demo profiles: **Ava** (calm/trains), **Leo** (balanced/dinos), **Sam** (bright/space).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Optional AI keys
 
-## Learn More
+```bash
+OPENAI_API_KEY=...
+# or
+GOOGLE_GENERATIVE_AI_API_KEY=...
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `npm run dev` — local app
+- `npm test` — adaptive engine + simulation tests
+- `npm run db:seed` — seed demo learners
+- `npm run build` — production build
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Docs
 
-## Deploy on Vercel
+- `docs/RESEARCH.md` — research foundations & competitor notes
+- `docs/CURRICULUM.md` — skill graph overview
+- `docs/PILOT_PROTOCOL.md` — specialist testing protocol
+- `docs/YC_DEMO_SCRIPT.md` — investor demo path
+- In-app: `/demo`, `/docs/pilot`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Next.js 15 · TypeScript · Tailwind · Prisma/SQLite · Vitest · Zustand

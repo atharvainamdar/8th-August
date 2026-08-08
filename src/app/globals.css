@@ -1,26 +1,135 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #f4f7f5;
+  --fg: #1f2a24;
+  --card: #ffffff;
+  --muted: #5b6b63;
+  --primary: #3d8f7a;
+  --primary-fg: #ffffff;
+  --accent: #6c8cff;
+  --warn: #e07a5f;
+  --ok: #7bbf6a;
+  --border: #d7e2dc;
+  --shadow: 0 8px 24px rgba(31, 42, 36, 0.08);
+  --radius: 20px;
+  --focus: 0 0 0 3px rgba(61, 143, 122, 0.35);
+}
+
+[data-sensory="calm"] {
+  --bg: #eef2f0;
+  --card: #f8faf9;
+  --primary: #5a8f82;
+  --accent: #7a8fb0;
+  --shadow: none;
+}
+
+[data-sensory="balanced"] {
+  --bg: #f4f7f5;
+  --primary: #3d8f7a;
+  --accent: #6c8cff;
+}
+
+[data-sensory="bright"] {
+  --bg: #fff8ef;
+  --primary: #2f9e7a;
+  --accent: #ff9f1c;
+  --card: #ffffff;
+}
+
+[data-font="dyslexia"] body {
+  font-family: "Comic Sans MS", "Atkinson Hyperlegible", "Segoe UI", sans-serif;
+  letter-spacing: 0.03em;
+  line-height: 1.6;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-geist-sans), "Segoe UI", sans-serif;
+}
+
+button,
+a,
+input,
+textarea {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus);
+}
+
+.lumi-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.lumi-btn {
+  min-height: 52px;
+  min-width: 52px;
+  border-radius: 16px;
+  border: 2px solid transparent;
+  padding: 0.85rem 1.25rem;
+  font-weight: 650;
+  cursor: pointer;
+  transition: transform 120ms ease, background 120ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lumi-btn {
+    transition: none;
+  }
+}
+
+.lumi-btn:active {
+  transform: scale(0.98);
+}
+
+.lumi-btn-primary {
+  background: var(--primary);
+  color: var(--primary-fg);
+}
+
+.lumi-btn-secondary {
+  background: #e7f2ee;
+  color: var(--fg);
+  border-color: var(--border);
+}
+
+.lumi-btn-ghost {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--fg);
+}
+
+.lumi-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: #e7f2ee;
+  color: var(--fg);
+  font-size: 0.9rem;
+  font-weight: 600;
 }

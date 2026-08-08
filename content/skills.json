@@ -1,0 +1,901 @@
+[
+  {
+    "id": "read.phoneme.isolate",
+    "domain": "reading",
+    "title": "Isolate sounds",
+    "description": "Hear the first sound in a word",
+    "prerequisites": [],
+    "standards": [
+      "RF.K.2"
+    ],
+    "difficulty": 1,
+    "defaultModalities": [
+      "audio",
+      "visual"
+    ],
+    "activityKinds": [
+      "phoneme_match"
+    ]
+  },
+  {
+    "id": "read.phoneme.blend",
+    "domain": "reading",
+    "title": "Blend sounds",
+    "description": "Blend 2–3 sounds into a word",
+    "prerequisites": [
+      "read.phoneme.isolate"
+    ],
+    "standards": [
+      "RF.1.2"
+    ],
+    "difficulty": 2,
+    "defaultModalities": [
+      "audio",
+      "avatar",
+      "visual"
+    ],
+    "activityKinds": [
+      "blend"
+    ]
+  },
+  {
+    "id": "read.phoneme.segment",
+    "domain": "reading",
+    "title": "Segment sounds",
+    "description": "Break a word into sounds",
+    "prerequisites": [
+      "read.phoneme.blend"
+    ],
+    "standards": [
+      "RF.1.2"
+    ],
+    "difficulty": 2,
+    "defaultModalities": [
+      "audio",
+      "visual"
+    ],
+    "activityKinds": [
+      "phoneme_match"
+    ]
+  },
+  {
+    "id": "read.letters.sounds",
+    "domain": "reading",
+    "title": "Letter sounds",
+    "description": "Match letters to sounds",
+    "prerequisites": [
+      "read.phoneme.isolate"
+    ],
+    "standards": [
+      "RF.K.3"
+    ],
+    "difficulty": 2,
+    "defaultModalities": [
+      "visual",
+      "audio",
+      "avatar"
+    ],
+    "activityKinds": [
+      "phoneme_match"
+    ]
+  },
+  {
+    "id": "read.phonics.cvc",
+    "domain": "reading",
+    "title": "CVC words",
+    "description": "Read short vowel CVC words",
+    "prerequisites": [
+      "read.letters.sounds",
+      "read.phoneme.blend"
+    ],
+    "standards": [
+      "RF.1.3"
+    ],
+    "difficulty": 3,
+    "defaultModalities": [
+      "visual",
+      "audio",
+      "speak"
+    ],
+    "activityKinds": [
+      "decode",
+      "blend"
+    ]
+  },
+  {
+    "id": "read.phonics.blends",
+    "domain": "reading",
+    "title": "Consonant blends",
+    "description": "Read words with blends (st, bl, tr)",
+    "prerequisites": [
+      "read.phonics.cvc"
+    ],
+    "standards": [
+      "RF.1.3"
+    ],
+    "difficulty": 4,
+    "defaultModalities": [
+      "visual",
+      "audio",
+      "speak"
+    ],
+    "activityKinds": [
+      "decode"
+    ]
+  },
+  {
+    "id": "read.phonics.digraphs",
+    "domain": "reading",
+    "title": "Digraphs",
+    "description": "Read sh, ch, th, ck words",
+    "prerequisites": [
+      "read.phonics.cvc"
+    ],
+    "standards": [
+      "RF.1.3"
+    ],
+    "difficulty": 4,
+    "defaultModalities": [
+      "visual",
+      "audio",
+      "avatar"
+    ],
+    "activityKinds": [
+      "decode"
+    ]
+  },
+  {
+    "id": "read.phonics.silent_e",
+    "domain": "reading",
+    "title": "Silent e",
+    "description": "Read CVCe long vowel words",
+    "prerequisites": [
+      "read.phonics.cvc"
+    ],
+    "standards": [
+      "RF.2.3"
+    ],
+    "difficulty": 5,
+    "defaultModalities": [
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "decode"
+    ]
+  },
+  {
+    "id": "read.phonics.vowel_teams",
+    "domain": "reading",
+    "title": "Vowel teams",
+    "description": "Read ai, ea, oa, ee words",
+    "prerequisites": [
+      "read.phonics.silent_e"
+    ],
+    "standards": [
+      "RF.2.3"
+    ],
+    "difficulty": 6,
+    "defaultModalities": [
+      "visual",
+      "audio",
+      "speak"
+    ],
+    "activityKinds": [
+      "decode"
+    ]
+  },
+  {
+    "id": "read.phonics.r_controlled",
+    "domain": "reading",
+    "title": "R-controlled",
+    "description": "Read ar, or, er, ir, ur words",
+    "prerequisites": [
+      "read.phonics.vowel_teams"
+    ],
+    "standards": [
+      "RF.2.3"
+    ],
+    "difficulty": 6,
+    "defaultModalities": [
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "decode"
+    ]
+  },
+  {
+    "id": "read.phonics.multisyllable",
+    "domain": "reading",
+    "title": "Multisyllable",
+    "description": "Decode two-syllable words",
+    "prerequisites": [
+      "read.phonics.vowel_teams"
+    ],
+    "standards": [
+      "RF.3.3"
+    ],
+    "difficulty": 7,
+    "defaultModalities": [
+      "visual",
+      "audio",
+      "speak"
+    ],
+    "activityKinds": [
+      "decode"
+    ]
+  },
+  {
+    "id": "read.hf.irregular",
+    "domain": "reading",
+    "title": "Tricky words",
+    "description": "Read common irregular words",
+    "prerequisites": [
+      "read.phonics.cvc"
+    ],
+    "standards": [
+      "RF.2.3"
+    ],
+    "difficulty": 4,
+    "defaultModalities": [
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "decode"
+    ]
+  },
+  {
+    "id": "read.fluency.short",
+    "domain": "reading",
+    "title": "Short fluency",
+    "description": "Read a short passage smoothly",
+    "prerequisites": [
+      "read.phonics.blends",
+      "read.hf.irregular"
+    ],
+    "standards": [
+      "RF.2.4"
+    ],
+    "difficulty": 5,
+    "defaultModalities": [
+      "visual",
+      "audio",
+      "speak"
+    ],
+    "activityKinds": [
+      "fluency"
+    ]
+  },
+  {
+    "id": "read.fluency.prosody",
+    "domain": "reading",
+    "title": "Expressive reading",
+    "description": "Read with pauses and feeling",
+    "prerequisites": [
+      "read.fluency.short"
+    ],
+    "standards": [
+      "RF.3.4"
+    ],
+    "difficulty": 7,
+    "defaultModalities": [
+      "speak",
+      "audio",
+      "avatar"
+    ],
+    "activityKinds": [
+      "fluency"
+    ]
+  },
+  {
+    "id": "read.vocab.context",
+    "domain": "reading",
+    "title": "Word meanings",
+    "description": "Use context to understand words",
+    "prerequisites": [
+      "read.fluency.short"
+    ],
+    "standards": [
+      "L.2.4"
+    ],
+    "difficulty": 6,
+    "defaultModalities": [
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "comprehension"
+    ]
+  },
+  {
+    "id": "read.comp.literal",
+    "domain": "reading",
+    "title": "Literal questions",
+    "description": "Answer who/what/where questions",
+    "prerequisites": [
+      "read.fluency.short"
+    ],
+    "standards": [
+      "RL.2.1"
+    ],
+    "difficulty": 5,
+    "defaultModalities": [
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "comprehension"
+    ]
+  },
+  {
+    "id": "read.comp.infer",
+    "domain": "reading",
+    "title": "Infer meaning",
+    "description": "Answer why/how questions with clues",
+    "prerequisites": [
+      "read.comp.literal"
+    ],
+    "standards": [
+      "RL.3.1"
+    ],
+    "difficulty": 7,
+    "defaultModalities": [
+      "visual",
+      "audio",
+      "avatar"
+    ],
+    "activityKinds": [
+      "comprehension"
+    ]
+  },
+  {
+    "id": "write.letters.lowercase",
+    "domain": "writing",
+    "title": "Lowercase letters",
+    "description": "Trace and write lowercase letters",
+    "prerequisites": [],
+    "standards": [
+      "L.K.1"
+    ],
+    "difficulty": 1,
+    "defaultModalities": [
+      "video_model",
+      "visual",
+      "typing"
+    ],
+    "activityKinds": [
+      "letter_trace"
+    ]
+  },
+  {
+    "id": "write.letters.uppercase",
+    "domain": "writing",
+    "title": "Uppercase letters",
+    "description": "Trace and write uppercase letters",
+    "prerequisites": [
+      "write.letters.lowercase"
+    ],
+    "standards": [
+      "L.K.1"
+    ],
+    "difficulty": 2,
+    "defaultModalities": [
+      "video_model",
+      "visual",
+      "typing"
+    ],
+    "activityKinds": [
+      "letter_trace"
+    ]
+  },
+  {
+    "id": "write.spelling.cvc",
+    "domain": "writing",
+    "title": "Spell CVC",
+    "description": "Spell short CVC words",
+    "prerequisites": [
+      "write.letters.lowercase",
+      "read.phonics.cvc"
+    ],
+    "standards": [
+      "L.1.2"
+    ],
+    "difficulty": 3,
+    "defaultModalities": [
+      "typing",
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "spelling_ccc"
+    ]
+  },
+  {
+    "id": "write.spelling.blends",
+    "domain": "writing",
+    "title": "Spell blends",
+    "description": "Spell words with blends/digraphs",
+    "prerequisites": [
+      "write.spelling.cvc",
+      "read.phonics.blends"
+    ],
+    "standards": [
+      "L.2.2"
+    ],
+    "difficulty": 4,
+    "defaultModalities": [
+      "typing",
+      "visual"
+    ],
+    "activityKinds": [
+      "spelling_ccc"
+    ]
+  },
+  {
+    "id": "write.spelling.vowel_teams",
+    "domain": "writing",
+    "title": "Spell vowel teams",
+    "description": "Spell ai/ea/oa pattern words",
+    "prerequisites": [
+      "write.spelling.blends",
+      "read.phonics.vowel_teams"
+    ],
+    "standards": [
+      "L.3.2"
+    ],
+    "difficulty": 6,
+    "defaultModalities": [
+      "typing",
+      "audio"
+    ],
+    "activityKinds": [
+      "spelling_ccc"
+    ]
+  },
+  {
+    "id": "write.sentence.frame",
+    "domain": "writing",
+    "title": "Sentence frames",
+    "description": "Build a complete sentence with a frame",
+    "prerequisites": [
+      "write.spelling.cvc"
+    ],
+    "standards": [
+      "W.1.2"
+    ],
+    "difficulty": 4,
+    "defaultModalities": [
+      "visual",
+      "typing",
+      "speak"
+    ],
+    "activityKinds": [
+      "sentence_build"
+    ]
+  },
+  {
+    "id": "write.sentence.expand",
+    "domain": "writing",
+    "title": "Expand sentences",
+    "description": "Add details to a sentence",
+    "prerequisites": [
+      "write.sentence.frame"
+    ],
+    "standards": [
+      "W.2.5"
+    ],
+    "difficulty": 6,
+    "defaultModalities": [
+      "typing",
+      "speak",
+      "avatar"
+    ],
+    "activityKinds": [
+      "sentence_build"
+    ]
+  },
+  {
+    "id": "write.response.pow",
+    "domain": "writing",
+    "title": "Short response",
+    "description": "Plan and write a short answer",
+    "prerequisites": [
+      "write.sentence.frame"
+    ],
+    "standards": [
+      "W.2.1"
+    ],
+    "difficulty": 7,
+    "defaultModalities": [
+      "typing",
+      "speak",
+      "visual"
+    ],
+    "activityKinds": [
+      "short_response"
+    ]
+  },
+  {
+    "id": "math.number.10",
+    "domain": "math",
+    "title": "Numbers to 10",
+    "description": "Count and show numbers to 10",
+    "prerequisites": [],
+    "standards": [
+      "K.CC"
+    ],
+    "difficulty": 1,
+    "defaultModalities": [
+      "manipulative",
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "number_sense",
+      "ten_frame"
+    ]
+  },
+  {
+    "id": "math.number.20",
+    "domain": "math",
+    "title": "Numbers to 20",
+    "description": "Count and compare to 20",
+    "prerequisites": [
+      "math.number.10"
+    ],
+    "standards": [
+      "1.NBT"
+    ],
+    "difficulty": 2,
+    "defaultModalities": [
+      "manipulative",
+      "visual"
+    ],
+    "activityKinds": [
+      "number_sense",
+      "ten_frame"
+    ]
+  },
+  {
+    "id": "math.number.100",
+    "domain": "math",
+    "title": "Numbers to 100",
+    "description": "Read and place numbers to 100",
+    "prerequisites": [
+      "math.number.20"
+    ],
+    "standards": [
+      "2.NBT.A"
+    ],
+    "difficulty": 3,
+    "defaultModalities": [
+      "visual",
+      "audio",
+      "manipulative"
+    ],
+    "activityKinds": [
+      "number_sense"
+    ]
+  },
+  {
+    "id": "math.placevalue.tens",
+    "domain": "math",
+    "title": "Tens and ones",
+    "description": "Build numbers with tens and ones",
+    "prerequisites": [
+      "math.number.20"
+    ],
+    "standards": [
+      "1.NBT.B",
+      "2.NBT.A"
+    ],
+    "difficulty": 3,
+    "defaultModalities": [
+      "manipulative",
+      "visual",
+      "avatar"
+    ],
+    "activityKinds": [
+      "ten_frame",
+      "number_sense"
+    ]
+  },
+  {
+    "id": "math.placevalue.hundreds",
+    "domain": "math",
+    "title": "Hundreds",
+    "description": "Understand hundreds, tens, ones",
+    "prerequisites": [
+      "math.placevalue.tens",
+      "math.number.100"
+    ],
+    "standards": [
+      "2.NBT.A"
+    ],
+    "difficulty": 5,
+    "defaultModalities": [
+      "manipulative",
+      "visual"
+    ],
+    "activityKinds": [
+      "number_sense"
+    ]
+  },
+  {
+    "id": "math.ops.add_20",
+    "domain": "math",
+    "title": "Add within 20",
+    "description": "Add with strategies within 20",
+    "prerequisites": [
+      "math.number.20"
+    ],
+    "standards": [
+      "1.OA",
+      "2.OA"
+    ],
+    "difficulty": 3,
+    "defaultModalities": [
+      "manipulative",
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "operation",
+      "ten_frame"
+    ]
+  },
+  {
+    "id": "math.ops.sub_20",
+    "domain": "math",
+    "title": "Subtract within 20",
+    "description": "Subtract with strategies within 20",
+    "prerequisites": [
+      "math.ops.add_20"
+    ],
+    "standards": [
+      "1.OA",
+      "2.OA"
+    ],
+    "difficulty": 3,
+    "defaultModalities": [
+      "manipulative",
+      "visual"
+    ],
+    "activityKinds": [
+      "operation"
+    ]
+  },
+  {
+    "id": "math.ops.add_100",
+    "domain": "math",
+    "title": "Add within 100",
+    "description": "Add two-digit numbers",
+    "prerequisites": [
+      "math.ops.add_20",
+      "math.placevalue.tens"
+    ],
+    "standards": [
+      "2.NBT.B"
+    ],
+    "difficulty": 5,
+    "defaultModalities": [
+      "visual",
+      "manipulative",
+      "avatar"
+    ],
+    "activityKinds": [
+      "operation"
+    ]
+  },
+  {
+    "id": "math.ops.sub_100",
+    "domain": "math",
+    "title": "Subtract within 100",
+    "description": "Subtract two-digit numbers",
+    "prerequisites": [
+      "math.ops.add_100"
+    ],
+    "standards": [
+      "2.NBT.B"
+    ],
+    "difficulty": 5,
+    "defaultModalities": [
+      "visual",
+      "manipulative"
+    ],
+    "activityKinds": [
+      "operation"
+    ]
+  },
+  {
+    "id": "math.ops.mul_concept",
+    "domain": "math",
+    "title": "Equal groups",
+    "description": "Understand multiplication as equal groups",
+    "prerequisites": [
+      "math.ops.add_100"
+    ],
+    "standards": [
+      "3.OA.A"
+    ],
+    "difficulty": 6,
+    "defaultModalities": [
+      "manipulative",
+      "visual",
+      "video_model"
+    ],
+    "activityKinds": [
+      "operation",
+      "word_problem"
+    ]
+  },
+  {
+    "id": "math.ops.div_concept",
+    "domain": "math",
+    "title": "Sharing groups",
+    "description": "Understand division as sharing",
+    "prerequisites": [
+      "math.ops.mul_concept"
+    ],
+    "standards": [
+      "3.OA.A"
+    ],
+    "difficulty": 7,
+    "defaultModalities": [
+      "manipulative",
+      "visual"
+    ],
+    "activityKinds": [
+      "operation",
+      "word_problem"
+    ]
+  },
+  {
+    "id": "math.facts.add",
+    "domain": "math",
+    "title": "Addition facts",
+    "description": "Quick addition facts",
+    "prerequisites": [
+      "math.ops.add_20"
+    ],
+    "standards": [
+      "2.OA.B"
+    ],
+    "difficulty": 4,
+    "defaultModalities": [
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "fact_fluency"
+    ]
+  },
+  {
+    "id": "math.facts.mul",
+    "domain": "math",
+    "title": "Multiplication facts",
+    "description": "Quick multiplication facts",
+    "prerequisites": [
+      "math.ops.mul_concept"
+    ],
+    "standards": [
+      "3.OA.C"
+    ],
+    "difficulty": 7,
+    "defaultModalities": [
+      "visual",
+      "audio"
+    ],
+    "activityKinds": [
+      "fact_fluency"
+    ]
+  },
+  {
+    "id": "math.frac.parts",
+    "domain": "math",
+    "title": "Fraction parts",
+    "description": "Name parts of a whole",
+    "prerequisites": [
+      "math.ops.div_concept"
+    ],
+    "standards": [
+      "3.NF.A"
+    ],
+    "difficulty": 8,
+    "defaultModalities": [
+      "visual",
+      "manipulative"
+    ],
+    "activityKinds": [
+      "number_sense"
+    ]
+  },
+  {
+    "id": "math.word.addto",
+    "domain": "math",
+    "title": "Word problems: add to",
+    "description": "Solve add-to stories",
+    "prerequisites": [
+      "math.ops.add_20"
+    ],
+    "standards": [
+      "1.OA.A",
+      "2.OA.A"
+    ],
+    "difficulty": 4,
+    "defaultModalities": [
+      "visual",
+      "audio",
+      "manipulative"
+    ],
+    "activityKinds": [
+      "word_problem"
+    ]
+  },
+  {
+    "id": "math.word.takefrom",
+    "domain": "math",
+    "title": "Word problems: take from",
+    "description": "Solve take-from stories",
+    "prerequisites": [
+      "math.ops.sub_20"
+    ],
+    "standards": [
+      "1.OA.A",
+      "2.OA.A"
+    ],
+    "difficulty": 4,
+    "defaultModalities": [
+      "visual",
+      "audio",
+      "manipulative"
+    ],
+    "activityKinds": [
+      "word_problem"
+    ]
+  },
+  {
+    "id": "math.word.compare",
+    "domain": "math",
+    "title": "Word problems: compare",
+    "description": "Solve compare stories",
+    "prerequisites": [
+      "math.word.addto",
+      "math.word.takefrom"
+    ],
+    "standards": [
+      "2.OA.A"
+    ],
+    "difficulty": 6,
+    "defaultModalities": [
+      "visual",
+      "avatar",
+      "manipulative"
+    ],
+    "activityKinds": [
+      "word_problem"
+    ]
+  },
+  {
+    "id": "math.word.equal_groups",
+    "domain": "math",
+    "title": "Word problems: equal groups",
+    "description": "Solve equal-groups stories",
+    "prerequisites": [
+      "math.ops.mul_concept"
+    ],
+    "standards": [
+      "3.OA.A"
+    ],
+    "difficulty": 7,
+    "defaultModalities": [
+      "visual",
+      "manipulative"
+    ],
+    "activityKinds": [
+      "word_problem"
+    ]
+  }
+]
